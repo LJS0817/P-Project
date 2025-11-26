@@ -1,0 +1,126 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+}
+
+.contentContainer {
+    flex: 1;
+    background-color: var(--primary100);
+    display: flex;
+    flex-direction: column;
+    font-size: 16px; 
+    transition: 0.3s;
+}
+
+@media (max-width: 1200px), (max-height: 1000px) {
+    .contentContainer {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px), (max-height: 800px) {
+    .contentContainer {
+        font-size: 12px;
+    }
+}
+
+@media (max-height: 600px) {
+    .contentContainer {
+        font-size: 11px; 
+    }
+}
+.contentContainer .topbar {
+    height: 4em;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 0 1.8em 0 1.2em;
+}
+
+.contentContainer .topbar .search {
+    height: 2.5em;
+    width: 70%;
+    padding: 0 0.9em;
+    background-color: var(--background100);
+    border-radius: 0.75em;
+    box-shadow: inset 1px 4px 20px -14px var(--shadow100);
+    display: flex;
+    align-items: center;
+}
+
+.contentContainer .topbar .search svg {
+    width: 1.25em;
+    height: 1.25em;
+    
+    fill: var(--text100);
+}
+
+.contentContainer .topbar .search #searchText {
+    border: none;
+    height: 80%;
+    flex: 1;
+    
+    margin-left: 1.25em;
+    
+    background-color: transparent;
+    font-size: 1.04em;
+    color: var(--text100);
+}
+
+.contentContainer .topbar .search #searchText:focus-visible {
+    outline: none;
+}
+
+.contentContainer .topbar .search #searchText::placeholder {
+    color: var(--text100);
+    opacity: 0.4;
+}
+
+.contentContainer .topbar .profile {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary300);
+    font-size: 1.1em;
+    font-weight: 400;
+    transition: 0.3s;
+    
+    border-radius: 0.6em;
+    
+    padding: 0.3em 0.6em;
+    
+    border: 0.18em solid transparent;
+}
+
+.contentContainer .topbar .profile svg {
+    margin-left: 0.3em;
+    
+    width: 1.2em;
+    height: 1.2em;
+    
+    fill: var(--background100);
+}
+
+.contentContainer .topbar .profile:hover {
+    color: var(--primary100);
+    background-color: var(--primary300);
+    border-color: var(--primary100);
+}
+
+.contentContainer .topbar .profile:hover svg {
+    fill: var(--primary100);
+}
+
+.contentContainer .content {
+    background-color: var(--background100);
+    flex: 1;
+    
+    border-top-left-radius: 0.9em;
+}

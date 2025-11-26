@@ -1,0 +1,180 @@
+.sidebar {
+    box-sizing: border-box;
+    width: 250px;
+    display: flex;
+    height: 100%;
+    background-color: var(--primary100);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0px;
+    color: var(--primary300);
+    font-size: 16px; 
+    transition: 0.3s;
+}
+
+@media (max-width: 1200px), (max-height: 1000px) {
+    .sidebar {
+        font-size: 14px;
+        width: 220px;
+    }
+}
+
+@media (max-width: 768px), (max-height: 800px) {
+    .sidebar {
+        font-size: 12px;
+        width: 180px;
+    }
+}
+
+@media (max-height: 600px) {
+    .contentContainer {
+        font-size: 11px; 
+    }
+}
+
+.sidebar h1 {
+    font-size: 2.4em;
+    margin: 0.5em 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.8em; 
+    width: 100%;
+}
+
+span {
+    z-index: 3;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.2em; 
+}
+
+.sidebar ul li {
+    cursor: pointer;
+    display: flex;
+    gap: 0.8em; 
+    font-size: 1.8em;
+    font-weight: 300;
+    
+    height: 2.5em; 
+    
+    align-items: center;
+    margin-left: 10%;
+    padding-left: 10%;
+    color: var(--accent200);
+    transition: 0.3s;
+    position: relative;
+}
+
+.sidebar ul li::after {
+    z-index: 2;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0px; 
+    height: 100%;
+    transition: 0.3s;
+    border-radius: 10px 0 0 10px;
+}
+
+.sidebar ul li:hover::after {
+    content: "";
+    width: 0.4em; 
+    background-color: var(--background100);
+}
+
+.sidebar ul li svg {
+    z-index: 3;
+    width: 1em;
+    height: 1em;
+    fill: var(--accent200);
+    transition: 0.3s;
+}
+
+.sidebar ul li.active {
+    color: var(--accent100);
+    font-weight: 400;
+}
+
+.sidebar ul li.active::after {
+    width: 100%;
+    background-color: var(--background100);
+}
+
+.sidebar ul li.active svg {
+    fill: var(--accent100);
+}
+
+.sidebar .addProjectBtn {
+    text-decoration: none;
+    color: var(--primary100);
+    background-color: var(--accent200);
+    width: 80%;
+    
+    height: 4em; 
+    
+    padding: 0 1em;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    font-weight: 500;
+    border-radius: 10px;
+    font-size: 1.1em;
+    transition: 0.3s;
+} 
+
+.sidebar .addProjectBtn:hover {
+    background-color: var(--primary200);
+    color: var(--accent200);
+} 
+
+.sidebar .addProjectBtn .addSphere {
+    width: 2.2em;
+    height: 2.2em;
+    
+    background-color: var(--primary100);
+    color: var(--accent200);
+    text-align: center;
+    
+    line-height: 2.2em; 
+    
+    font-size: 1.4em;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.sidebar .addProjectBtn:hover .addSphere {
+    background-color: var(--accent200);
+    color: var(--primary100);
+} 
+
+.sidebar .watch {
+    margin-top: 0.6em;
+    
+    height: 3em;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+.sidebar .watch svg {
+    width: 1.5em;
+    height: 1.5em;
+    fill: var(--accent200);
+}
+
+.sidebar .watch span {
+    font-size: 1.3em;
+}
