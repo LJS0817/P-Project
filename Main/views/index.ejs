@@ -5,13 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/default.css"> 
-    <link rel="stylesheet" href="./css/style.css"> 
+    <link rel="stylesheet" href="./css/sidebar.css"> 
+    <link rel="stylesheet" href="./css/topbar.css"> 
+    <link rel="stylesheet" href="./css/content.css"> 
+    <script src="./js/sidebar.js" defer></script>
 </head>
 <body>
-    <%- include("./sidebar.ejs") %>
+    <%- include("sidebar") %>
     <div class="contentContainer">
-        <%- include("./topbar.ejs") %>
-        <%- include(content) %>
+        <%- include("topbar") %>
+        <div class="content">
+            <div class="title">
+                <h2><%= title %></h2>
+                <p><%= subtitle %></p>
+            </div>
+            <%- include(content) %>
+        </div>
     </div>
 </body>
 </html>

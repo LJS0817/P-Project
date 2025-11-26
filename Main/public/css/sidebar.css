@@ -84,7 +84,6 @@ span {
 }
 
 .sidebar ul li:hover::after {
-    content: "";
     width: 0.4em; 
     background-color: var(--background100);
 }
@@ -104,6 +103,53 @@ span {
 
 .sidebar ul li.active::after {
     width: 100%;
+    background-color: var(--background100);
+}
+
+.sidebar ul li.active span::before {
+    z-index: 3;
+    content: "";
+    position: absolute;
+    top: -0.799em;
+    right: 0;
+    width: 1em;
+    height: 0.8em;
+    background-color: var(--primary100);
+    border-radius: 0 0 30px 0;
+}
+
+.sidebar ul li.active span::after {
+    z-index: 3;
+    content: "";
+    position: absolute;
+    bottom: -0.799em;
+    right: 0;
+    width: 1em;
+    height: 0.8em;
+    background-color: var(--primary100);
+    transition: 0.3s;
+    border-radius: 0 30px 0 0;
+}
+
+.sidebar ul li.active::before {
+    z-index: 2;
+    content: "";
+    position: absolute;
+    top: -0.799em;
+    right: 0;
+    width: 1em;
+    height: 0.8em;
+    background-color: var(--background100);
+}
+
+.sidebar ul li.active div::before {
+    z-index: 2;
+    content: "";
+    position: absolute;
+    bottom: -0.799em;
+    right: 0;
+    width: 1em;
+    height: 0.8em;
     background-color: var(--background100);
 }
 
