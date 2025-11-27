@@ -138,17 +138,28 @@
 .projectInfo .lastestProject .prevImage .arrow {
     width: 32px;
     height: 32px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .projectInfo .lastestProject .arrow:nth-child(1) {
-    transform: rotateZ(90deg);
+    transform: scale(1) rotateZ(90deg);
     fill: var(--primary200);
 }
 
+.projectInfo .lastestProject .prevImage .arrow:nth-child(1):hover {
+    transform: scale(1.4) rotateZ(90deg);
+}
+
 .projectInfo .lastestProject .arrow:nth-child(3) {
-    transform: rotateZ(270deg);
+    transform: scale(1) rotateZ(270deg);
     fill: var(--primary100);
 }
+
+.projectInfo .lastestProject .prevImage .arrow:nth-child(3):hover {
+    transform: scale(1.4) rotateZ(270deg);
+}
+
 
 .projectInfo .lastestProject .imageCount {
     height: 32px;
@@ -162,15 +173,25 @@
 .projectInfo .lastestProject .imageCount .dot {
     width: 16px;
     height: 16px;
-    background-color: var(--primary200);
+    background-color: var(--primary100);
+    opacity: 0.4;
     border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.projectInfo .lastestProject .imageCount .dot:hover {
+    opacity: 0.6;
+}
+
+.projectInfo .lastestProject .imageCount .dot.active {
+    opacity: 1;
 }
 
 .projectInfo .history {
     flex: 1;
     display: flex;
     flex-direction: column;
-
 }
 
 .projectInfo .history .historyList {
@@ -178,7 +199,7 @@
     padding: 10px 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .projectInfo .history .historyList .historyCard {
@@ -193,15 +214,30 @@
     padding-left: 40px;
     box-sizing: border-box;
     box-shadow: inset -9px 4px 20px -14px var(--shadow100);
+    cursor: pointer;
+}
+
+.projectInfo .history .historyList .historyCard p{
+    z-index: 3;
+}
+
+.projectInfo .history .historyList .historyCard:hover::after {
+    width: 100%;
 }
 
 .projectInfo .history .historyList .historyCard p:nth-child(3) {
     color: var(--text100);
     font-size: 1.5em;
     font-weight: 500;
+    transition: 0.3s;
+}
+
+.projectInfo .history .historyList .historyCard:hover p:nth-child(3) {
+    color: var(--accent200);
 }
 
 .projectInfo .history .historyList .historyCard::after {
+    z-index: 2;
     content: "";
     position: absolute;
     left: 0;
@@ -209,6 +245,7 @@
     height: 100%;
     background-color: var(--primary200);
     border-radius: 10px;
+    transition: 0.3s;
 }
 
 .projectInfo .history .historyList .historyCard p:nth-child(4) {
@@ -216,6 +253,11 @@
     opacity: 0.4;
     font-size: 1.1em;
     font-weight: 500;
+    transition: 0.3s;
+}
+
+.projectInfo .history .historyList .historyCard:hover p:nth-child(4) {
+    color: var(--accent200);
 }
 
 .projectInfo .history .seeMore {
