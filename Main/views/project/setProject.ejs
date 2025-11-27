@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="./css/addProject.css" />
+
+<div class="add-project-container">
+  <div class="form-wrapper">
+    <div class="form-header">
+      <h2>Add new project</h2>
+      <span class="required-note">Required fields are marked with an asterisk (*).</span>
+    </div>
+
+    <form action="#">
+      <div class="form-group">
+        <input type="text" id="projectName" class="form-input" placeholder="Project name *" required />
+      </div>
+
+      <div class="form-group">
+        <textarea id="shortDescription" class="form-input textarea" placeholder="Short description" rows="5"></textarea>
+      </div>
+
+      <div class="form-group row">
+        <label class="form-label">Thumbnail</label>
+        <button type="button" class="btn-outline">Add File</button>
+      </div>
+
+      <div class="form-group row">
+        <label class="form-label">Pages
+          <span class="sub-label">( Optional ) [ Limited 10 pages ]</span></label>
+        <div class="btn-group">
+          <button type="button" class="btn-outline">Menu</button>
+          <button type="button" class="btn-outline">+ Add</button>
+        </div>
+      </div>
+
+      <div class="form-group visibility-group">
+        <div class="visibility-info">
+          <label class="form-label">Choose visibility *</label>
+          <span class="sub-label">Choose who can see this project</span>
+        </div>
+
+        <div class="toggle-wrapper">
+          <span class="toggle-label active">Public <i class="fas fa-lock-open"></i></span>
+          <label class="switch">
+            <input type="checkbox" checked />
+            <span class="slider round"></span>
+          </label>
+          <span class="toggle-label inactive">Private <i class="fas fa-lock"></i></span>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <a href="#" class="btn-outline wide" style="
+                    text-decoration: none;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  ">
+          Cancel
+        </a>
+        <button type="submit" class="btn-fill wide">Add Project</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,254 @@
+.add-project-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10em;
+}
+
+.form-wrapper {
+  width: 50%;
+}
+
+.form-header {
+  margin-bottom: 30px;
+}
+
+.form-header h2 {
+  font-size: 2.1em;
+  font-weight: 500;
+  color: var(--text100);
+  margin-bottom: 5px;
+}
+
+.required-note {
+  font-size: 1.1em;
+  color: var(--text200);
+}
+
+/* [3] 인풋 스타일 */
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 15px 20px;
+  background-color: var(--background200); /* 연한 회색 배경 */
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--text100);
+  outline: none;
+  box-sizing: border-box; /* 패딩 포함 너비 계산 */
+}
+
+.form-input::placeholder {
+  color: #999;
+  font-weight: 500;
+}
+
+.form-input.textarea {
+  resize: none;
+  height: 150px;
+}
+
+/* [4] 라벨 및 버튼 그룹 */
+.form-group.row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.form-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+.sub-label {
+  font-size: 12px;
+  color: var(--text200);
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+/* 아웃라인 버튼 (Add File, Menu, Cancel 등) */
+.btn-outline {
+  background-color: #fff;
+  border: 1px solid var(--primary200);
+  color: var(--primary200); /* 파란색 글씨 */
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  background-color: var(--primary300);
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* 채워진 버튼 (Add Project) */
+.btn-fill {
+  background-color: var(--primary100); /* 진한 파란색 */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-fill:hover {
+  background-color: var(--primary200);
+}
+
+/* 버튼 넓게 */
+.wide {
+  min-width: 100px;
+  padding: 10px 30px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 50px;
+}
+
+/* [5] 토글 스위치 및 공개 설정 */
+.visibility-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+
+.visibility-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toggle-label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.toggle-label.active {
+  color: var(--primary100); /* Public 색상 */
+}
+
+.toggle-label.inactive {
+  color: #ccc; /* Private 색상 */
+}
+
+/* 스위치 CSS */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--primary100);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--primary100);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* 둥근 스위치 */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* ==========================================================================
+   ★ 사이드바 색상 수정 (사진과 동일하게 맞춤) ★
+   ========================================================================== */
+
+.sidebar ul li {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.sidebar ul li svg {
+  fill: rgba(255, 255, 255, 0.7);
+}
+
+.sidebar ul li:hover {
+  color: #ffffff;
+}
+.sidebar ul li:hover svg {
+  fill: #ffffff;
+}
+
+.sidebar ul li.active {
+  color: var(--primary100);
+}
+
+.sidebar ul li.active svg {
+  fill: var(--primary100);
+}
+
+.sidebar .addProjectBtn {
+  background-color: #ffffff;
+  color: var(--primary100);
+}
+
+.sidebar .addProjectBtn .addSphere {
+  background-color: var(--primary100);
+  color: #ffffff;
+}

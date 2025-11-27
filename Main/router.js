@@ -18,4 +18,13 @@ router.get('/', (req, res) => {
     });
 });
 
+
+
+router.get('/add', (req, res) => {
+    res.render('index', {content:"./project/setProject.ejs", title:"Project", subtitle:"Add new project"}, (e, content) => {
+        res.end(content);
+    });
+});
+
+
 module.exports = router;
