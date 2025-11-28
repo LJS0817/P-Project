@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10em;
+    box-sizing: border-box;
 }
 
 .form-wrapper {
@@ -35,13 +35,22 @@
 .form-input {
   width: 100%;
   padding: 15px 20px;
-  background-color: var(--background200); /* 연한 회색 배경 */
-  border: none;
+  background-color: var(--background200);
+  border: 2px solid transparent;
   border-radius: 8px;
   font-size: 14px;
   color: var(--text100);
   outline: none;
-  box-sizing: border-box; /* 패딩 포함 너비 계산 */
+  box-sizing: border-box;
+  transition: 0.3s;
+  font-weight: 500;
+  color: var(--accent100);
+  box-shadow: inset -1px 4px 19px -14px var(--shadow100);
+}
+
+.form-input:focus-visible {
+  outline: none;
+  border-color: var(--primary100);
 }
 
 .form-input::placeholder {
@@ -51,10 +60,8 @@
 
 .form-input.textarea {
   resize: none;
-  height: 150px;
 }
 
-/* [4] 라벨 및 버튼 그룹 */
 .form-group.row {
   display: flex;
   flex-direction: column;
@@ -75,12 +82,22 @@
   margin-left: 5px;
 }
 
-/* 아웃라인 버튼 (Add File, Menu, Cancel 등) */
+input[type="file"]::file-selector-button {
+  background-color: var(--accent100);
+  color: var(--accent200);
+  padding: 4px 8px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
 .btn-outline {
-  background-color: #fff;
-  border: 1px solid var(--primary200);
-  color: var(--primary200); /* 파란색 글씨 */
-  padding: 8px 20px;
+  background-color: var(--background100);
+  border: 2px solid var(--primary200);
+  color: var(--primary200); 
+  padding: 8px 10px;
   border-radius: 6px;
   font-size: 14px;
   font-weight: 500;
@@ -97,10 +114,9 @@
   gap: 10px;
 }
 
-/* 채워진 버튼 (Add Project) */
 .btn-fill {
-  background-color: var(--primary100); /* 진한 파란색 */
-  color: #fff;
+  background-color: var(--accent100);
+  color: var(--accent200);
   border: none;
   padding: 10px 20px;
   border-radius: 6px;
@@ -114,7 +130,6 @@
   background-color: var(--primary200);
 }
 
-/* 버튼 넓게 */
 .wide {
   min-width: 100px;
   padding: 10px 30px;
@@ -127,12 +142,10 @@
   margin-top: 50px;
 }
 
-/* [5] 토글 스위치 및 공개 설정 */
 .visibility-group {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: 40px;
 }
 
 .visibility-info {
@@ -144,22 +157,35 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  align-self: end;
+  cursor: pointer;
 }
 
 .toggle-label {
   font-size: 14px;
   font-weight: 500;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  color: var(--text100);
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.toggle-label svg {
+  width: 20px;
+  fill: var(--text100);
 }
 
 .toggle-label.active {
-  color: var(--primary100); /* Public 색상 */
+  color: var(--primary100);
+  opacity: 1;
 }
 
-.toggle-label.inactive {
-  color: #ccc; /* Private 색상 */
+.toggle-label.active svg {
+  fill: var(--primary100);
 }
 
-/* 스위치 CSS */
 .switch {
   position: relative;
   display: inline-block;
@@ -180,8 +206,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
+  background-color: transparent;
+  transition: 0.3s;
 }
 
 .slider:before {
@@ -191,23 +217,14 @@
   width: 16px;
   left: 2px;
   bottom: 2px;
-  background-color: white;
-  transition: 0.4s;
-}
-
-input:checked + .slider {
   background-color: var(--primary100);
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px var(--primary100);
+  transition: 0.4s;
 }
 
 input:checked + .slider:before {
   transform: translateX(20px);
 }
 
-/* 둥근 스위치 */
 .slider.round {
   border-radius: 34px;
 }
@@ -215,10 +232,6 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-
-/* ==========================================================================
-   ★ 사이드바 색상 수정 (사진과 동일하게 맞춤) ★
-   ========================================================================== */
 
 .sidebar ul li {
   color: rgba(255, 255, 255, 0.7);
@@ -251,4 +264,50 @@ input:checked + .slider:before {
 .sidebar .addProjectBtn .addSphere {
   background-color: var(--primary100);
   color: #ffffff;
+}
+
+#pageName {
+  margin-top: 5px;
+  padding: 10px 10px;
+  font-size: 0.95em;
+}
+
+#pageList {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+#pageName.error {
+    border-color: var(--accent300);
+    color: var(--accent300);
+}
+
+.pageElement {
+  display: flex;
+  border: 2px solid var(--accent100);
+  background-color: var(--accent200);
+  color: var(--accent100);
+  border-radius: 10px;
+  padding: 5px 11px;
+  font-size: 1em;
+  gap: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.pageElement svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--accent100);
+}
+
+.pageElement:hover {
+  background-color: var(--accent100);
+  color: var(--accent200);
+}
+
+.pageElement:hover svg {
+    fill: var(--accent200);
 }

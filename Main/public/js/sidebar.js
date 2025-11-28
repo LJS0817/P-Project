@@ -8,11 +8,10 @@ function changeView(idx) {
     sidebar.children[curIndex].classList.add("active")
 }
 
-window.onload = () => {
-    for(let i = 0; i < sidebar.children.length; i++) {
-        sidebar.children[i].onclick = () => {
-            changeView(i);
-        }
+for (let i = 0; i < sidebar.children.length; i++) {
+    sidebar.children[i].onclick = () => {
+        changeView(i);
     }
-    changeView(0);
 }
+changeView(0);
+console.log('e');

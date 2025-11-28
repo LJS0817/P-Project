@@ -106,51 +106,74 @@ span {
     background-color: var(--background100);
 }
 
-.sidebar ul li.active span::before {
+.sidebar ul li span::before {
     z-index: 3;
     content: "";
     position: absolute;
     top: -0.799em;
     right: 0;
-    width: 1em;
+    width: 0.3em;
     height: 0.8em;
     background-color: var(--primary100);
     border-radius: 0 0 30px 0;
+    transition: 0.2s;
 }
 
-.sidebar ul li.active span::after {
+.sidebar ul li.active span::before {
+    width: 1em;
+}
+
+.sidebar ul li span::after {
     z-index: 3;
     content: "";
     position: absolute;
     bottom: -0.799em;
     right: 0;
-    width: 1em;
+    width: 0.3em;
     height: 0.8em;
     background-color: var(--primary100);
-    transition: 0.3s;
+    transition: 0.2s;
     border-radius: 0 30px 0 0;
 }
 
-.sidebar ul li.active::before {
+.sidebar ul li.active span::after {
+    width: 1em;
+}
+
+.sidebar ul li::before {
     z-index: 2;
     content: "";
     position: absolute;
     top: -0.799em;
     right: 0;
-    width: 1em;
+    width: 0em;
     height: 0.8em;
     background-color: var(--background100);
+    transition: 0.2s;
+    opacity: 0;
 }
 
-.sidebar ul li.active div::before {
+.sidebar ul li.active::before {
+    width: 1em;
+    opacity: 1;
+}
+
+.sidebar ul li div::before {
     z-index: 2;
     content: "";
     position: absolute;
     bottom: -0.799em;
     right: 0;
-    width: 1em;
+    width: 0em;
     height: 0.8em;
     background-color: var(--background100);
+    transition: 0.2s;
+    opacity: 0;
+}
+
+.sidebar ul li.active div::before {
+    width: 1em;
+    opacity: 1;
 }
 
 .sidebar ul li.active svg {

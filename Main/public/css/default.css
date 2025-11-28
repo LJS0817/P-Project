@@ -11,6 +11,7 @@ body {
     --shadow100: #00000085;
     --accent100: var(--primary100);
     --accent200: var(--primary300);
+    --accent300: #ff5a5a;
 }
 
 body.dark {
