@@ -9,7 +9,7 @@
     padding: 20px 0px;
     color: var(--primary300);
     font-size: 16px; 
-    transition: 0.3s;
+    /* transition: 0.3s; */
 }
 
 @media (max-width: 1200px), (max-height: 1000px) {

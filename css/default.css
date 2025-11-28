@@ -4,13 +4,16 @@ body {
     --primary300: #f4f4ff;
     --text100: #333333;
     --text200: #5c5c5c;
+    --text300: #33333381;
     --background100: #ffffff;
     --background200: #f5f5f5;
     --background300: #cccccc;
     --gradient100: #F5F5FF;
+    --gradient200: #717FCE;
     --shadow100: #00000085;
     --accent100: var(--primary100);
     --accent200: var(--primary300);
+    --accent300: #ff5a5a;
 }
 
 body.dark {

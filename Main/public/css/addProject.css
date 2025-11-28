@@ -91,6 +91,12 @@ input[type="file"]::file-selector-button {
   border-radius: 4px;
   cursor: pointer;
   font-size: 1em;
+  transition: 0.3s;
+}
+
+input[type="file"]:hover::file-selector-button {
+  background-color: var(--accent200);
+  color: var(--accent100);
 }
 
 .btn-outline {
@@ -106,7 +112,8 @@ input[type="file"]::file-selector-button {
 }
 
 .btn-outline:hover {
-  background-color: var(--primary300);
+  background-color: var(--primary200);
+  color: var(--accent200);
 }
 
 .btn-group {
@@ -131,8 +138,7 @@ input[type="file"]::file-selector-button {
 }
 
 .wide {
-  min-width: 100px;
-  padding: 10px 30px;
+  padding: 8px 15px;
 }
 
 .form-actions {
