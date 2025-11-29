@@ -34,8 +34,6 @@ document.addEventListener('mouseup', () => {
     thumb.style.cursor = 'grab';
 });
 
-
-
 const addBtn = document.getElementById('addPageBtn');
 const tableBody = document.querySelector('.viewProject .pageList table tbody');
 addPageBtn.addEventListener('click', () => {
@@ -122,4 +120,74 @@ function convertToStaticText(inputElement) {
             }
         });
     }, { once: true });
+}
+
+
+const dropArea = document.querySelector('.viewProject .page .result .dropHere');
+const fileInput = document.getElementById('fileData');
+
+const addFileUi = document.querySelector('.viewProject .page .result .uiGroup .addFile');
+const fileInputContainer = addFileUi.querySelector('.fileInput');
+
+fileInputContainer.addEventListener('click', (e) => {
+    e.stopPropagation(); 
+    fileInput.click();
+});
+
+dropArea.addEventListener('click', () => {
+    fileInput.click();
+});
+
+dropArea.addEventListener('dragenter', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dropArea.classList.add('is-dragover');
+});
+
+dropArea.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+});
+
+dropArea.addEventListener('dragleave', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dropArea.classList.remove('is-dragover');
+});
+
+dropArea.addEventListener('drop', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dropArea.classList.remove('is-dragover');
+
+    const files = e.dataTransfer.files;
+
+    if (files.length > 0) {
+        const dataTransfer = new DataTransfer();
+        
+        for (let i = 0; i < files.length; i++) {
+            dataTransfer.items.add(files[i]);
+        }
+
+        fileInput.files = dataTransfer.files;
+        
+        console.log(`${fileInput.files.length}개의 파일이 성공적으로 할당되었습니다.`);
+        
+        handleFiles(fileInput.files);
+    }
+});
+
+fileInput.addEventListener('change', (e) => {
+    handleFiles(e.target.files);
+});
+
+
+function handleFiles(files) {
+    if (files.length > 0) {
+        console.log('선택/드롭된 파일 목록:');
+        for (let i = 0; i < files.length; i++) {
+             console.log(`- ${files[i].name} (${(files[i].size / 1024 / 1024).toFixed(2)} MB)`);
+        }
+
+    }
 }
