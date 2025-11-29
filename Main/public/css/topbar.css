@@ -79,15 +79,14 @@ body {
 }
 
 .contentContainer .topbar .search #searchText::placeholder {
-    color: var(--text100);
-    opacity: 0.4;
+    color: var(--placeholderText);
 }
 
 .contentContainer .topbar .profile {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: var(--primary300);
+    color: var(--textOnPrimary);
     font-size: 1.1em;
     font-weight: 400;
     transition: 0.3s;
@@ -105,12 +104,12 @@ body {
     width: 1.2em;
     height: 1.2em;
     
-    fill: var(--background100);
+    fill: var(--textOnPrimary);
 }
 
 .contentContainer .topbar .profile:hover {
     color: var(--primary100);
-    background-color: var(--primary300);
+    background-color: var(--textOnPrimary);
     border-color: var(--primary100);
 }
 

@@ -82,7 +82,7 @@ form p:nth-child(1) {
   background-color: var(--background100);
 }
 
-/* 비밀번호 눈 아이콘 */
+
 .toggle-pw {
   position: absolute;
   right: 20px;
@@ -118,7 +118,7 @@ form p:nth-child(1) {
 }
 
 .btn-submit:hover {
-  background-color: var(--primary200);
+  background-color: var(--primary300);
 }
 
 .auth-footer {
@@ -134,13 +134,11 @@ form p:nth-child(1) {
   text-decoration: underline;
 }
 
-/* 소셜 로그인 버튼 */
 .social-login {
   display: flex;
   justify-content: center;
   gap: 20px;
-  border-top: 1px solid var(--background300);
-  /* #e0e5f2 -> var */
+  border-top: 1px solid var(--background200);
   padding-top: 30px;
 }
 
@@ -158,13 +156,13 @@ form p:nth-child(1) {
 
 .google-btn {
   background-color: white;
-  border: 1px solid var(--background300);
-  color: #db4437;
+  border: 1px solid var(--background200);
+  color: var(--text100);
 }
 
 .kakao-btn {
   background-color: #fee500;
-  color: #3c1e1e;
+  color: var(--text100);
   border: none;
 }
 

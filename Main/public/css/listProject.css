@@ -20,16 +20,15 @@
 .listProject .projectMenu a {
     text-decoration: none;
     border-radius: 10px;
-    background-color: var(--accent100);
-    color: var(--accent200);
+    background-color: var(--primary100);
+    color: var(--textOnPrimary);
     padding: 10px 20px;
     font-size: 0.9em;
     transition: 0.3s;
 }
 
 .listProject .projectMenu a:hover {
-    background-color: var(--primary200);
-    transform: scale(1.05);
+    background-color: var(--primary300);
 }
 
 .listProject .projectMenu a p {
@@ -53,7 +52,7 @@
 }
 
 .listProject .projects thead th {
-    border-right: 2px dashed var(--text300);
+    border-right: 2px dashed var(--placeholderText);
 }
 
 .listProject .projects thead th:first-child {
@@ -77,7 +76,6 @@
     background-color: var(--background200);
 }
 
-
 .listProject .projects td,
 .listProject .projects th {
     padding: 0 10px;
@@ -99,7 +97,7 @@
     top: 0;
     transition: 0.3s;
     opacity: 0;
-    background : linear-gradient(90deg,var(--gradient200) 0%, var(--background100) 100%);
+    background : linear-gradient(90deg,var(--primary100) 0%, var(--gradient100) 100%);
 }
 
 .listProject .projects tbody tr:hover::after {
@@ -108,8 +106,8 @@
 }
 
 .listProject .projects tbody td .pdfDownload {
-    background-color: var(--accent200);
-    color: var(--accent100);
+    background-color: var(--background200);
+    color: var(--text100);
     width: 100%;
     height: 45px;
     display: flex;
@@ -122,29 +120,33 @@
     transition: 0.3s;
 }
 
-.listProject .projects tbody tr:hover .pdfDownload:hover {
-    background-color: var(--accent200);
-    color: var(--accent100);
-}
-
-.listProject .projects tbody tr:hover .pdfDownload:hover svg {
-    fill: var(--accent100);
-}
-
 .listProject .projects tbody td .pdfDownload svg {
     width: 1em;
     height: 1em;
-    fill: var(--accent100);
+    fill: var(--text100);
     transition: 0.3s;
 }
 
+.listProject .projects tbody tr:nth-child(even) .pdfDownload {
+    background-color: var(--background100);
+}
+
+.listProject .projects tbody tr:hover .pdfDownload:hover {
+    background-color: var(--primary200);
+    color: var(--textOnPrimary);
+}
+
+.listProject .projects tbody tr:hover .pdfDownload:hover svg {
+    fill: var(--textOnPrimary);
+}
+
 .listProject .projects tbody tr:hover .pdfDownload svg {
-    fill: var(--accent200);
+    fill: var(--primary100);
 }
 
 .listProject .projects tbody tr:hover .pdfDownload {
-    background-color: var(--accent100);
-    color: var(--accent200);
+    background-color: var(--alphaPrimary);
+    color: var(--primary100);
 }
 
 .listProject .projects tbody td span {
@@ -154,21 +156,22 @@
     line-height: 1.5;
     display: block;
     font-size: 0.7em;
-    color: var(--text300);
+    color: var(--alphaText);
 }
 
-.listProject .projects tbody tr:hover td p {
-    color: var(--accent200);
-}
+/* .listProject .projects tbody tr:hover td p {
+    color: var(--textOnPrimary);
+} */
 
 .listProject .projects tbody tr:hover td span {
-    color: var(--accent200);
+    color: var(--textOnPrimary);
     opacity: 0.6;
 }
 
 .listProject .projects tbody tr:hover td:nth-child(2), 
-.listProject .projects tbody tr:hover td:nth-child(3) {
-    color: var(--accent200);
+.listProject .projects tbody tr:hover td:nth-child(3),
+.listProject .projects tbody tr:hover td:nth-child(4) {
+    color: var(--textOnPrimary);
 }
 
 .listProject .projects thead th:nth-child(1) {
@@ -206,15 +209,15 @@
 .buttons .viewMore {
     width: 40%;
     height: 40px;
-    color: var(--accent200);
-    background-color: var(--accent100);
+    color: var(--textOnPrimary);
+    background-color: var(--primary100);
     border-radius: 40px;
     font-size: 0.9em;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    box-shadow: 1px 4px 7px -3px var(--accent100);
+    box-shadow: 1px 4px 7px -3px var(--primary100);
     transition: 0.3s;
 }
 
@@ -224,27 +227,41 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--accent200);
+    background-color: var(--background200);
     border-radius: 40px;
     box-shadow: inset 1px 4px 20px -14px var(--shadow100);
     transition: 0.3s;
 }
 
-.buttons .option:hover {
-    background-color: var(--accent100);
+.listProject .projects tbody tr:nth-child(even) .buttons .option {
+    background-color: var(--background100);
+}
+
+.buttons .option:hover,
+.listProject .projects tbody tr:nth-child(even) .buttons .option:hover {
+    background-color: var(--primary100);
 }
 
 .buttons .option svg {
-    fill: var(--accent100);
+    fill: var(--text100);
     transition: 0.3s;
     width: 1em;
     height: 1em;
 }
 
+.buttons .option:nth-child(3) svg {
+    fill: var(--danger100);
+}
+
 .buttons .option:hover svg {
-    fill: var(--accent200);
+    fill: var(--textOnPrimary);
+}
+
+.buttons .option:nth-child(3):hover,
+.listProject .projects tbody tr:nth-child(even) .buttons .option:nth-child(3):hover {
+    background-color: var(--danger100);
 }
 
 .buttons .viewMore:hover {
-    background-color: var(--primary200);
+    background-color: var(--primary300);
 }

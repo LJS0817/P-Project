@@ -28,7 +28,8 @@ page.onkeyup = (e) => {
 
 const swPublic = document.getElementById('switchVisibility');
 let isPublic = true;
-swPublic.onclick = () => {
+swPublic.onclick = (e) => {
+    e.preventDefault()
     isPublic = !isPublic;
     swPublic.children[isPublic ? 2 : 0].classList.remove("active");
     swPublic.children[isPublic ? 0 : 2].classList.add("active");

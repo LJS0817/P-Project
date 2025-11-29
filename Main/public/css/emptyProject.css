@@ -11,7 +11,7 @@
     width: 128px;
     height: 128px;
     margin-bottom: 20px;
-    fill: var(--primary100);
+    fill: var(--primary300);
 }
 
 .empty p {
@@ -22,8 +22,8 @@
 
 .empty a {
     text-decoration: none;
-    color: var(--accent200);
-    background-color: var(--accent100);
+    color: var(--textOnPrimary);
+    background-color: var(--primary100);
     font-size: 1.1em;
     font-weight: 500;
     margin-top: 15px;
@@ -33,5 +33,6 @@
 }
 
 .empty a:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+    background-color: var(--primary300);
 }

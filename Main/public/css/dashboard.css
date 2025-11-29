@@ -13,6 +13,7 @@
     justify-content: space-between;
     cursor: pointer;
     transition: 0.3s;
+    color: var(--textOnPrimary);
 }
 
 .cardContainer .projectCard:hover {
@@ -20,8 +21,7 @@
 }
 
 .cardContainer .projectCard:nth-child(1) {
-    color: var(--accent200);
-    background-color: var(--primary100);
+    background-color: var(--primary300);
 }
 
 .cardContainer .projectCard:nth-child(2) {
@@ -29,7 +29,7 @@
 }
 
 .cardContainer .projectCard:nth-child(3) {
-    background-color: var(--text200);
+    background-color: var(--primary100);
 }
 
 .cardContainer .projectCard .cardInfo {
@@ -41,15 +41,14 @@
 
 .cardContainer .projectCard .cardInfo .viewProjectBtn {
     text-decoration: none;
-    color: var(--accent200);
     font-size: 1em;
 }
 
 .cardContainer .projectCard .cardInfo .viewProjectBtn svg {
     width: 1rem;
     height: 1rem;
-    fill: var(--accent200);
-        transform: translateY(0.25em);
+    fill: var(--textOnPrimary);
+    transform: translateY(0.25em);
 }
 
 .cardContainer .projectCard .cardInfo div p:nth-child(1) {
@@ -91,7 +90,7 @@
 }
 
 .cardContainer .projectCard:nth-child(1) .subMenu .cardThumb {
-    box-shadow: 0 0 8px 8px var(--primary100) inset;
+    box-shadow: 0 0 8px 8px var(--primary300) inset;
 }
 
 .cardContainer .projectCard:nth-child(2) .subMenu .cardThumb {
@@ -99,7 +98,7 @@
 }
 
 .cardContainer .projectCard:nth-child(3) .subMenu .cardThumb {
-    box-shadow: 0 0 8px 8px var(--text200) inset;
+    box-shadow: 0 0 8px 8px var(--primary100) inset;
 }
 
 .projectInfo {
@@ -132,7 +131,8 @@
 .projectInfo .lastestProject .prevImage #projectImage {
     flex: 1;
     height: 100%;
-    background-color: var(--accent200);
+    border-radius: 0.6em;
+    background-color: var(--primary300);
 }
 
 .projectInfo .lastestProject .prevImage .arrow {
@@ -153,7 +153,7 @@
 
 .projectInfo .lastestProject .arrow:nth-child(3) {
     transform: scale(1) rotateZ(270deg);
-    fill: var(--primary100);
+    fill: var(--primary200);
 }
 
 .projectInfo .lastestProject .prevImage .arrow:nth-child(3):hover {
@@ -214,7 +214,6 @@
     padding-left: 40px;
     box-sizing: border-box;
     box-shadow: inset -9px 4px 20px -14px var(--shadow100);
-    cursor: pointer;
 }
 
 .projectInfo .history .historyList .historyCard p{
@@ -229,7 +228,7 @@
 }
 
 .projectInfo .history .historyList .historyCard:hover p:nth-child(3) {
-    color: var(--accent200);
+    color: var(--textOnPrimary);
 }
 
 .projectInfo .history .historyList .historyCard::after {
@@ -239,7 +238,7 @@
     left: 0;
     width: 2em;
     height: 100%;
-    background : linear-gradient(90deg,var(--primary100) 0%, var(--accent200) 100%);
+    background : linear-gradient(90deg,var(--primary100) 0%, var(--gradient100) 100%);
     border-radius: 10px 0 0 10px;
     transition: 0.3s;
 }
@@ -250,24 +249,28 @@
 }
 
 .projectInfo .history .historyList .historyCard p:nth-child(4) {
-    color: var(--text100);
-    opacity: 0.4;
+    color: var(--alphaText);
     font-size: 1.1em;
     font-weight: 500;
     transition: 0.3s;
 }
 
 .projectInfo .history .historyList .historyCard:hover p:nth-child(4) {
-    color: var(--accent200);
+    color: var(--textOnPrimary);
 }
 
 .projectInfo .history .seeMore {
     height: 48px;
     text-decoration: none;
     text-align: center;
-    background-color: var(--accent100);
-    color: var(--accent200);
+    background-color: var(--primary100);
+    color: var(--textOnPrimary);
     border-radius: 10px;
     font-size: 1.3em;
     line-height: 45px;
+    transition: 0.3s;
+}
+
+.projectInfo .history .seeMore:hover {
+    background-color: var(--primary300);
 }

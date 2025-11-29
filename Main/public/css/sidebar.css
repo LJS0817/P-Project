@@ -7,7 +7,7 @@
     flex-direction: column;
     align-items: center;
     padding: 20px 0px;
-    color: var(--primary300);
+    color: var(--textOnPrimary);
     font-size: 16px; 
     /* transition: 0.3s; */
 }
@@ -66,7 +66,6 @@ span {
     align-items: center;
     margin-left: 10%;
     padding-left: 10%;
-    color: var(--accent200);
     transition: 0.3s;
     position: relative;
 }
@@ -92,12 +91,12 @@ span {
     z-index: 3;
     width: 1em;
     height: 1em;
-    fill: var(--accent200);
+    fill: var(--textOnPrimary);
     transition: 0.3s;
 }
 
 .sidebar ul li.active {
-    color: var(--accent100);
+    color: var(--primary100);
     font-weight: 400;
 }
 
@@ -177,13 +176,13 @@ span {
 }
 
 .sidebar ul li.active svg {
-    fill: var(--accent100);
+    fill: var(--primary100);
 }
 
 .sidebar .addProjectBtn {
     text-decoration: none;
     color: var(--primary100);
-    background-color: var(--accent200);
+    background-color: var(--textOnPrimary);
     width: 80%;
     
     height: 4em; 
@@ -202,7 +201,7 @@ span {
 
 .sidebar .addProjectBtn:hover {
     background-color: var(--primary200);
-    color: var(--accent200);
+    color: var(--textOnPrimary);
 } 
 
 .sidebar .addProjectBtn .addSphere {
@@ -210,7 +209,7 @@ span {
     height: 2.2em;
     
     background-color: var(--primary100);
-    color: var(--accent200);
+    color: var(--textOnPrimary);
     text-align: center;
     
     line-height: 2.2em; 
@@ -221,8 +220,8 @@ span {
 }
 
 .sidebar .addProjectBtn:hover .addSphere {
-    background-color: var(--accent200);
-    color: var(--primary100);
+    background-color: var(--primary200);
+    color: var(--textOnPrimary);
 } 
 
 .sidebar .watch {
@@ -241,7 +240,7 @@ span {
 .sidebar .watch svg {
     width: 1.5em;
     height: 1.5em;
-    fill: var(--accent200);
+    fill: var(--textOnPrimary);
 }
 
 .sidebar .watch span {

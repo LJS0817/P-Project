@@ -26,7 +26,7 @@ document.addEventListener('mousemove', (e) => {
     const percentage = Math.round((newBottom / (trackHeight - thumbHeight)) * 100) * 0.01;
     thumb.children[2].style.opacity = 1 - percentage;
     thumb.children[0].style.opacity = 1 - percentage;
-    console.log(percentage);
+    // console.log(percentage);
 });
 
 document.addEventListener('mouseup', () => {

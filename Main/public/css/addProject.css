@@ -43,8 +43,8 @@
   outline: none;
   box-sizing: border-box;
   transition: 0.3s;
-  font-weight: 500;
-  color: var(--accent100);
+  font-weight: bold;
+  color: var(--primary100);
   box-shadow: inset -1px 4px 19px -14px var(--shadow100);
 }
 
@@ -83,8 +83,8 @@
 }
 
 input[type="file"]::file-selector-button {
-  background-color: var(--accent100);
-  color: var(--accent200);
+  background-color: var(--primary200);
+  color: var(--textOnPrimary);
   padding: 4px 8px;
   margin-right: 10px;
   border: none;
@@ -95,8 +95,8 @@ input[type="file"]::file-selector-button {
 }
 
 input[type="file"]:hover::file-selector-button {
-  background-color: var(--accent200);
-  color: var(--accent100);
+  background-color: var(--textOnPrimary);
+  color: var(--primary200);
 }
 
 .btn-outline {
@@ -113,7 +113,7 @@ input[type="file"]:hover::file-selector-button {
 
 .btn-outline:hover {
   background-color: var(--primary200);
-  color: var(--accent200);
+  color: var(--textOnPrimary);
 }
 
 .btn-group {
@@ -122,8 +122,8 @@ input[type="file"]:hover::file-selector-button {
 }
 
 .btn-fill {
-  background-color: var(--accent100);
-  color: var(--accent200);
+  background-color: var(--primary100);
+  color: var(--textOnPrimary);
   border: none;
   padding: 10px 20px;
   border-radius: 6px;
@@ -134,7 +134,7 @@ input[type="file"]:hover::file-selector-button {
 }
 
 .btn-fill:hover {
-  background-color: var(--primary200);
+  background-color: var(--primary300);
 }
 
 .wide {
@@ -239,39 +239,6 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-.sidebar ul li {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.sidebar ul li svg {
-  fill: rgba(255, 255, 255, 0.7);
-}
-
-.sidebar ul li:hover {
-  color: #ffffff;
-}
-.sidebar ul li:hover svg {
-  fill: #ffffff;
-}
-
-.sidebar ul li.active {
-  color: var(--primary100);
-}
-
-.sidebar ul li.active svg {
-  fill: var(--primary100);
-}
-
-.sidebar .addProjectBtn {
-  background-color: #ffffff;
-  color: var(--primary100);
-}
-
-.sidebar .addProjectBtn .addSphere {
-  background-color: var(--primary100);
-  color: #ffffff;
-}
-
 #pageName {
   margin-top: 5px;
   padding: 10px 10px;
@@ -286,15 +253,15 @@ input:checked + .slider:before {
 }
 
 #pageName.error {
-    border-color: var(--accent300);
-    color: var(--accent300);
+    border-color: var(--danger100);
+    color: var(--danger100);
 }
 
 .pageElement {
   display: flex;
-  border: 2px solid var(--accent100);
-  background-color: var(--accent200);
-  color: var(--accent100);
+  border: 2px solid var(--primary100);
+  background-color: var(--textOnPrimary);
+  color: var(--primary100);
   border-radius: 10px;
   padding: 5px 11px;
   font-size: 1em;
@@ -306,14 +273,14 @@ input:checked + .slider:before {
 .pageElement svg {
     width: 20px;
     height: 20px;
-    fill: var(--accent100);
+    fill: var(--primary100);
 }
 
 .pageElement:hover {
-  background-color: var(--accent100);
-  color: var(--accent200);
+  background-color: var(--primary100);
+  color: var(--textOnPrimary);
 }
 
 .pageElement:hover svg {
-    fill: var(--accent200);
+    fill: var(--textOnPrimary);
 }
