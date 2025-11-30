@@ -1,0 +1,382 @@
+.viewProject {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 1.4em 15em;
+    box-sizing: border-box;
+    gap: 2em;
+}
+
+.viewProject .page {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.viewProject .page h2 {
+    font-weight: 500;
+    font-size: 1.4em;
+}
+
+.viewProject .page .result {
+    margin-top: 1em;
+    display: flex;
+    gap: 1em;
+    flex: 1;
+}
+
+.viewProject .page .result .dropHere {
+    flex: 1;
+    border: 3px dashed var(--primary100);
+    border-radius: 15px;
+    background-color: var(--alphaPrimary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.viewProject .page .result .dropHere:hover {
+    background-color: var(--textOnPrimary);
+}
+
+.viewProject .page .result .dropHere h3 {
+    color: var(--primary100);
+    font-size: 1.3em;
+    opacity: 0.7;
+}
+
+.viewProject .page .result .dropHere h4 {
+    color: var(--text200);
+    font-size: 1em;
+    text-align: center;
+    opacity: 0.7;
+}
+
+.viewProject .page .result .dropHere svg {
+    width: 7em;
+    height: 7em;
+    fill: var(--primary100);
+    opacity: 0.5;
+}
+
+.viewProject .page .result .uiGroup {
+    width: 4.3em;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.viewProject .page .result .uiGroup .ui {
+    width: 3.5em;
+    height: 3.5em;
+    cursor: grab;
+    border-radius: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.viewProject .page .result .uiGroup .ui svg {
+    width: 2em;
+    height: 2em;
+}
+
+.viewProject .page .result .uiGroup .sliderContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 15em;
+}
+
+.viewProject .page .result .uiGroup #track {
+    position: relative;
+    width: 10px;
+    height: 100%;
+    background: var(--background200);
+    border-radius: 5px;
+}
+
+.viewProject .page .result .uiGroup #slider {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 100% - 3.5em;
+    
+    background-color: var(--textPrimaryOnBackground);
+    border: 2px solid var(--textPrimaryOnBackground);
+}
+
+.viewProject .page .result .uiGroup #slider .background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--textOnPrimary);
+    border: 2px solid var(--textPrimaryOnBackground);
+    border-radius: 1em;
+    opacity: 0;
+}
+
+.viewProject .page .result .uiGroup #slider svg {
+    position: absolute;
+    fill: var(--primary100);
+    transition: 0.1s;
+    opacity: 0;
+}
+
+.viewProject .page .result .uiGroup #slider svg:nth-child(2) {
+    fill: var(--textOnPrimary);
+    opacity: 1;
+}
+
+.viewProject .page .result .uiGroup .btnContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.viewProject .page .result .uiGroup .addFile,
+.viewProject .page .result .uiGroup .sendDesign {
+    border: 2px solid var(--textPrimaryOnBackground);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.viewProject .page .result .uiGroup .addFile:hover,
+.viewProject .page .result .uiGroup .sendDesign:hover {
+    background-color: var(--primary300);
+    border: 2px solid var(--primary300);
+    fill: var(--textPrimaryOnBackground);
+}
+
+
+.viewProject .page .result .uiGroup .addFile .fileInput {
+    display: contents;
+}
+
+.viewProject .page .result .uiGroup .addFile .fileInput svg {
+    fill: var(--textPrimaryOnBackground);
+    transition: 0.3s;
+}
+
+.viewProject .page .result .uiGroup .addFile:hover .fileInput svg {
+    fill: var(--textPrimaryOnBackground);
+}
+
+.viewProject .page .result .uiGroup .sendDesign {
+    background: var(--textPrimaryOnBackground);
+    fill: var(--textOnPrimary);
+}
+
+#fileData {
+    display: none;
+}
+
+.viewProject .pageList {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.viewProject .pageList h2 {
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+    gap: 1em;
+}
+
+.viewProject .pageList h2 p {
+    display: inline-block;
+    font-size: 0.7em;
+    font-weight: 500;
+    border-radius: 1em;
+    background-color: var(--primary100);
+    color: var(--textOnPrimary);
+    width: 8em;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.viewProject .pageList h2 p:hover {
+    background-color: var(--primary300);
+}
+
+.viewProject .pageList .tableContainer {
+    max-height: 12.4em;
+    overflow: auto;
+}
+
+.viewProject .pageList table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+}
+
+.viewProject .pageList table thead tr td {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background-color: var(--background200);
+    font-size: 1.1em;
+    padding: 0.2em;
+    line-height: 1.5;
+}
+
+.viewProject .pageList table tr td:nth-child(1) {
+    border-top-left-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
+}
+
+.viewProject .pageList table tr td:nth-child(5) {
+    border-top-right-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+}
+
+.viewProject .pageList table tr td:nth-child(1) {
+    width: 3%;
+    text-align: center;
+}
+
+.viewProject .pageList table tr td:nth-child(2) {
+    width: 30%;
+}
+
+.viewProject .pageList table tr td:nth-child(3) {
+    width: 10%;
+    text-align: center;
+}
+
+.viewProject .pageList table tr td:nth-child(5) {
+    width: 30%;
+}
+
+.viewProject .pageList table tbody tr {
+    z-index: 1;
+    position: relative;
+    border-radius: 0;
+}
+
+.viewProject .pageList table tbody tr td {
+    z-index: 3;
+    height: 2.1em;
+    font-size: 1.2em;
+    position: relative;
+    cursor: pointer;
+    border-radius: 0;
+}
+
+.viewProject .pageList table tbody tr:nth-child(even) {
+    background-color: var(--background200);
+}
+
+.viewProject .pageList table tbody tr td .btnGroup {
+    display: flex;
+    gap: 1em;
+}
+
+.viewProject .pageList table tbody tr td .btnGroup a {
+    text-decoration: none;
+    color: var(--text100);
+    border-radius: 0.7em;
+    padding: 0.3em 1em;
+    font-size: 0.9em;
+    transition: 0.3s;
+}
+
+.viewProject .pageList table tbody tr td .btnGroup a:last-child {
+    color: var(--danger100);
+}
+
+.viewProject .pageList table tbody tr td .btnGroup a:hover {
+    background-color: var(--primary100);
+    color: var(--textOnPrimary);
+}
+
+.viewProject .pageList table tbody tr td .btnGroup a:last-child:hover {
+    background-color: var(--danger100);
+    color: var(--textOnPrimary);
+}
+
+.viewProject .pageList table .status {
+    border-radius: 1em;
+    border: 2px solid var(--textPrimaryOnBackground);
+    background-color: var(--textOnPrimary);
+    width: 1em;
+    height: 1em;
+    fill: var(--primary100);
+    justify-self: center;
+}
+
+.viewProject .pageList table .status.done {
+    background-color: var(--primary100);
+    fill: var(--textOnPrimary);
+}
+
+.viewProject .pageList table .status svg:nth-child(1) {
+    padding: 0.15em;
+    padding-bottom: 0.3em;
+    display: none;
+}
+.viewProject .pageList table .status svg:nth-child(2) {
+    padding: 0.2em;
+    padding-bottom: 0.4em;
+    display: inline-block;
+}
+
+.viewProject .pageList table .status.done svg:nth-child(1) {
+    display: inline-block;
+}
+
+.viewProject .pageList table .status.done svg:nth-child(2) {
+    display: none;
+}
+
+.viewProject .pageList table tbody tr::after {
+    z-index: 2;
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 0;
+    left: 0;
+    top: 0;
+    transition: 0.3s;
+    opacity: 0;
+    border-radius: 0.3em;
+    background : linear-gradient(90deg,var(--primary100) 0%, var(--gradient100) 100%);
+}
+
+.viewProject .pageList table tbody tr:hover::after {
+    width: 100%;
+    opacity: 1;
+}
+
+.viewProject .pageList table tbody tr:hover td:nth-child(2),
+.viewProject .pageList table tbody tr:hover td:nth-child(4) {
+    color: var(--textOnPrimary);
+}
+
+.viewProject .pageList table tbody tr .pageName .pageNameInput {
+    outline: none;
+    border: none;
+    padding: 0.3em 0.5em;
+    border-radius: 0.45em;
+    color: var(--text100);
+    background-color: var(--background100);
+}
+
+.viewProject .pageList table tbody tr .pageName .pageNameInput:focus-visible {
+    outline: 2px solid var(--textPrimaryOnBackground);
+}

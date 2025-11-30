@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="/css/main/history/history.css" />
+<script src="/js/main/history/filterProject.js" defer></script>
+<div class="histories">
+    <div class="filterContainer">
+        <h3>Filter</h3>
+        <div class="filters">
+            <div class="projectName">
+                <p>Project</p>
+                <div class="details">
+                    <div class="filter" onclick="filtering(this, true)">All</div>
+                    <div class="filter" onclick="filtering(this)">Test</div>
+                </div>
+            </div>
+            <hr>
+            <div class="pageName">
+                <p>Page</p>
+                <div class="details">
+                    <div class="filter" onclick="filtering(this, true)">All</div>
+                </div>
+            </div>
+            <hr>
+            <div class="date">
+                <p>Date</p>
+                <div class="dateSelector">
+                    <input type="date" name="startDate" id="startDate">
+                    <span>~</span>
+                    <input type="date" name="endDate" id="endDate">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="result">
+        <div class="categories linked">
+            <p>Date</p>
+            <p>Project name</p>
+            <p>Page name</p>
+        </div>
+        <div class="historyContainer">
+            <div class="historyList">
+                <% history.forEach(hist => { %>
+                    <%- include('historyContainer', {
+                        date: hist.date,
+                        project: hist.desc,
+                        page: hist.pages,
+                    }) %>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</div>

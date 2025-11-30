@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="/css/main/settings/settings.css" />
+<script src="/js/main/settings/settings.js" defer></script>
+<div class="settings">
+    <div class="categories">
+        <a href="/dashboard/settings/" class="category <%= index == 0 ? 'active' : '' %>">Account</a>
+        <a href="/dashboard/settings/preferences" class="category <%= index == 1 ? 'active' : '' %>">Preferences</a>
+        <a href="/dashboard/settings/project" class="category <%= index == 2 ? 'active' : '' %>">Project</a>
+    </div>
+    <div class="settingContainer">
+        <%- include(which) %>
+        <hr>
+        <div class="settingBtnContainer">
+            <a href="#">Save changes</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+<link rel="stylesheet" href="/css/main/settings/prefer.css" />
+<script src="/js/main/settings/prefer.js" defer></script>
+<h3>Preferneces</h3>
+<h4>Set according to your preferences</h4>
+<hr>
+<div class="preferInput input">
+    <div class="inputContainer">
+        <p>Language</p>
+        <div class="customSelect" id="languageSelect">
+            <button type="button" class="selectTrigger">English</button>
+            <div class="selectOptions">
+                <span class="optionItem selected" data-value="en">English</span>
+                <span class="optionItem" data-value="ko">Korean</span>
+            </div>
+            <input type="hidden" name="languageSelector" id="languageInput" value="en">
+        </div>
+    </div>
+
+    <div class="inputContainer">
+        <p>Date and time format</p>
+        <div class="formatInput">
+            <div class="toggleContainer">
+                <label for="themeToggle" class="toggleText" id="textLeft">12-Hours</label>
+                
+                <label class="switchWrapper">
+                    <input type="checkbox" class="toggleCheckbox" id="themeToggle">
+                    <span class="sliderRound"></span>
+                </label>
+                
+                <label for="themeToggle" class="toggleText" id="textRight">24-Hours</label>
+            </div>
+            <hr>
+            <div class="customSelect" id="dateFormatSelect">
+                <button type="button" class="selectTrigger">yyyy.mm.dd</button>
+                <div class="selectOptions">
+                    <span class="optionItem selected" data-value="0">yyyy.mm.dd</span>
+                    <span class="optionItem" data-value="1">yy.mm.dd</span>
+                    <span class="optionItem" data-value="2">mm.dd.yyyy</span>
+                    <span class="optionItem" data-value="3">mm.dd.yy</span>
+                    <span class="optionItem" data-value="4">dd.mm.yyyy</span>
+                    <span class="optionItem" data-value="5">dd.mm.yy</span>
+                </div>
+                <input type="hidden" name="dateFormatSelector" id="dateFormatInput" value="0">
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="themeSetting">
+    <p>Select Theme</p>
+    <div class="themes">
+        <div class="themeDots">
+            <div class="dot active" style="background-color: var(--defaultPrimary);"><svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24"><path d="M22.319,4.431,8.5,18.249a1,1,0,0,1-1.417,0L1.739,12.9a1,1,0,0,0-1.417,0h0a1,1,0,0,0,0,1.417l5.346,5.345a3.008,3.008,0,0,0,4.25,0L23.736,5.847a1,1,0,0,0,0-1.416h0A1,1,0,0,0,22.319,4.431Z"/></svg></div>
+            <div class="dot" style="background-color: var(--juicePrimary);"><svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24"><path d="M22.319,4.431,8.5,18.249a1,1,0,0,1-1.417,0L1.739,12.9a1,1,0,0,0-1.417,0h0a1,1,0,0,0,0,1.417l5.346,5.345a3.008,3.008,0,0,0,4.25,0L23.736,5.847a1,1,0,0,0,0-1.416h0A1,1,0,0,0,22.319,4.431Z"/></svg></div>
+            <div class="dot" style="background-color: var(--sandPrimary);"><svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24"><path d="M22.319,4.431,8.5,18.249a1,1,0,0,1-1.417,0L1.739,12.9a1,1,0,0,0-1.417,0h0a1,1,0,0,0,0,1.417l5.346,5.345a3.008,3.008,0,0,0,4.25,0L23.736,5.847a1,1,0,0,0,0-1.416h0A1,1,0,0,0,22.319,4.431Z"/></svg></div>
+            <div class="dot" style="background-color: var(--lavenderPrimary);"><svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24"><path d="M22.319,4.431,8.5,18.249a1,1,0,0,1-1.417,0L1.739,12.9a1,1,0,0,0-1.417,0h0a1,1,0,0,0,0,1.417l5.346,5.345a3.008,3.008,0,0,0,4.25,0L23.736,5.847a1,1,0,0,0,0-1.416h0A1,1,0,0,0,22.319,4.431Z"/></svg></div>
+            <div class="dot" style="background-color: var(--junglePrimary);"><svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24"><path d="M22.319,4.431,8.5,18.249a1,1,0,0,1-1.417,0L1.739,12.9a1,1,0,0,0-1.417,0h0a1,1,0,0,0,0,1.417l5.346,5.345a3.008,3.008,0,0,0,4.25,0L23.736,5.847a1,1,0,0,0,0-1.416h0A1,1,0,0,0,22.319,4.431Z"/></svg></div>
+        </div>
+        <div class="themeModes">
+            <div class="mode active">
+                <div class="preview">
+                    <div class="contentPreview">
+                        <div class="dummyPreview"></div>
+                        <div class="dummyPreview"></div>
+                    </div>
+                    <div class="checked"><svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24"><path d="M22.319,4.431,8.5,18.249a1,1,0,0,1-1.417,0L1.739,12.9a1,1,0,0,0-1.417,0h0a1,1,0,0,0,0,1.417l5.346,5.345a3.008,3.008,0,0,0,4.25,0L23.736,5.847a1,1,0,0,0,0-1.416h0A1,1,0,0,0,22.319,4.431Z"/></svg></div>
+                </div>
+                <p>Light mode</p>
+            </div>
+            <div class="mode">
+                <div class="preview">
+                    <div class="contentPreview">
+                        <div class="dummyPreview"></div>
+                        <div class="dummyPreview"></div>
+                    </div>
+                    <div class="checked"><svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24"><path d="M22.319,4.431,8.5,18.249a1,1,0,0,1-1.417,0L1.739,12.9a1,1,0,0,0-1.417,0h0a1,1,0,0,0,0,1.417l5.346,5.345a3.008,3.008,0,0,0,4.25,0L23.736,5.847a1,1,0,0,0,0-1.416h0A1,1,0,0,0,22.319,4.431Z"/></svg></div>
+                </div>
+                <p>Dark mode</p>
+            </div>
+            <div class="mode">
+                <div class="preview">
+                    <div class="contentPreview">
+                        <div class="dummyPreview"></div>
+                        <div class="dummyPreview"></div>
+                    </div>
+                    <div class="checked"><svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24"><path d="M22.319,4.431,8.5,18.249a1,1,0,0,1-1.417,0L1.739,12.9a1,1,0,0,0-1.417,0h0a1,1,0,0,0,0,1.417l5.346,5.345a3.008,3.008,0,0,0,4.25,0L23.736,5.847a1,1,0,0,0,0-1.416h0A1,1,0,0,0,22.319,4.431Z"/></svg></div>
+                </div>
+                <p>System theme</p>
+            </div>
+        </div>
+    </div>
+</div>

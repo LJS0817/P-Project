@@ -6,16 +6,17 @@
     <title>Welcome</title>
     <link rel="stylesheet" href="../css/default.css"> 
     <link rel="stylesheet" href="./css/style.css"> 
+    <script src="./js/menu.js" defer></script>
   </head>
   <body class="">
     <header>
       <div class="headerContent">
         <a href="#"><div class="logo">Logo</div></a>
         <nav class="nav-center">
-          <a href="#" class="active">Home</a>
-          <a href="#">Service</a>
-          <a href="#">Tech</a>
-          <a href="#">Team</a>
+          <a href="#first" class="active">Home</a>
+          <a href="#second">Service</a>
+          <a href="#third">Tech</a>
+          <a href="#fourth">Team</a>
         </nav>
         <div class="nav-right">
           <a href="#" class="btn-signin">Sign in</a>
@@ -25,7 +26,7 @@
       <hr>
     </header>
 
-    <section class="first">
+    <section class="first" id="first">
       <h1>Lorem Ipsum</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus blanditiis in cum tempore nisi similique nostrum at maxime<br>
@@ -37,7 +38,7 @@
       <div class="thumb"></div>
     </section>
 
-    <section>
+    <section id="second">
       <div class="section-icon"><i class="fas fa-robot"></i></div>
       <h2 class="section-title">Lorem Ipsum</h2>
       <p class="section-desc">
@@ -95,46 +96,84 @@
       </div>
     </section>
 
-    <section>
+    <section id="third">
       <div class="third">
         
-        <h2 class="section-title"><div class="card-icon"></div>Lorem Ipsum</h2>
+        <h2 class="section-title"><div class="card-icon"></div>How it works</h2>
 
         <div class="process-list">
           <div class="process-item">
             <div class="process-box"></div>
-            <div class="process-text">Lorem Ipsum is simply dummy text.</div>
+            <div class="process-text">1. test</div>
           </div>
           <div class="arrow-down">▼</div>
           <div class="process-item">
             <div class="process-box"></div>
-            <div class="process-text">Lorem Ipsum is simply dummy text.</div>
+            <div class="process-text">2. upload</div>
           </div>
           <div class="arrow-down">▼</div>
           <div class="process-item">
             <div class="process-box"></div>
-            <div class="process-text">Lorem Ipsum is simply dummy text.</div>
+            <div class="process-text">3. send data to server</div>
           </div>
           <div class="arrow-down">▼</div>
           <div class="process-item">
             <div class="process-box"></div>
-            <div class="process-text">Lorem Ipsum is simply dummy text.</div>
+            <div class="process-text">4. check result</div>
           </div>
         </div>
-
-        <a href="#" class="learnMoreBtn">Learn more</a>
       </div>
     </section>
-
-    <section>
+ 
+    <section id="fourth">
       <div class="bottom-banner">
-      <div class="banner-content">
-        <div class="card-icon"></div>
-        <h3>가천대학교 P-Project</h3>
-        <p>Team. undefined</p>
-        <a href="#" class="learnMoreBtn">Learn more</a>
-      </div>
-      <img class="gachonImg" src="https://www.gachon.ac.kr/sites/kor/images/sub/slogan_2.png" alt="">
+        <div class="teamTitle">
+          <div class="banner-content">
+            <div class="card-icon"></div>
+            <h3>가천대학교 P-Project</h3>
+            <p>Team. undefined</p>
+          </div>
+          <img class="gachonImg" src="https://www.gachon.ac.kr/sites/kor/images/sub/slogan_2.png" alt="">
+        </div>
+        <div class="teamContainer">
+          <div class="teammate">
+            <div class="teamIcon"></div>
+            <div class="teamInfo">
+              <p>A.I.</p>
+              <p>함 의 찬 <span>( 202136057 )</span></p>
+            </div>
+          </div>
+          <hr>
+          <div class="teammate">
+            <div class="teamIcon"></div>
+            <div class="teamInfo">
+              <p>Frontend</p>
+              <p>이 준 상 <span>( 202136017) </span></p>
+            </div>
+          </div>
+          <div class="teammate">
+            <div class="teamIcon"></div>
+            <div class="teamInfo">
+              <p>Frontend</p>
+              <p>채 동 원 <span>( 202239901 )</span></p>
+            </div>
+          </div>
+          <hr>
+          <div class="teammate">
+            <div class="teamIcon"></div>
+            <div class="teamInfo">
+              <p>Backend</p>
+              <p>김 성 주 <span>( 202135930 ) *</span></p>
+            </div>
+          </div>
+          <div class="teammate">
+            <div class="teamIcon"></div>
+            <div class="teamInfo">
+              <p>Backend</p>
+              <p>이 시 우 <span>( 202337657 )</span></p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <hr>
@@ -145,10 +184,10 @@
           <span>Lorem Ipsum</span>
         </div>
         <div class="footer-links">
-          <a href="#">Home</a>
-          <a href="#">Service</a>
-          <a href="#">Tech</a>
-          <a href="#">Team</a>
+          <a href="#first">Home</a>
+          <a href="#second">Service</a>
+          <a href="#third">Tech</a>
+          <a href="#fourth">Team</a>
         </div>
       </div>
     </footer>

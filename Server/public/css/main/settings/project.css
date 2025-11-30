@@ -1,0 +1,30 @@
+.settingContainer .btnGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3em;
+}
+
+.settingContainer .btnGroup h2 p {
+    display: inline-block;
+    font-size: 0.6em;
+    font-weight: 500;
+}
+
+.settingContainer .btnGroup .btn a {
+    width: 8.5em;
+    text-align: center;
+}
+
+.settingContainer .btnGroup .change h3 {
+    color: var(--text100);
+}
+
+.settingContainer .btnGroup .change.btn a {
+    color: var(--text100);
+    border-color: var(--text100);
+}
+
+.settingContainer .btnGroup .change.btn a:hover {
+    background-color: var(--primary300);
+    color: var(--textOnPrimary);
+}

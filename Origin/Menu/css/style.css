@@ -3,6 +3,10 @@
     font-family: "Noto Sans KR", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     background: linear-gradient(180deg, var(--background100) 0%, var(--gradient100) 100%);
 }
@@ -24,9 +28,8 @@ header {
 }
 
 hr {
-    height: 1px;
-    border: 0;
-    border-top: 1px solid var(--background200);
+    height: 2px;
+    background-color: var(--background200);
 }
 
 .headerContent {
@@ -122,6 +125,8 @@ section {
 .third .section-title {
     margin-bottom: 50px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
 }
 
 .section-desc {
@@ -186,7 +191,7 @@ section {
     max-width: 1100px;
     margin: 0 auto;
     border-radius: 15px;
-    background-color: var(--background200);
+    background-color: var(--alphaPrimary);
     padding: 30px 40px;
     box-shadow: inset 1px 4px 20px -14px var(--shadow100);
     height: 450px;
@@ -217,12 +222,13 @@ section {
     gap: 20px;
     max-width: 1100px;
     margin: 0 auto;
+    margin-bottom: 10px;
 }
 
 .info-card {
     border-radius: 12px;
     padding: 20px;
-    background: var(--background200);
+    background: var(--alphaPrimary);
     box-shadow: inset 1px 4px 20px -14px var(--shadow100);
     text-align: left;
     height: 450px;
@@ -259,7 +265,7 @@ section {
 .third {
     padding: 30px 40px;
     border-radius: 15px;
-    background-color: var(--background200);
+    background-color: var(--alphaPrimary);
     margin: 0 auto;
     box-shadow: inset 1px 4px 20px -14px var(--shadow100);
     text-align: start;
@@ -307,16 +313,69 @@ section {
 }
 
 .bottom-banner {
-    background-color: var(--background200);
-    padding: 30px 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: var(--alphaPrimary);
+    padding: 30px 40px;
     border-radius: 20px;
     width: 100%;
     max-width: 1100px;
+    display: flex;
+    flex-direction: column;
     box-shadow: inset 1px 4px 20px -14px var(--shadow100);
+    gap: 2em;
 }
+
+.teamTitle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--background100);
+}
+
+.teammate {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.teamContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.teamContainer hr {
+    background-color: var(--background100);
+    height: 2px;
+    border: none;
+}
+
+.teamContainer .teammate .teamIcon {
+    background-color: var(--primary100);
+    width: 2.6em;
+    height: 2.6em;
+    border-radius: 0.5em;
+}
+
+.teamContainer .teammate .teamInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.teamContainer .teammate .teamInfo p span {
+    font-size: 0.7em;
+}
+
+.teamContainer .teammate .teamInfo p:nth-child(1) {
+    font-size: 0.8em;
+}
+
+.teamContainer .teammate .teamInfo p:nth-child(2) {
+    font-size: 1.3em;
+    line-height: 1;
+}
+
 
 .banner-content {
     text-align: start;
@@ -338,7 +397,7 @@ section {
 }
 
 .gachonImg {
-    border-radius: 12px;
+    width: 15em;
 }
 
 .footer-inner {
