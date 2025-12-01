@@ -1,6 +1,6 @@
 <h1 class="auth-title">Create account</h1>
 
-<form action="#" method="POST">
+<form action="/auth/create" method="POST" id="userForm">
   <p style="
               font-size: 12px;
               color: var(--text100);
@@ -23,8 +23,8 @@
   </div>
 
   <div class="input-group">
-    <input type="password" name="password" placeholder="Password" id="signupPw" class="input-field" />
-    <i class="fas fa-eye-slash toggle-pw" onclick="togglePassword('signupPw', this)"></i>
+    <input type="password" name="password" placeholder="Password" id="password" class="input-field" />
+    <i class="fas fa-eye-slash toggle-pw" onclick="togglePassword(this)"></i>
   </div>
 
   <button type="submit" class="btn-submit">Create account</button>
