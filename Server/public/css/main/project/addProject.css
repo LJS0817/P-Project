@@ -282,3 +282,54 @@ input:checked + .slider:before {
 .pageElement:hover svg {
     fill: var(--textOnPrimary);
 }
+
+@media (max-width: 768px) {
+  .add-project-container {
+    /* 모바일에서는 높이 자동 (스크롤 가능하게) */
+    height: auto;
+    min-height: 100%;
+    padding: 20px 0;
+  }
+
+  .form-wrapper {
+    width: 100%; /* 너비 꽉 차게 */
+    padding: 0 15px; /* 좌우 여백 */
+  }
+
+  .form-header h2 {
+    font-size: 1.8em; /* 폰트 사이즈 조절 */
+  }
+
+  /* 버튼 그룹 꽉 차게 */
+  .btn-group {
+    width: 100%;
+  }
+
+  .btn-group button {
+    flex: 1; /* 버튼 균등 분할 */
+  }
+
+  /* Visibility (공개 설정) 영역 세로 배치 */
+  .visibility-group {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .toggle-wrapper {
+    width: 100%;
+    justify-content: space-between; /* 양끝 정렬 */
+    align-self: center; /* 중앙 정렬 */
+  }
+
+  /* 하단 버튼 (Cancel, Add Project) */
+  .form-actions {
+    margin-top: 30px;
+    justify-content: space-between; /* 양끝 정렬 */
+  }
+
+  .form-actions a,
+  .form-actions button {
+    flex: 1; /* 버튼 균등 분할 */
+    text-align: center;
+  }
+}

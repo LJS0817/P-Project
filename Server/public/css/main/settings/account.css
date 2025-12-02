@@ -18,3 +18,20 @@
 .accountInput input[type="text"]:focus-visible {
     border-color: var(--textPrimaryOnBackground);
 }
+
+@media (max-width: 768px) {
+  .accountInput input[type="text"] {
+    font-size: 1em;
+  }
+
+  .deleteUser.btn {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .deleteUser.btn a {
+    width: 100%;
+    text-align: center;
+  }
+}

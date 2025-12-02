@@ -214,62 +214,57 @@
     background-color: var(--primary300);
 }
 
-.viewProject .pageList .tableContainer {
-    max-height: 12.4em;
-    overflow: auto;
-}
-
-.viewProject .pageList table {
-    border-collapse: separate;
-    border-spacing: 0;
-    width: 100%;
-}
-
-.viewProject .pageList table thead tr td {
-    position: sticky;
-    top: 0;
-    z-index: 3;
-    background-color: var(--background200);
-    font-size: 1.1em;
-    padding: 0.2em;
+.viewProject .pageList .linked {
     line-height: 1.5;
+    align-items: center;
 }
 
-.viewProject .pageList table tr td:nth-child(1) {
+.viewProject .pageList .categories .area:nth-child(1) {
     border-top-left-radius: 0.3em;
     border-bottom-left-radius: 0.3em;
 }
 
-.viewProject .pageList table tr td:nth-child(5) {
-    border-top-right-radius: 0.3em;
-    border-bottom-right-radius: 0.3em;
+.viewProject .pageList .categories .area:nth-child(2) {
+    padding-left: 0.3em;
 }
 
-.viewProject .pageList table tr td:nth-child(1) {
+.viewProject .pageList .categories .area:nth-child(5) {
+    border-top-right-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+    padding-left: 0.7em;
+    box-sizing: border-box;
+}
+
+.viewProject .pageList .area:nth-child(1) {
     width: 3%;
     text-align: center;
 }
 
-.viewProject .pageList table tr td:nth-child(2) {
+.viewProject .pageList .area:nth-child(2) {
     width: 30%;
+    display: flex;
 }
 
-.viewProject .pageList table tr td:nth-child(3) {
+.viewProject .pageList .area:nth-child(3) {
     width: 10%;
     text-align: center;
 }
 
-.viewProject .pageList table tr td:nth-child(5) {
+.viewProject .pageList .area:nth-child(4) {
+    width: 27%;
+}
+
+.viewProject .pageList .area:nth-child(5) {
     width: 30%;
 }
 
-.viewProject .pageList table tbody tr {
+.viewProject .pageList .area {
     z-index: 1;
     position: relative;
     border-radius: 0;
 }
 
-.viewProject .pageList table tbody tr td {
+.viewProject .pageList .pageElement {
     z-index: 3;
     height: 2.1em;
     font-size: 1.2em;
@@ -278,16 +273,16 @@
     border-radius: 0;
 }
 
-.viewProject .pageList table tbody tr:nth-child(even) {
+.viewProject .pageList .pageElement:nth-child(even) {
     background-color: var(--background200);
 }
 
-.viewProject .pageList table tbody tr td .btnGroup {
+.viewProject .pageList .pageElement .btnGroup {
     display: flex;
     gap: 1em;
 }
 
-.viewProject .pageList table tbody tr td .btnGroup a {
+.viewProject .pageList .pageElement .btnGroup a {
     text-decoration: none;
     color: var(--text100);
     border-radius: 0.7em;
@@ -296,21 +291,21 @@
     transition: 0.3s;
 }
 
-.viewProject .pageList table tbody tr td .btnGroup a:last-child {
+.viewProject .pageList .pageElement .btnGroup a:last-child {
     color: var(--danger100);
 }
 
-.viewProject .pageList table tbody tr td .btnGroup a:hover {
+.viewProject .pageList .pageElement .btnGroup a:hover {
     background-color: var(--primary100);
     color: var(--textOnPrimary);
 }
 
-.viewProject .pageList table tbody tr td .btnGroup a:last-child:hover {
+.viewProject .pageList .pageElement .btnGroup a:last-child:hover {
     background-color: var(--danger100);
     color: var(--textOnPrimary);
 }
 
-.viewProject .pageList table .status {
+.viewProject .pageList .pageElement .status {
     border-radius: 1em;
     border: 2px solid var(--textPrimaryOnBackground);
     background-color: var(--textOnPrimary);
@@ -320,32 +315,31 @@
     justify-self: center;
 }
 
-.viewProject .pageList table .status.done {
+.viewProject .pageList .pageElement .status.done {
     background-color: var(--primary100);
     fill: var(--textOnPrimary);
 }
 
-.viewProject .pageList table .status svg:nth-child(1) {
+.viewProject .pageList .pageElement .status svg:nth-child(1) {
     padding: 0.15em;
     padding-bottom: 0.3em;
     display: none;
 }
-.viewProject .pageList table .status svg:nth-child(2) {
+.viewProject .pageList .pageElement .status svg:nth-child(2) {
     padding: 0.2em;
     padding-bottom: 0.4em;
     display: inline-block;
 }
 
-.viewProject .pageList table .status.done svg:nth-child(1) {
+.viewProject .pageList .pageElement .status.done svg:nth-child(1) {
     display: inline-block;
 }
 
-.viewProject .pageList table .status.done svg:nth-child(2) {
+.viewProject .pageList .pageElement .status.done svg:nth-child(2) {
     display: none;
 }
 
-.viewProject .pageList table tbody tr::after {
-    z-index: 2;
+.viewProject .pageList .pageElement::after {
     content: '';
     position: absolute;
     height: 100%;
@@ -358,17 +352,17 @@
     background : linear-gradient(90deg,var(--primary100) 0%, var(--gradient100) 100%);
 }
 
-.viewProject .pageList table tbody tr:hover::after {
+.viewProject .pageList .pageElement:hover::after {
     width: 100%;
     opacity: 1;
 }
 
-.viewProject .pageList table tbody tr:hover td:nth-child(2),
-.viewProject .pageList table tbody tr:hover td:nth-child(4) {
+.viewProject .pageList .pageElement:hover .area:nth-child(2),
+.viewProject .pageList .pageElement:hover .area:nth-child(4) {
     color: var(--textOnPrimary);
 }
 
-.viewProject .pageList table tbody tr .pageName .pageNameInput {
+.viewProject .pageList .pageElement .pageName .pageNameInput {
     outline: none;
     border: none;
     padding: 0.3em 0.5em;
@@ -377,6 +371,97 @@
     background-color: var(--background100);
 }
 
-.viewProject .pageList table tbody tr .pageName .pageNameInput:focus-visible {
+.viewProject .pageList .pageElement .pageName .pageNameInput:focus-visible {
     outline: 2px solid var(--textPrimaryOnBackground);
+}
+
+@media (max-width: 768px) {
+  .viewProject {
+    padding: 20px 15px;
+  }
+
+  .viewProject .page .result {
+    gap: 10px;
+  }
+
+  .viewProject .page .result .dropHere svg {
+    width: 4em;
+    height: 4em;
+  }
+
+  .viewProject .page .result .dropHere h3 {
+    font-size: 1.1em;
+    text-align: center;
+  }
+
+  .viewProject .page .result .dropHere h4 {
+    font-size: 0.9em;
+  }
+
+  .viewProject .pageList .categories {
+    display: none;
+  }
+
+  .viewProject .pageList .listParent,
+  .viewProject .pageList .listContainer,
+  .viewProject .pageList .linked,
+  .viewProject .pageList .linked .area {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .viewProject .pageList .list .linked {
+    margin-bottom: 15px;
+    border: 1px solid var(--background200);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px var(--shadow100);
+    background-color: var(--background100);
+  }
+
+  .viewProject .pageList .linked .area {
+    width: 100% !important;
+    text-align: right;
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 !important;
+    border-bottom: 1px solid var(--background200);
+    height: auto;
+  }
+
+  .viewProject .pageList .linked .area:first-child {
+    justify-content: flex-start;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .viewProject .pageList .linked .area:last-child {
+    border-bottom: none;
+    justify-content: center;
+    padding-top: 15px;
+  }
+
+  .viewProject .pageList .linked .area:nth-child(2)::before {
+    content: "Name";
+    font-weight: bold;
+    color: var(--text200);
+  }
+  .viewProject .pageList .linked .area:nth-child(3)::before {
+    content: "Analyzed";
+    font-weight: bold;
+    color: var(--text200);
+  }
+  .viewProject .pageList .linked .area:nth-child(4)::before {
+    content: "Updated";
+    font-weight: bold;
+    color: var(--text200);
+  }
+
+  .viewProject .pageList .linked .area .pageName .pageNameInput {
+    width: 60%;
+    text-align: right;
+  }
 }

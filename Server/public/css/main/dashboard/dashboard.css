@@ -284,3 +284,47 @@
 .projectInfo .history .seeMore:hover {
     background-color: var(--primary300);
 }
+
+@media (max-width: 768px) {
+  .dashboardContainer {
+    height: auto;
+    max-height: none;
+  }
+
+  .cardContainer {
+    flex-direction: column;
+    height: auto;
+    margin: 10px 15px;
+    gap: 20px;
+  }
+
+  .cardContainer .projectCard {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+  }
+
+  .projectInfo {
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 0 15px;
+    gap: 30px;
+  }
+
+  .projectInfo .lastestProject {
+    padding: 0;
+    width: 100%;
+  }
+
+  .projectInfo .lastestProject .prevImage {
+    height: 200px;
+  }
+
+  .projectInfo .history {
+    width: 100%;
+  }
+
+  .projectInfo .history .historyList {
+    gap: 10px;
+  }
+}

@@ -4,6 +4,134 @@ body {
     --sandPrimary: #bfae9f;
     --lavenderPrimary: #8b5fbf;
     --junglePrimary: #658864;
+
+    --previewPrimary: var(--primary100);
+    --previewPrimary300: var(--primary300);
+    --previewBackground: var(--background100);
+    --previewPrimaryOnBackground: var(--previewPrimary);
+
+    --previewDarkPrimary: #0b1627;
+    --previewDarkPrimary300: #556785;
+    --previewDarkBackground: #19263b;
+    --previewDarkPrimaryOnBackground: #497fcc;
+}
+
+
+
+body.dark {
+    --previewPrimary :#3f51b5;
+    --previewPrimary300: #7d85b3;
+    --previewBackground: #ffffff;
+    --previewPrimaryOnBackground: var(--previewPrimary);
+
+    --previewDarkPrimary: var(--primary100);
+    --previewDarkPrimary300: var(--primary300);
+    --previewDarkBackground: var(--background100);
+    --previewDarkPrimaryOnBackground: var(--textPrimaryOnBackground);
+}
+
+/* ============================================================================================ */
+
+body.juice {
+    --previewPrimary: var(--primary100);
+    --previewPrimary300: var(--primary300);
+    --previewBackground: var(--background100);
+    --previewPrimaryOnBackground: var(--previewPrimary);
+
+    --previewDarkPrimary: #2b2b2b;
+    --previewDarkPrimary300: #a17066;
+    --previewDarkBackground: #1c1c1c;
+    --previewDarkPrimaryOnBackground: #c54f35;
+}
+
+body.juice.dark {
+    --previewPrimary: #f58d64;
+    --previewPrimary300: #df9f87;
+    --previewBackground: #f5e6cc;
+    --previewPrimaryOnBackground: var(--previewPrimary);
+
+    --previewDarkPrimary: var(--primary100);
+    --previewDarkPrimary300: var(--primary300);
+    --previewDarkBackground: var(--background100);
+    --previewDarkPrimaryOnBackground: var(--textPrimaryOnBackground);
+}
+
+/* ============================================================================================ */
+
+body.sand {
+    --previewPrimary: var(--primary100);
+    --previewPrimary300: var(--primary300);
+    --previewBackground: var(--background100);
+    --previewPrimaryOnBackground: var(--textPrimaryOnBackground);
+
+    --previewDarkPrimary: #3c2f2f;
+    --previewDarkPrimary300: #8c7c7c;
+    --previewDarkBackground: #4d3f3f;
+    --previewDarkPrimaryOnBackground: #c38957;
+}
+
+body.sand.dark {
+    --previewPrimary: #bfae9f;
+    --previewPrimary300: #bc9370;
+    --previewBackground: #f5efe8;
+    --previewPrimaryOnBackground: #724721;
+
+    --previewDarkPrimary: var(--primary100);
+    --previewDarkPrimary300: var(--primary300);
+    --previewDarkBackground: var(--background100);
+    --previewDarkPrimaryOnBackground: var(--textPrimaryOnBackground);
+}
+
+/* ============================================================================================ */
+
+body.lavender {
+    --previewPrimary: var(--primary100);
+    --previewPrimary300: var(--primary300);
+    --previewBackground: var(--background100);
+    --previewPrimaryOnBackground: var(--previewPrimary);
+
+    --previewDarkPrimary: #2f2240;
+    --previewDarkPrimary300: #9984b3;
+    --previewDarkBackground: #3e324e;
+    --previewDarkPrimaryOnBackground: #a482d0;
+}
+
+body.lavender.dark {
+    --previewPrimary: #8b5fbf;
+    --previewPrimary300: #b6a5ca;
+    --previewBackground: #f5f3f7;
+    --previewPrimaryOnBackground: var(--previewPrimary);
+
+    --previewDarkPrimary: var(--primary100);
+    --previewDarkPrimary300: var(--primary300);
+    --previewDarkBackground: var(--background100);
+    --previewDarkPrimaryOnBackground: var(--textPrimaryOnBackground);
+}
+
+/* ============================================================================================ */
+
+body.jungle {
+    --previewPrimary: var(--primary100);
+    --previewPrimary300: var(--primary300);
+    --previewBackground: var(--background100);
+    --previewPrimaryOnBackground: var(--previewPrimary);
+
+    --previewDarkPrimary: #212318;
+    --previewDarkPrimary300: #717654;
+    --previewDarkBackground: #333624;
+    --previewDarkPrimaryOnBackground: #d0d8b0;
+}
+
+body.jungle.dark {
+    --previewPrimary: #658864;
+    --previewPrimary300: #98bc98;
+    --previewBackground: #dddddd;
+    --previewPrimaryOnBackground: var(--previewPrimary);
+
+    --previewDarkPrimary: var(--primary100);
+    --previewDarkPrimary300: var(--primary300);
+    --previewDarkBackground: var(--background100);
+    --previewDarkPrimaryOnBackground: var(--textPrimaryOnBackground);
 }
 
 .preferInput .inputContainer {
@@ -366,4 +494,50 @@ body {
 .themeModes .mode .preview:hover::after,
 .themeModes .mode.active .preview:hover::after {
     opacity: 0.6;
+}
+
+
+
+@media (max-width: 768px) {
+  .preferInput .inputContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .customSelect {
+    width: 100%;
+  }
+
+  .formatInput {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .formatInput hr {
+    display: none;
+  }
+
+  .toggleContainer {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .themeSetting .themes {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .themeModes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .themeModes .mode .preview {
+    width: 100%;
+    height: 6em;
+  }
 }

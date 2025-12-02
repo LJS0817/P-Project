@@ -13,7 +13,12 @@ router.get('/', (req, res) => {
 });
 
 router.get('/view/:id', (req, res) => {
-    res.render('main/index', {content:"./project/viewProject.ejs", title:"Project name", subtitle:"Analysis your design"}, (e, content) => {
+    const pages = [
+        { id: "1", name: "Test 123", analyzed: true, datetime: "2025.11.11 20:00"},
+        { id: "2", name: "1234153", analyzed: true, datetime: "2023.11.21 20:00"},
+        { id: "3", name: "abcde", analyzed: false, datetime: "2015.11.31 20:00"},
+    ]
+    res.render('main/index', {content:"./project/viewProject.ejs", title:"Project name", subtitle:"Analysis your design", pages:pages}, (e, content) => {
         res.end(content);
     });
 });

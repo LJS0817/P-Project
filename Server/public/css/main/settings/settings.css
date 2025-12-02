@@ -134,3 +134,29 @@
     background-color: var(--primary300);
     border: 2px solid var(--primary300);
 }
+
+@media (max-width: 768px) {
+  .settings .categories {
+    gap: 0.5em;
+    margin: 1em 0;
+  }
+
+  .settings .categories .category {
+    padding: 0.4em 0.8em;
+    font-size: 0.9em;
+  }
+
+  .settingContainer {
+    width: 100%;
+    padding: 1.5em;
+    border: none;
+    border-top: 1px solid var(--textPrimaryOnBackground);
+    border-radius: 0;
+  }
+
+  .settingContainer .input,
+  .settingContainer .btn,
+  .settingContainer .settingBtnContainer {
+    padding: 0;
+  }
+}

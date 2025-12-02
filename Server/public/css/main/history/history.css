@@ -110,21 +110,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     flex-direction: column;
 }
 
-.result .historyContainer {
-    max-height: 30em;
-    overflow: auto;
-    scrollbar-width: none;
-}
-
-.result .linked {
-    display: flex;
-    padding: 0.3em 0.6em;
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 1.1em;
-    transition: 0.3s;
-}
-
 .result .linked p:nth-child(1) {
     width: 20%;
 }
@@ -137,12 +122,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     width: 30%;
 }
 
-.result .categories {
-    width: 100%;
-    background-color: var(--background200);
-    border-radius: 0.5em 0.5em 0 0;
-}
-
 .result .historyList .history:nth-child(even) {
     background-color: var(--background200);
 }
@@ -153,4 +132,90 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 hr {
     border-color: var(--primary300);
+}
+
+@media (max-width: 768px) {
+  .histories {
+    padding: 1em;
+  }
+
+  .histories .filterContainer {
+    height: auto;
+    padding: 1em;
+  }
+
+  .histories .filterContainer .filters {
+    margin: 0;
+  }
+
+  .histories .filterContainer .filters .pageName,
+  .histories .filterContainer .filters .projectName,
+  .histories .filterContainer .filters .date {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0.5em 0;
+    gap: 0.5em;
+  }
+
+  .histories .filterContainer .filters p {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .histories .filterContainer .filters .details {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0.5em;
+  }
+
+  .dateSelector {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+  }
+
+  .dateSelector span {
+    display: none;
+  }
+
+  #startDate,
+  #endDate {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .result .categories.linked {
+    display: none;
+  }
+
+  .result .linked {
+    flex-direction: column;
+    padding: 1em;
+    gap: 0.5em;
+    border-bottom: 1px solid var(--background200);
+  }
+
+  .result .linked p:nth-child(1),
+  .result .linked p:nth-child(2),
+  .result .linked p:nth-child(3) {
+    width: 100%;
+  }
+
+  .result .linked p:nth-child(1)::before {
+    content: "Date: ";
+    color: var(--text200);
+    font-size: 0.8em;
+  }
+  .result .linked p:nth-child(2)::before {
+    content: "Project: ";
+    color: var(--text200);
+    font-size: 0.8em;
+  }
+  .result .linked p:nth-child(3)::before {
+    content: "Page: ";
+    color: var(--text200);
+    font-size: 0.8em;
+  }
 }

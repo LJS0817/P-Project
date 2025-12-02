@@ -1,5 +1,7 @@
-<link rel="stylesheet" href="/css/main/project/viewProject.css" />
+<link rel="stylesheet" href="/css/main/listview.css"/>
+<link rel="stylesheet" href="/css/main/project/viewProject.css"/>
 <script src="/js/main/project/analysisProject.js" defer></script>
+<script src="/js/main/scroll.js" defer></script>
 <div class="viewProject">
     <div class="page">
         <h2>Page Name</h2>
@@ -37,20 +39,27 @@
     </div>
     <div class="pageList">
         <h2>Pages <p id="addPageBtn">+&emsp;Add page</p></h2>
-        <div class="tableContainer">
-            <table>
-                <thead>
-                    <tr>
-                        <td><input type="checkbox" name="selectPage" id="selectPage"></td>
-                        <td>Name</td>
-                        <td>Analyzed</td>
-                        <td>Updated</td>
-                        <td>Options</td>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
+        <div class="tableContainer listParent">
+             <div class="categories linked">
+                <input class="area" type="checkbox" name="selectPage" id="selectPage">
+                <p class="area">Name</p>
+                <p class="area">Analyzed</p>
+                <p class="area">Updated</p>
+                <p class="area">Options</p>
+            </div>
+            <div class="listContainer">
+                <div class="list">
+                    <% pages.forEach(page => { %>
+                        <%- include('pageElement', {
+                            id: page.id,
+                            name: page.name,
+                            analyzed: page.analyzed,
+                            datetime: page.datetime,
+                        }) %>
+                    <% }); %>
+                </div>
+                <div class="scrollBar" id="customScroll"></div>
+            </div>
         </div>
     </div>
 </div>

@@ -1,6 +1,8 @@
+<link rel="stylesheet" href="/css/main/listview.css" />
 <link rel="stylesheet" href="/css/main/history/history.css" />
 <script src="/js/main/history/filterProject.js" defer></script>
-<div class="histories">
+<script src="/js/main/scroll.js" defer></script>
+<div class="histories listParent">
     <div class="filterContainer">
         <h3>Filter</h3>
         <div class="filters">
@@ -29,14 +31,14 @@
             </div>
         </div>
     </div>
-    <div class="result">
+    <div class="result listParent">
         <div class="categories linked">
             <p>Date</p>
             <p>Project name</p>
             <p>Page name</p>
         </div>
-        <div class="historyContainer">
-            <div class="historyList">
+        <div class="historyContainer listContainer">
+            <div class="historyList list">
                 <% history.forEach(hist => { %>
                     <%- include('historyContainer', {
                         date: hist.date,
@@ -45,6 +47,7 @@
                     }) %>
                 <% }); %>
             </div>
+            <div class="scrollBar" id="customScroll"></div>
         </div>
     </div>
 </div>

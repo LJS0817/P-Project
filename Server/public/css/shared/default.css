@@ -21,17 +21,6 @@ body {
     --danger100: #ff5a5a;
 
     --accent100: #fff;
-
-
-    --previewPrimary: var(--primary100);
-    --previewPrimary300: var(--primary300);
-    --previewBackground: var(--background100);
-    --previewPrimaryOnBackground: var(--previewPrimary);
-
-    --previewDarkPrimary: #0b1627;
-    --previewDarkPrimary300: #556785;
-    --previewDarkBackground: #19263b;
-    --previewDarkPrimaryOnBackground: #497fcc;
 }
 
 body.dark {
@@ -54,17 +43,6 @@ body.dark {
     --shadow100: #d3e4ff;
     --danger100: #b94343;
     --accent100: #fff;
-
-    
-    --previewPrimary :#3f51b5;
-    --previewPrimary300: #7d85b3;
-    --previewBackground: #ffffff;
-    --previewPrimaryOnBackground: var(--previewPrimary);
-
-    --previewDarkPrimary: var(--primary100);
-    --previewDarkPrimary300: var(--primary300);
-    --previewDarkBackground: var(--background100);
-    --previewDarkPrimaryOnBackground: var(--textPrimaryOnBackground);
 }
 
 /* ============================================================================================ */
@@ -86,17 +64,6 @@ body.juice {
     --shadow100: #2e20088a;
     --danger100: #ff5c5c;
     --accent100: var(--primary100);
-
-
-    --previewPrimary: var(--primary100);
-    --previewPrimary300: var(--primary300);
-    --previewBackground: var(--background100);
-    --previewPrimaryOnBackground: var(--previewPrimary);
-
-    --previewDarkPrimary: #2b2b2b;
-    --previewDarkPrimary300: #a17066;
-    --previewDarkBackground: #1c1c1c;
-    --previewDarkPrimaryOnBackground: #c54f35;
 }
 
 body.juice.dark {
@@ -116,17 +83,6 @@ body.juice.dark {
     --shadow100: #dca99f6b;
     --danger100: #cd4646;
     --accent100: var(--primary100);
-
-    
-    --previewPrimary: #f58d64;
-    --previewPrimary300: #df9f87;
-    --previewBackground: #f5e6cc;
-    --previewPrimaryOnBackground: var(--previewPrimary);
-
-    --previewDarkPrimary: var(--primary100);
-    --previewDarkPrimary300: var(--primary300);
-    --previewDarkBackground: var(--background100);
-    --previewDarkPrimaryOnBackground: var(--textPrimaryOnBackground);
 }
 
 /* ============================================================================================ */
@@ -148,17 +104,6 @@ body.sand {
     --shadow100: #42332554;
     --danger100: #d95d5d;
     --accent100: var(--primary100);
-
-
-    --previewPrimary: var(--primary100);
-    --previewPrimary300: var(--primary300);
-    --previewBackground: var(--background100);
-    --previewPrimaryOnBackground: var(--textPrimaryOnBackground);
-
-    --previewDarkPrimary: #3c2f2f;
-    --previewDarkPrimary300: #8c7c7c;
-    --previewDarkBackground: #4d3f3f;
-    --previewDarkPrimaryOnBackground: #c38957;
 }
 
 body.sand.dark {
@@ -178,17 +123,6 @@ body.sand.dark {
     --shadow100: #bdb5b5a6;
     --danger100: #d95d5d;
     --accent100: var(--primary100);
-
-
-    --previewPrimary: #bfae9f;
-    --previewPrimary300: #bc9370;
-    --previewBackground: #f5efe8;
-    --previewPrimaryOnBackground: #724721;
-
-    --previewDarkPrimary: var(--primary100);
-    --previewDarkPrimary300: var(--primary300);
-    --previewDarkBackground: var(--background100);
-    --previewDarkPrimaryOnBackground: var(--textPrimaryOnBackground);
 }
 
 /* ============================================================================================ */
@@ -210,17 +144,6 @@ body.lavender {
     --shadow100: #84709494;
     --danger100: #d95d5d;
     --accent100: var(--primary100);
-
-
-    --previewPrimary: var(--primary100);
-    --previewPrimary300: var(--primary300);
-    --previewBackground: var(--background100);
-    --previewPrimaryOnBackground: var(--previewPrimary);
-
-    --previewDarkPrimary: #2f2240;
-    --previewDarkPrimary300: #9984b3;
-    --previewDarkBackground: #3e324e;
-    --previewDarkPrimaryOnBackground: #a482d0;
 }
 
 body.lavender.dark {
@@ -240,17 +163,6 @@ body.lavender.dark {
     --shadow100: #f8efffb0;
     --danger100: #fb8484;
     --accent100: var(--primary100);
-
-
-    --previewPrimary: #8b5fbf;
-    --previewPrimary300: #b6a5ca;
-    --previewBackground: #f5f3f7;
-    --previewPrimaryOnBackground: var(--previewPrimary);
-
-    --previewDarkPrimary: var(--primary100);
-    --previewDarkPrimary300: var(--primary300);
-    --previewDarkBackground: var(--background100);
-    --previewDarkPrimaryOnBackground: var(--textPrimaryOnBackground);
 }
 
 /* ============================================================================================ */
@@ -272,17 +184,6 @@ body.jungle {
     --shadow100: #96a796;
     --danger100: #e83c3c;
     --accent100: var(--primary100);
-
-
-    --previewPrimary: var(--primary100);
-    --previewPrimary300: var(--primary300);
-    --previewBackground: var(--background100);
-    --previewPrimaryOnBackground: var(--previewPrimary);
-
-    --previewDarkPrimary: #212318;
-    --previewDarkPrimary300: #717654;
-    --previewDarkBackground: #333624;
-    --previewDarkPrimaryOnBackground: #d0d8b0;
 }
 
 body.jungle.dark {
@@ -302,17 +203,6 @@ body.jungle.dark {
     --shadow100: #f7ffe09e;
     --danger100: #bc3232;
     --accent100: var(--primary100);
-
-
-    --previewPrimary: #658864;
-    --previewPrimary300: #98bc98;
-    --previewBackground: #dddddd;
-    --previewPrimaryOnBackground: var(--previewPrimary);
-
-    --previewDarkPrimary: var(--primary100);
-    --previewDarkPrimary300: var(--primary300);
-    --previewDarkBackground: var(--background100);
-    --previewDarkPrimaryOnBackground: var(--textPrimaryOnBackground);
 }
 
 /* ============================================================================================ */
@@ -332,4 +222,5 @@ body {
     background-color: var(--background100);
     color: var(--text100);
     transition: color 0.3s, background-color 0.3s;
+    position: relative;
 }
