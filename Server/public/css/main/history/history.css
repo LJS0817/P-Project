@@ -195,6 +195,7 @@ hr {
     padding: 1em;
     gap: 0.5em;
     border-bottom: 1px solid var(--background200);
+    height: 7.4em;
   }
 
   .result .linked p:nth-child(1),
