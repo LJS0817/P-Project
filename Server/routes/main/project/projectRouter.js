@@ -30,7 +30,7 @@ router.get('/add', (req, res) => {
 });
 
 router.get('/edit/:id', (req, res) => {
-    res.render('main/index', {content:"./project/setProject.ejs", title:"Project", subtitle:"Add new project", flag:"edit"}, (e, content) => {
+    res.render('main/index', {content:"./project/setProject.ejs", title:"Project", subtitle:"Edit project", flag:"edit", id:req.params.id}, (e, content) => {
         res.end(content);
     });
 });

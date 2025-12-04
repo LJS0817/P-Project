@@ -1,0 +1,16 @@
+
+.result .linked p:nth-child(1) {
+    width: 20%;
+}
+
+.result .linked p:nth-child(2) {
+    width: 20%;
+}
+
+.result .linked p:nth-child(3) {
+    width: 30%;
+}
+
+.result .linked p:nth-child(4) {
+    width: 30%;
+}

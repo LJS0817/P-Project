@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="/css/main/history/history.css" />
 <script src="/js/main/history/filterProject.js" defer></script>
 <script src="/js/main/scroll.js" defer></script>
+<script src="/js/main/sort.js" defer></script>
 <div class="histories listParent">
     <div class="filterContainer">
         <h3>Filter</h3>
@@ -33,17 +34,17 @@
     </div>
     <div class="result listParent">
         <div class="categories linked">
-            <p>Date</p>
-            <p>Project name</p>
-            <p>Page name</p>
+            <p class="sortable">Date<span class="arrow">▼</span></p>
+            <p class="sortable">Project name<span class="arrow">▼</span></p>
+            <p class="sortable">Page name<span class="arrow">▼</span></p>
         </div>
         <div class="historyContainer listContainer">
             <div class="historyList list">
                 <% history.forEach(hist => { %>
                     <%- include('historyContainer', {
                         date: hist.date,
-                        project: hist.desc,
-                        page: hist.pages,
+                        project: hist.project,
+                        page: hist.page,
                     }) %>
                 <% }); %>
             </div>

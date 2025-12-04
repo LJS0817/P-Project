@@ -1,0 +1,257 @@
+.sidebar {
+    box-sizing: border-box;
+    width: 250px;
+    display: flex;
+    height: 100%;
+    background-color: var(--primary100);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0px;
+    color: var(--textOnPrimary);
+    font-size: 16px; 
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar h1 {
+    cursor: pointer;
+}
+
+@media (max-width: 1200px), (max-height: 1000px) {
+    .sidebar {
+        font-size: 14px;
+        width: 220px;
+    }
+}
+
+@media (max-width: 768px), (max-height: 800px) {
+    .sidebar {
+        font-size: 12px;
+        width: 180px;
+    }
+}
+
+@media (max-height: 600px) {
+    .contentContainer {
+        font-size: 11px; 
+    }
+}
+
+.sidebar h1 {
+    font-size: 2.4em;
+    margin: 0.5em 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.8em; 
+    width: 100%;
+}
+
+span {
+    z-index: 3;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.5; 
+}
+
+.sidebar ul li {
+    cursor: pointer;
+    display: flex;
+    gap: 0.8em; 
+    font-size: 1.8em;
+    font-weight: 300;
+    
+    height: 2.5em; 
+    
+    align-items: center;
+    margin-left: 10%;
+    padding-left: 10%;
+    transition: color 0.3s, background-color 0.3s;
+    position: relative;
+}
+
+.sidebar ul li::after {
+    z-index: 2;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0px; 
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    transition: width 0.3s, background-color 0.3s;
+    will-change: width;
+}
+
+.sidebar ul li:hover::after {
+    width: 0.4em; 
+    background-color: var(--background100);
+}
+
+.sidebar ul li svg {
+    z-index: 3;
+    width: 1em;
+    height: 1em;
+    fill: var(--textOnPrimary);
+    transition: fill 0.3s;
+}
+
+.sidebar ul li.active {
+    color: var(--textPrimaryOnBackground);
+    font-weight: 400;
+}
+
+.sidebar ul li.active::after {
+    width: 100%;
+    background-color: var(--background100);
+}
+
+.sidebar ul li span::before {
+    z-index: 3;
+    content: "";
+    position: absolute;
+    top: -0.899em;
+    right: 0;
+    width: 0.4em;
+    height: 0.9em;
+    background-color: var(--primary100);
+    border-radius: 0 0 30px 0;
+    transition: width 0.3s, background-color 0.3s;
+    will-change: width;
+}
+
+.sidebar ul li.active span::before {
+    width: 1.1em;
+}
+
+.sidebar ul li span::after {
+    z-index: 3;
+    content: "";
+    position: absolute;
+    bottom: -0.8em;
+    right: 0;
+    width: 0.3em;
+    height: 0.8em;
+    background-color: var(--primary100);
+    border-radius: 0 30px 0 0;
+    transition: width 0.3s, background-color 0.3s;
+    will-change: width, opacity;
+}
+
+.sidebar ul li.active span::after {
+    width: 1em;
+}
+
+.sidebar ul li::before {
+    z-index: 2;
+    content: "";
+    position: absolute;
+    top: -0.799em;
+    right: 0;
+    width: 0em;
+    height: 0.8em;
+    background-color: var(--background100);
+    opacity: 0;
+    transition: width 0.3s, background-color 0.3s, opacity 0.3s;
+    will-change: width, opacity;
+}
+
+.sidebar ul li.active::before {
+    width: 1em;
+    opacity: 1;
+}
+
+.sidebar ul li div::before {
+    z-index: 2;
+    content: "";
+    position: absolute;
+    bottom: -0.8em;
+    right: 0;
+    width: 0em;
+    height: 0.8em;
+    background-color: var(--background100);
+    opacity: 0;
+    transition: width 0.3s, background-color 0.3s, opacity 0.3s;
+    will-change: width, opacity;
+}
+
+.sidebar ul li.active div::before {
+    width: 1em;
+    opacity: 1;
+}
+
+.sidebar ul li.active svg {
+    fill: var(--textPrimaryOnBackground);
+}
+
+.sidebar .addProjectBtn {
+    text-decoration: none;
+    color: var(--primary100);
+    background-color: var(--textOnPrimary);
+    width: 80%;
+    
+    height: 4em; 
+    
+    padding: 0 1em;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    font-weight: 500;
+    border-radius: 10px;
+    font-size: 1.1em;
+    transition: 0.3s;
+} 
+
+.sidebar .addProjectBtn:hover {
+    background-color: var(--primary200);
+    color: var(--textOnPrimary);
+} 
+
+.sidebar .addProjectBtn .addSphere {
+    width: 2.2em;
+    height: 2.2em;
+    
+    background-color: var(--primary100);
+    color: var(--textOnPrimary);
+    text-align: center;
+    
+    line-height: 2.2em; 
+    
+    font-size: 1.4em;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.sidebar .addProjectBtn:hover .addSphere {
+    background-color: var(--primary200);
+    color: var(--textOnPrimary);
+} 
+
+.sidebar .watch {
+    margin-top: 0.6em;
+    
+    height: 3em;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+.sidebar .watch svg {
+    width: 1.5em;
+    height: 1.5em;
+    fill: var(--textOnPrimary);
+}
+
+.sidebar .watch span {
+    font-size: 1.3em;
+}

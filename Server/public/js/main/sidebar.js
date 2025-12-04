@@ -12,12 +12,12 @@ const curUrl = window.location.pathname.split('/');
 // const prevUrl = document.referrer.replace('http://ceprj2.gachon.ac.kr:65024', '').split('/');
 const prevUrl = document.referrer.replace('http://localhost:3000', '').split('/');
 
-const getUrl = (index) => {
-    if(index == 0) return '/dashboard/'
-    else if(index == 1) return '/dashboard/project'
-    else if(index == 2) return '/dashboard/history'
-    else return '/dashboard/settings'
-}
+// const getUrl = (index) => {
+//     if(index == 0) return '/dashboard/'
+//     else if(index == 1) return '/dashboard/project'
+//     else if(index == 2) return '/dashboard/history'
+//     else return '/dashboard/settings'
+// }
 
 const checkUrl = (url) => {
     if(url.length == 2) {
@@ -41,8 +41,9 @@ setTimeout(() => {
 // console.log(curUrl);
 
 for (let i = 0; i < sidebar.children.length; i++) {
+     console.log();
     sidebar.children[i].onclick = () => {
         changeView(i);
-        location.href = getUrl(i);
+        location.href = sidebar.children[i].dataset.link;
     }
 }

@@ -15,6 +15,7 @@ app.use('/dashboard', require('./routes/main/dashboard/router'));
 app.use('/dashboard/project', require('./routes/main/project/projectRouter'));
 app.use('/dashboard/history', require('./routes/main/history/historyRouter'));
 app.use('/dashboard/settings', require('./routes/main/settings/settingRouter'));
+app.use('/admin', require('./routes/main/admin/adminRouter'));
 
 
 // 서버 시작

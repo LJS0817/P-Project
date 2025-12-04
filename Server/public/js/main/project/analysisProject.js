@@ -26,7 +26,6 @@ document.addEventListener('mousemove', (e) => {
     const percentage = Math.round((newBottom / (trackHeight - thumbHeight)) * 100) * 0.01;
     thumb.children[2].style.opacity = 1 - percentage;
     thumb.children[0].style.opacity = 1 - percentage;
-    // console.log(percentage);
 });
 
 document.addEventListener('mouseup', () => {
@@ -73,29 +72,26 @@ function addNewPageRow() {
             <p class="area">${currentDateTime}</p>
             <div class="btnGroup area">
                 <a href="#">Download</a>
-                <a href="#">Reset</a>
+                <a href="#" class="resetBtn">Reset</a>
                 <a href="#" class="deleteBtn">Delete</a>
             </div>
         </div>
     `;
 
-    // HTML 삽입
     listContainer.insertAdjacentHTML('beforeend', newRowHTML);
 
-    // 방금 추가된 요소 가져오기
     const newRow = listContainer.lastElementChild;
     const nameInput = newRow.querySelector('.pageNameInput');
 
-    // 이벤트 연결
     bindEventsToRow(newRow);
 
-    // 새 항목은 바로 포커스
     if (nameInput) nameInput.focus();
 }
 
 function bindEventsToRow(row) {
     const nameInput = row.querySelector('.pageNameInput');
     const deleteBtn = row.querySelector('.deleteBtn');
+    const resetBtn = row.querySelector('.resetBtn');
 
     if (nameInput) {
         nameInput.addEventListener('blur', () => convertToStaticText(nameInput));
@@ -104,14 +100,52 @@ function bindEventsToRow(row) {
         });
     }
 
+    if (resetBtn) {
+        resetBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const currentName = row.querySelector('.pageNameInput')?.value || row.querySelector('.pageName').textContent.trim();
+            
+            window.openPopup('Reset page data', 'danger', `<p>${currentName} 페이지 데이터를 초기화하시겠습니까</p>`, () => {
+                // row.remove();
+                fetch(resetBtn.href, {
+                    method: 'GET'
+                })
+                .then(response => {
+                    if (response.ok) {
+                        const dateElement = row.querySelector('p.area');
+                        if (dateElement) {
+                            dateElement.textContent = getCurrentDateTimeString();
+                        }
+                        const statusElement = row.querySelector('.status.done');
+                        if(statusElement) statusElement.classList.remove('done');
+                    } else {
+                        console.error('삭제 실패');
+                    }
+                })
+                .catch(error => console.error('에러 발생:', error));
+            })
+        });
+    }
+
     if (deleteBtn) {
         deleteBtn.addEventListener('click', (e) => {
             e.preventDefault();
             const currentName = row.querySelector('.pageNameInput')?.value || row.querySelector('.pageName').textContent.trim();
             
-            if (confirm(`페이지 "${currentName}"를 삭제하시겠습니까?`)) {
-                row.remove();
-            }
+            window.openPopup('Delete page', 'danger', `<p>${currentName} 페이지를 삭제하시겠습니까</p>`, () => {
+                fetch(deleteBtn.href, {
+                    method: 'GET'
+                })
+                .then(response => {
+                    if (response.ok) {
+                        row.remove();
+                        console.log('삭제 성공');
+                    } else {
+                        console.error('삭제 실패');
+                    }
+                })
+                .catch(error => console.error('에러 발생:', error));
+            })
         });
     }
 }
@@ -143,15 +177,13 @@ function enableClickToEdit(cellElement) {
         cellElement.appendChild(tempInput);
         tempInput.focus();
 
-        // 이벤트 재연결
         tempInput.addEventListener('blur', () => convertToStaticText(tempInput));
         tempInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') convertToStaticText(tempInput);
         });
-    }, { once: true }); // 클릭 이벤트는 input이 되면 사라져야 하므로 once: true 추천
+    }, { once: true });
 }
 
-// 6. 서버 전송 함수 (기존 유지)
 async function savePageNameToServer(name) {
     try {
         console.log(`[서버 전송] 페이지 이름: ${name}`);
@@ -163,7 +195,6 @@ async function savePageNameToServer(name) {
     }
 }
 
-// 7. 날짜 포맷 헬퍼 함수 (YYYY.MM.DD HH:mm)
 function getCurrentDateTimeString() {
     const now = new Date();
     const year = now.getFullYear();

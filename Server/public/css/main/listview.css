@@ -34,8 +34,46 @@
     box-sizing: border-box;
     font-size: 1.1em;
     transition: color 0.3s, background-color 0.3s;
-    position: relative
+    position: relative;
+    z-index: 1;
+    align-items: center;
 }
+
+.linked .sortable {
+    cursor: pointer;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.linked .sortable:hover {
+    color: var(--textPrimaryOnBackground);
+}
+
+.linked .sortable span {
+    font-size: 0.75em;
+    margin-left: 1em;
+}
+
+.linked .sortable .arrow {
+    display: inline-block;
+    font-size: 0.75em;
+    margin-left: 0.5em;
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+}
+
+.linked .sortable:hover .arrow {
+    opacity: 0.3;
+}
+
+.linked .sortable.asc .arrow, 
+.linked .sortable.desc .arrow { 
+    opacity: 1; 
+}
+
+.linked .sortable.asc .arrow { transform: rotate(180deg); }
+.linked .sortable.desc .arrow { transform: rotate(0deg); }
 
  .categories {
     width: 100%;
@@ -64,9 +102,9 @@
     top: 2.4em;
     opacity: 0;
     transition: background-color 0.2s, opacity 0.3s, height 0.2s;
-    z-index: 1000;
+    z-index: 50;
 }
 
 .scrollBar:hover, .scrollBar.active {
-    background-color: var(--textPrimaryOnBackground,);
+    background-color: var(--textPrimaryOnBackground);
 }

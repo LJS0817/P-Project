@@ -1,0 +1,30 @@
+<h1 class="auth-title">Create account</h1>
+
+<form action="/auth/signup" method="POST" id="userForm">
+  <p>
+    Incorrect username or password.
+  </p>
+
+  <div class="input-group">
+    <input type="text" name="userid" placeholder="ID" class="input-field" />
+  </div>
+
+  <div class="input-group">
+    <input type="email" name="useremail" placeholder="E-mail" class="input-field" />
+  </div>
+
+  <div class="input-group">
+    <input type="text" name="username" placeholder="Username" class="input-field" />
+  </div>
+
+  <div class="input-group">
+    <input type="password" name="password" placeholder="Password" id="password" class="input-field" />
+    <i class="fas fa-eye-slash toggle-pw" onclick="togglePassword(this)"></i>
+  </div>
+
+  <button type="submit" class="btn-submit">Create account</button>
+</form>
+
+<div class="auth-footer">
+  Already have an account? <a href="/auth/signin">Login</a>
+</div>

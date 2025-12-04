@@ -1,0 +1,151 @@
+.histories {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 2em 10em;
+    box-sizing: border-box;
+}
+
+.histories .filterContainer {
+    width: 100%;
+    /* height: 16em; */
+    border-radius: 0.7em;
+    border: 3px solid var(--background200);
+    padding: 1.5em 3em;
+    box-sizing: border-box;
+}
+
+.histories .filterContainer h3 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.histories .filterContainer .filters {
+    margin: 0 2em;
+    box-sizing: border-box;
+}
+
+/* .histories .filterContainer .filters > div{
+    height: 3em;
+    display: flex;
+    align-items: center;
+    margin: 0 3em;
+    box-sizing: border-box;
+    width: 100%;
+} */
+
+.histories .filterContainer .filters > div {
+    height: 3em;
+    display: flex;
+    align-items: center;
+    margin: 0 3em;
+    box-sizing: border-box;
+    
+    /* ▼▼ [수정] 중요! 부모가 너비를 꽉 잡고 있어야 합니다 ▼▼ */
+    width: 100%; 
+    
+    /* 혹시 모를 부모 영역 침범 방지 (선택 사항이지만 추천) */
+    overflow: hidden; 
+}
+
+.histories .filterContainer .filters p {
+    display: inline-block;
+    font-size: 1.3em;
+    width: 4em;
+}
+
+.histories .filterContainer .filters .details {
+    flex: 1;
+    width: 0; 
+    overflow-x: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+
+.histories .filterContainer .filters .details::-webkit-scrollbar {
+    display: none;
+}
+
+
+.histories .filterContainer .filters .details .filter {
+    display: inline-block;
+    border-radius: 10em;
+    background-color: transparent;
+    border: 2px solid var(--primary300);
+    font-weight: 500;
+    padding: 0.1em 0.8em;
+    font-size: 1.1em;
+    line-height: 1.5;
+    transition: 0.3s;
+    cursor: pointer;
+    color: var(--primary300);
+
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.histories .filterContainer .filters .details .filter:hover,
+.histories .filterContainer .filters .details .filter.active:hover {
+    background-color: var(--primary200);
+    border-color: var(--primary200);
+    color: var(--textOnPrimary);
+}
+
+.histories .filterContainer .filters .details .filter.active {
+    background-color: var(--textPrimaryOnBackground);
+    border-color: var(--textPrimaryOnBackground);
+    color: var(--textOnPrimary);
+}
+
+.dateSelector span {
+    margin: 0 1em;
+    color: var(--primary300);
+    font-weight: 500;
+}
+
+#startDate,
+#endDate {
+    border: 2px solid var(--primary300);
+    background-color: var(--background100);
+    border-radius: 0.5em;
+    padding: 0.3em 0.5em;
+    color: var(--primary300);
+    font-weight: 500;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+#startDate:focus-visible,
+#endDate:focus-visible {
+    outline: none;
+}
+
+.histories .result {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.result .linked p:nth-child(1) {
+    width: 20%;
+}
+
+.result .linked p:nth-child(2) {
+    width: 40%;
+}
+
+.result .linked p:nth-child(3) {
+    width: 30%;
+}
+
+hr {
+    border-color: var(--primary300);
+}

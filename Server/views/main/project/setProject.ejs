@@ -4,11 +4,14 @@
 <div class="add-project-container">
   <div class="form-wrapper">
     <div class="form-header">
-      <h2>Add new project</h2>
+      <h2><%= (flag == "add" ? "Add new" : "Edit") %> project</h2>
       <span class="required-note">Required fields are marked with an asterisk (*).</span>
     </div>
 
     <form action="/dashbaord/project/<%= flag %>Project" id="projectForm" method="POST">
+      <% if(locals.id) { %>
+        <input type="hidden" name="projectId" value="<%= id %>">
+      <% } %>
       <div class="form-group">
         <input type="text" id="projectName" class="form-input" placeholder="Project name *" />
       </div>
@@ -58,7 +61,7 @@
                     ">
           Cancel
         </a>
-        <button type="submit" class="btn-fill wide">Add Project</button>
+        <button type="submit" class="btn-fill wide"><%= (flag == "add" ? "Add new" : "Edit") %> Project</button>
       </div>
     </form>
   </div>
