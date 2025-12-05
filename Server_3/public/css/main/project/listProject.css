@@ -1,0 +1,431 @@
+.listProject {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 50px 20px 50px;
+    box-sizing: border-box;
+}
+
+.listProject .projectMenu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+}
+
+.listProject .projectMenu a {
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: var(--primary100);
+    color: var(--textOnPrimary);
+    padding: 10px 20px;
+    font-size: 0.9em;
+    transition: 0.3s;
+}
+
+.listProject .projectMenu a:hover {
+    background-color: var(--primary300);
+}
+
+.listProject .projectMenu a p {
+    margin-left: 20px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.listProject .projects {
+    table-layout : fixed;
+    /* flex: 1; */
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.listProject .projects thead {
+    background-color: var(--background200);
+    height: 40px;
+    font-size: 1.1em;
+}
+
+.listProject .projects thead th {
+    border-right: 2px dashed var(--placeholderText);
+}
+
+.listProject .projects thead th:first-child {
+    border-radius: 10px 0 0 0;
+}
+
+.listProject .projects thead th:last-child {
+    border-right: none;
+    border-radius: 0 10px 0 0;
+}
+
+.listProject .projects tbody td {
+    height: 70px;
+    z-index: 3;
+    font-size: 1.3em;
+    transition: 0.3s;
+    position: relative;
+}
+
+.listProject .projects tbody tr:nth-child(even) {
+    background-color: var(--background200);
+}
+
+.listProject .projects td,
+.listProject .projects th {
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.listProject .projects tbody tr {
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.listProject .projects tbody tr::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 0;
+    left: 0;
+    top: 0;
+    transition: 0.3s;
+    opacity: 0;
+    background : linear-gradient(90deg,var(--primary100) 0%, var(--gradient100) 100%);
+}
+
+.listProject .projects tbody tr:hover::after {
+    width: 100%;
+    opacity: 1;
+}
+
+.listProject .projects tbody td .pdfDownload {
+    background-color: var(--background200);
+    color: var(--text100);
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-weight: 500;
+    box-shadow: inset 1px 4px 20px -14px var(--shadow100);
+    gap: 0.8em;
+    transition: 0.3s;
+}
+
+.listProject .projects tbody td .pdfDownload svg {
+    width: 1em;
+    height: 1em;
+    fill: var(--text100);
+    transition: 0.3s;
+}
+
+.listProject .projects tbody tr:nth-child(even) .pdfDownload {
+    background-color: var(--background100);
+}
+
+.listProject .projects tbody tr:hover .pdfDownload:hover {
+    background-color: var(--primary200);
+    color: var(--textOnPrimary);
+}
+
+.listProject .projects tbody tr:hover .pdfDownload:hover svg {
+    fill: var(--textOnPrimary);
+}
+
+.listProject .projects tbody tr:hover .pdfDownload svg {
+    fill: var(--primary100);
+}
+
+.listProject .projects tbody tr:hover .pdfDownload {
+    background-color: var(--alphaPrimary);
+    color: var(--primary100);
+}
+
+.listProject .projects tbody td span {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 1.5;
+    display: block;
+    font-size: 0.7em;
+    color: var(--alphaText);
+}
+
+/* .listProject .projects tbody tr:hover td p {
+    color: var(--textOnPrimary);
+} */
+
+.listProject .projects tbody tr:hover td span {
+    color: var(--textOnPrimary);
+    opacity: 0.6;
+}
+
+.listProject .projects tbody tr:hover td:nth-child(2), 
+.listProject .projects tbody tr:hover td:nth-child(3),
+.listProject .projects tbody tr:hover td:nth-child(4) {
+    color: var(--textOnPrimary);
+}
+
+.listProject .projects thead th:nth-child(1) {
+    width: 10%;
+}
+
+.listProject .projects thead th:nth-child(2) {
+    width: 30%;
+}
+
+.listProject .projects thead th:nth-child(3) {
+    width: 10%;
+}
+ 
+.listProject .projects thead th:nth-child(4),
+.listProject .projects tbody tr td:nth-child(4) {
+    width: 5%;
+    text-align: center;
+}
+
+.listProject .projects thead th:nth-child(5) {
+    width: 15%;
+}
+
+.listProject .projects thead th:nth-child(6) {
+    width: 30%;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.buttons .viewMore {
+    width: 40%;
+    height: 40px;
+    color: var(--textOnPrimary);
+    background-color: var(--primary100);
+    border-radius: 40px;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 1px 4px 7px -3px var(--primary100);
+    transition: 0.3s;
+}
+
+.buttons .option {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background200);
+    border-radius: 40px;
+    box-shadow: inset 1px 4px 20px -14px var(--shadow100);
+    transition: 0.3s;
+}
+
+.listProject .projects tbody tr:nth-child(even) .buttons .option {
+    background-color: var(--background100);
+}
+
+.buttons .option:hover,
+.listProject .projects tbody tr:nth-child(even) .buttons .option:hover {
+    background-color: var(--textPrimaryOnBackground);
+}
+
+.buttons .option svg {
+    fill: var(--text100);
+    transition: 0.3s;
+    width: 1em;
+    height: 1em;
+}
+
+.buttons .option:nth-child(3) svg {
+    fill: var(--danger100);
+}
+
+.buttons .option:hover svg {
+    fill: var(--textOnPrimary);
+}
+
+.buttons .option:nth-child(3):hover,
+.listProject .projects tbody tr:nth-child(even) .buttons .option:nth-child(3):hover {
+    background-color: var(--danger100);
+}
+
+.buttons .viewMore:hover {
+    background-color: var(--primary300);
+}
+
+@media (max-width: 768px) {
+  .listProject {
+    padding: 1.5em 1em;
+  }
+
+  .listProject .projectMenu {
+    flex-direction: column;
+    gap: 1em;
+    align-items: stretch;
+    font-size: 1em;
+  }
+
+  .listProject .projectMenu p {
+    text-align: left;
+  }
+
+  .listProject .projectMenu a {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0.8em 1.5em;
+  }
+
+  .listProject .projects thead {
+    display: none;
+  }
+
+  .listProject .projects tbody,
+  .listProject .projects tr,
+  .listProject .projects td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .listProject .projects tbody tr {
+    margin-bottom: 1.5em;
+    border: 2px solid var(--background200);
+    border-radius: 0.8em;
+    padding: 1.2em;
+    background-color: var(--background100);
+    box-shadow: 0 2px 8px var(--shadow100);
+    cursor: default;
+  }
+
+  .listProject .projects tbody tr:nth-child(even) {
+    background-color: var(--background100);
+  }
+
+  .listProject .projects tbody tr:hover {
+    background-color: var(--background100);
+  }
+  .listProject .projects tbody tr::after {
+    display: none;
+  }
+
+  .listProject .projects tbody td {
+    height: auto;
+    padding: 0.8em 0;
+    text-align: left;
+    border-bottom: 1px solid var(--background200);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1em;
+    color: var(--text100) !important;
+  }
+
+  .listProject .projects tbody td span {
+    color: var(--alphaText) !important;
+  }
+
+  .listProject .projects tbody td:first-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .listProject .projects tbody td:last-child {
+    border-bottom: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8em;
+    padding-top: 1em;
+  }
+
+  .listProject .projects tbody td p {
+    text-align: right;
+    flex: 1;
+  }
+
+  .listProject .projects tbody td:nth-child(2) p {
+    font-weight: 600;
+  }
+
+  .listProject .projects tbody td span {
+    display: block;
+    text-align: right;
+    margin-top: 0.3em;
+  }
+
+  .listProject .projects tbody td:nth-child(2)::before {
+    content: "Name";
+    font-weight: 600;
+    color: var(--text200);
+    font-size: 0.9em;
+  }
+
+  .listProject .projects tbody td:nth-child(3)::before {
+    content: "Author";
+    font-weight: 600;
+    color: var(--text200);
+    font-size: 0.9em;
+  }
+
+  .listProject .projects tbody td:nth-child(4) {
+    justify-content: flex-start;
+    gap: 265px;
+  }
+
+  .listProject .projects tbody td:nth-child(4)::before {
+    content: "Pages";
+    font-weight: 600;
+    color: var(--text200);
+    font-size: 0.9em;
+  }
+
+  .listProject .projects tbody td:nth-child(5)::before {
+    content: "Updated";
+    font-weight: 600;
+    color: var(--text200);
+    font-size: 0.9em;
+  }
+
+  .listProject .projects tbody td .pdfDownload {
+    background-color: var(--primary100);
+    color: var(--textOnPrimary);
+    box-shadow: none;
+    padding: 0.8em 1.5em;
+    cursor: pointer;
+  }
+
+  .listProject .projects tbody tr:nth-child(even) .pdfDownload {
+    background-color: var(--primary100);
+  }
+
+  .buttons {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.5em;
+  }
+
+  .buttons .viewMore {
+    flex: 1;
+    padding: 0.8em;
+    height: 20px;
+    font-size: 1.05em;
+  }
+
+  .buttons .option {
+    width: 2.8em;
+    height: 2.8em;
+  }
+}

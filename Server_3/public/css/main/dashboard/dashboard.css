@@ -1,0 +1,378 @@
+.dashboardContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 120em;
+    align-self: center;
+    width: 100%;
+    max-height: 50em;
+}
+
+.cardContainer {
+    display: flex;
+    margin: 20px 30px 0 30px;
+    height: 175px;
+    gap: 100px;
+}
+
+.cardContainer .projectCard {
+    display: flex;
+    width: 26em;
+    border-radius: 15px;
+    padding: 15px 20px 20px 20px;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: 0.3s;
+    color: var(--textOnPrimary);
+}
+
+.cardContainer .projectCard:hover {
+    transform: translateY(10px);
+}
+
+.cardContainer .projectCard:nth-child(1) {
+    background-color: var(--primary300);
+}
+
+.cardContainer .projectCard:nth-child(2) {
+    background-color: var(--primary200);
+}
+
+.cardContainer .projectCard:nth-child(3) {
+    background-color: var(--primary100);
+}
+
+.cardContainer .projectCard .cardInfo {
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.cardContainer .projectCard .cardInfo .viewProjectBtn {
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.cardContainer .projectCard .cardInfo .viewProjectBtn svg {
+    width: 1rem;
+    height: 1rem;
+    fill: var(--textOnPrimary);
+    transform: translateY(0.25em);
+}
+
+.cardContainer .projectCard .cardInfo div p:nth-child(1) {
+    transform: translateY(5px);
+    font-size: 1.8em;
+}
+
+.cardContainer .projectCard .cardInfo div p:nth-child(2) {
+    font-size: 1.1em;
+}
+
+.cardContainer .projectCard .cardInfo div p:nth-child(3) {
+    font-size: 1.1em;
+}
+
+.cardContainer .projectCard .subMenu {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    justify-content: space-between;
+}
+
+/* .cardContainer .projectCard .subMenu a{
+    width: 25px;
+    height: 25px;
+    align-self: end;
+    transform: translate(-6px, -2px);
+}
+
+.cardContainer .projectCard .subMenu a svg {
+    fill: var(--accent200);
+} */
+
+.cardContainer .projectCard .subMenu .cardThumb {
+    height: 100%;
+    width: 100%;
+    align-self: end;
+}
+
+.cardContainer .projectCard:nth-child(1) .subMenu .cardThumb {
+    box-shadow: 0 0 8px 8px var(--primary300) inset;
+}
+
+.cardContainer .projectCard:nth-child(2) .subMenu .cardThumb {
+    box-shadow: 0 0 8px 8px var(--primary200) inset;
+}
+
+.cardContainer .projectCard:nth-child(3) .subMenu .cardThumb {
+    box-shadow: 0 0 8px 8px var(--primary100) inset;
+}
+
+.projectInfo {
+    display: flex;
+    margin-top: 30px;
+    flex: 1;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.projectInfo .lastestProject {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px 0 40px;
+    gap: 10px;
+}
+
+.projectInfo .lastestProject .prevImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+}
+
+.projectInfo .lastestProject .prevImage #projectImage {
+    flex: 1;
+    height: 100%;
+    border-radius: 0.6em;
+    background-color: var(--primary300);
+}
+
+.projectInfo .lastestProject .prevImage .arrow {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.projectInfo .lastestProject .arrow:nth-child(1) {
+    transform: scale(1) rotateZ(90deg);
+    fill: var(--textPrimaryOnBackground);
+}
+
+.projectInfo .lastestProject .prevImage .arrow:nth-child(1):hover {
+    transform: scale(1.4) rotateZ(90deg);
+}
+
+.projectInfo .lastestProject .arrow:nth-child(3) {
+    transform: scale(1) rotateZ(270deg);
+    fill: var(--textPrimaryOnBackground);
+}
+
+.projectInfo .lastestProject .prevImage .arrow:nth-child(3):hover {
+    transform: scale(1.4) rotateZ(270deg);
+}
+
+
+.projectInfo .lastestProject .imageCount {
+    height: 32px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.projectInfo .lastestProject .imageCount .dot {
+    width: 16px;
+    height: 16px;
+    background-color: var(--textPrimaryOnBackground);
+    opacity: 0.4;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.projectInfo .lastestProject .imageCount .dot:hover {
+    opacity: 0.6;
+}
+
+.projectInfo .lastestProject .imageCount .dot.active {
+    opacity: 1;
+}
+
+.projectInfo .history {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.projectInfo .history .historyList {
+    /* flex: 1; */
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    /* justify-content: space-evenly; */
+}
+
+.projectInfo .history .historyList .historyCard {
+    height: 80px;
+    width: 100%;
+    background-color: var(--background200);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding-left: 40px;
+    box-sizing: border-box;
+    box-shadow: inset -9px 4px 20px -14px var(--shadow100);
+}
+
+.projectInfo .history .historyList .historyCard p{
+    z-index: 3;
+}
+
+.projectInfo .history .historyList .historyCard p:nth-child(1) {
+    color: var(--text100);
+    font-size: 1.3em;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.projectInfo .history .historyList .historyCard:hover p:nth-child(1) {
+    color: var(--textOnPrimary);
+}
+
+.projectInfo .history .historyList .historyCard::after {
+    z-index: 2;
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 2em;
+    height: 100%;
+    background : linear-gradient(90deg,var(--primary100) 0%, var(--background200) 100%);
+    border-radius: 10px 0 0 10px;
+    transition: 0.3s;
+}
+
+.projectInfo .history .historyList .historyCard:hover::after {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.projectInfo .history .historyList .historyCard p:nth-child(2) {
+    color: var(--alphaText);
+    font-size: 1em;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.projectInfo .history .historyList .historyCard:hover p:nth-child(2) {
+    color: var(--textOnPrimary);
+}
+
+.projectInfo .history .seeMore {
+    height: 48px;
+    text-decoration: none;
+    text-align: center;
+    background-color: var(--primary100);
+    color: var(--textOnPrimary);
+    border-radius: 10px;
+    font-size: 1.3em;
+    line-height: 45px;
+    transition: 0.3s;
+}
+
+.projectInfo .history .seeMore:hover {
+    background-color: var(--primary300);
+}
+
+@media (max-width: 768px) {
+  .dashboardContainer {
+    height: auto;
+    max-height: none;
+    padding: 0 1em;
+  }
+
+  .cardContainer {
+    flex-direction: column;
+    height: auto;
+    margin: 1em 0;
+    gap: 1.5em;
+  }
+
+  .cardContainer .projectCard {
+    width: 100%;
+    min-height: 180px;
+    box-sizing: border-box;
+    padding: 1.2em;
+    flex-direction: column;
+  }
+
+  .cardContainer .projectCard .cardInfo {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
+  .cardContainer .projectCard .subMenu {
+    width: 100%;
+    height: 150px;
+  }
+
+  .cardContainer .projectCard .subMenu .cardThumb {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5em;
+  }
+
+  .projectInfo {
+    flex-direction: column;
+    margin-top: 1.5em;
+    padding: 0;
+    gap: 2em;
+  }
+
+  .projectInfo .lastestProject {
+    padding: 0;
+    width: 100%;
+  }
+
+  .projectInfo .lastestProject .prevImage {
+    height: 250px;
+    position: relative;
+  }
+
+  .projectInfo .lastestProject .prevImage #projectImage {
+    width: 100%;
+    height: 100%;
+  }
+
+  .projectInfo .lastestProject .prevImage .arrow {
+    position: absolute;
+    z-index: 10;
+  }
+
+  .projectInfo .lastestProject .arrow:nth-child(1) {
+    left: 1em;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+  }
+
+  .projectInfo .lastestProject .arrow:nth-child(3) {
+    right: 1em;
+    top: 50%;
+    transform: translateY(-50%) rotate(270deg);
+  }
+
+  .projectInfo .history {
+    width: 100%;
+  }
+
+  .projectInfo .history .historyList {
+    gap: 0.8em;
+  }
+
+  .projectInfo .history .historyList .historyCard {
+    padding-left: 1.5em;
+    height: 70px;
+  }
+}
