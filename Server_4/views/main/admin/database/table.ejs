@@ -1,0 +1,40 @@
+<h3 class="<%= index !== 0 ? 'disable' : '' %>"><%= name %> table<div class="selectBtn" data-table="<%= name %>" onclick="retrieveData(this)">Retrieve</div></h3>
+<% 
+    const validKeys = Object.keys(sche).filter(key => key !== 'id');
+    const colNum = validKeys.length; 
+%>
+<div class="verticalScrollableList <%= index !== 0 ? 'disable' : '' %>">
+    <div class="listParent" style="--col-num: <%= colNum %>;">
+        <div class="categories linked">
+            <% validKeys.forEach(key => { 
+                const value = sche[key];
+            %>
+                <p class="<%= value %>">
+                    <%= key %>
+                    <% if(value == "sortable") { %>
+                        <span class="arrow">▼</span>
+                    <% } %>
+                </p>
+            <% }); %>
+            <p>Option</p>
+        </div>
+        <div class="listContainer">
+            <div class="list">
+                <% data.forEach(d => { %>
+                    <div class="linked">
+                    <% validKeys.forEach((key) => { %>
+                        <p>
+                            <%= d[key] %>
+                        </p>
+                    <% }); %>
+                        <p onclick="deleteRow(this)" data-table="<%= name %>" data-id="<%= d.id %>">Delete</p>
+                    </div>
+                <% }); %>
+            </div>
+            <!-- <div class="scrollBar" id="customScroll"></div> -->
+        </div>
+    </div>
+    <div class="scrollTrack">
+        <div class="scrollBar" id="customScroll"></div>
+    </div>
+</div>

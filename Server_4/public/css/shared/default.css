@@ -1,0 +1,241 @@
+body {
+    --primary100: #3f51b5;
+    --primary200: #6572ba;
+    --primary300: #7d85b3;
+    --alphaPrimary: #dfe1ee;
+
+    --textOnPrimary: #e3e7ff;
+    --textPrimaryOnBackground: var(--primary100);
+    --text100: #333333;
+    --text200: #818181;
+    --alphaText: #33333381;
+    --placeholderText: #97979786;
+
+    --background100: #ffffff;
+    --background200: #f0f0f0;
+
+    --gradient100: #F5F5FF;
+
+    --shadow100: #00000085;
+
+    --danger100: #ff5a5a;
+
+    --accent100: #fff;
+}
+
+body.dark {
+    --primary100: #0b1627;
+    --primary200: #15305b;
+    --primary300: #556785;
+
+    --alphaPrimary: #587198;
+    --textOnPrimary: #a9bfe1;
+    --textPrimaryOnBackground: #497fcc;
+    --text100: #aec5e8;
+    --text200: #cdd8e9;
+    --alphaText: #a6c9ff80;
+    --placeholderText: #b2d1ff6b;
+
+    --background100: #19263b;
+    --background200: #2a384d;
+
+    --gradient100: #364358;
+    --shadow100: #d3e4ff;
+    --danger100: #b94343;
+    --accent100: #fff;
+}
+
+/* ============================================================================================ */
+
+body.juice {
+    --primary100: #f58d64;
+    --primary200: #de835f;
+    --primary300: #df9f87;
+    --alphaPrimary: #93573e8c;
+    --textOnPrimary: #ffeee7;
+    --textPrimaryOnBackground: var(--primary100);
+    --text100: #94573f;
+    --text200: #b06e54;
+    --alphaText: #c051258a;
+    --placeholderText: #d278549c;
+    --background100: #f5e6cc;
+    --background200: #ebdcc2;
+    --gradient100: #fff7ea;
+    --shadow100: #2e20088a;
+    --danger100: #ff5c5c;
+    --accent100: var(--primary100);
+}
+
+body.juice.dark {
+    --primary100: #2b2b2b;
+    --primary200: #a4573b;
+    --primary300: #a17066;
+    --alphaPrimary: #da7f6d75;
+    --textOnPrimary: #d6afa2;
+    --textPrimaryOnBackground: #c54f35;
+    --text100: #c8aea8;
+    --text200: #a67c75;
+    --alphaText: #f8b89fa8;
+    --placeholderText: #ffe3dd85;
+    --background100: #1c1c1c;
+    --background200: #383434;
+    --gradient100: #74544d;
+    --shadow100: #dca99f6b;
+    --danger100: #cd4646;
+    --accent100: var(--primary100);
+}
+
+/* ============================================================================================ */
+
+body.sand {
+    --primary100: #bfae9f;
+    --primary200: #937962;
+    --primary300: #bc9370;
+    --alphaPrimary: #8b715499;
+    --textOnPrimary: #fff5ec;
+    --textPrimaryOnBackground: #724721;
+    --text100: #5e330d;
+    --text200: #aa9888;
+    --alphaText: #a07b5b99;
+    --placeholderText: #997b6166;
+    --background100: #f5efe8;
+    --background200: #efe4d7;
+    --gradient100: #f5e9dc;
+    --shadow100: #42332554;
+    --danger100: #d95d5d;
+    --accent100: var(--primary100);
+}
+
+body.sand.dark {
+    --primary100: #3c2f2f;
+    --primary200: #796b6b;
+    --primary300: #8c7c7c;
+    --alphaPrimary: #d1b08a80;
+    --textOnPrimary: #e9dcd0;
+    --textPrimaryOnBackground: #c38957;
+    --text100: #c6ab92;
+    --text200: #b6a799;
+    --alphaText: #f0ccae85;
+    --placeholderText: #997b6166;
+    --background100: #4d3f3f;
+    --background200: #5e4f4f;
+    --gradient100: #6d6060;
+    --shadow100: #bdb5b5a6;
+    --danger100: #d95d5d;
+    --accent100: var(--primary100);
+}
+
+/* ============================================================================================ */
+
+body.lavender {
+    --primary100: #8b5fbf;
+    --primary200: #7149a0;
+    --primary300: #b6a5ca;
+    --alphaPrimary: #e5d0ff;
+    --textOnPrimary: #f4eaff;
+    --textPrimaryOnBackground: var(--primary100);
+    --text100: #441f71;
+    --text200: #3f2460;
+    --alphaText: #9e7ac980;
+    --placeholderText: #a17dcc69;
+    --background100: #f5f3f7;
+    --background200: #ebe8ef;
+    --gradient100: #f0eaf5;
+    --shadow100: #84709494;
+    --danger100: #d95d5d;
+    --accent100: var(--primary100);
+}
+
+body.lavender.dark {
+    --primary100: #2f2240;
+    --primary200: #684d8c;
+    --primary300: #9984b3;
+    --alphaPrimary: #ac9cc18c;
+    --textOnPrimary: #e1d4f3;
+    --textPrimaryOnBackground: #a482d0;
+    --text100: #f1e6ff;
+    --text200: #a794c0;
+    --alphaText: #f0e3ff80;
+    --placeholderText: #ebdcff69;
+    --background100: #3e324e;
+    --background200: #5a4d6b;
+    --gradient100: #6b5b82;
+    --shadow100: #f8efffb0;
+    --danger100: #fb8484;
+    --accent100: var(--primary100);
+}
+
+/* ============================================================================================ */
+
+body.jungle {
+    --primary100: #658864;
+    --primary200: #8cac8b;
+    --primary300: #98bc98;
+    --alphaPrimary: #acc4ac80;
+    --textOnPrimary: #cce0cc;
+    --textPrimaryOnBackground: var(--primary100);
+    --text100: #0d250d;
+    --text200: #465a46;
+    --alphaText: #45664470;
+    --placeholderText: #e0ffdf6e;
+    --background100: #dddddd;
+    --background200: #cad2ca;
+    --gradient100: #ccd4cc;
+    --shadow100: #96a796;
+    --danger100: #e83c3c;
+    --accent100: var(--primary100);
+}
+
+body.jungle.dark {
+    --primary100: #212318;
+    --primary200: #4b4d3e;
+    --primary300: #717654;
+    --alphaPrimary: #acc4ac80;
+    --textOnPrimary: #8f927f;
+    --textPrimaryOnBackground: #d0d8b0;
+    --text100: #ced4b5;
+    --text200: #c2c8a8;
+    --alphaText: #f8ffd761;
+    --placeholderText: #f8ffda61;
+    --background100: #333624;
+    --background200: #454738;
+    --gradient100: #1c1e12;
+    --shadow100: #f7ffe09e;
+    --danger100: #bc3232;
+    --accent100: var(--primary100);
+}
+
+/* ============================================================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background100);
+    color: var(--text100);
+    transition: color 0.3s, background-color 0.3s;
+    position: relative;
+}
+
+input.error {
+    border-color: var(--danger100);
+    color: var(--danger100);
+}
+
+i {
+    display: flex;
+    z-index: 3;
+}
+
+a {
+    text-decoration: none;
+}

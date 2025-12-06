@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="stylesheet" href="/css/shared/default.css"> 
+    <link rel="stylesheet" href="/css/main/sidebar.css"> 
+    <link rel="stylesheet" href="/css/main/topbar.css"> 
+    <link rel="stylesheet" href="/css/main/content.css"> 
+    <link rel="stylesheet" href="/css/main/popup.css"> 
+    <script src="/js/main/popup.js" defer></script>
+    <script src="/js/main/sidebar.js" defer></script>
+    <script src="/js/main/hamburger.js" defer></script>
+</head>
+<body class="<%= user && user.theme ? user.theme : '' %>"> 
+    <%- include("popup") %>
+    
+    <!-- 디버깅용 빨간화면 -->
+    <!-- <div style="background: red; color: white; padding: 20px; font-weight: bold; z-index: 9999; position: relative;">
+        DEBUG USER: <%= JSON.stringify(user) %>
+    </div> -->
+
+    <%- include("sidebar") %>
+    <div class="contentContainer">
+        <%- include("topbar") %>
+        <div class="content">
+            <div class="title">
+                <h2><%= title %></h2>
+                <p><%= subtitle %></p>
+            </div>
+            <%- include(content) %>
+        </div>
+    </div>
+</body>
+</html>
