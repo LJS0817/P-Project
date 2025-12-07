@@ -55,3 +55,27 @@
 .linked p:nth-child(3) {
     width: 30%;
 }
+
+
+@media (max-width: 768px) {
+    .dashboardContainer {
+        padding: 3em 0;
+    }
+    .chartContainer {
+        flex-direction: column;
+    }
+    .verticalScrollableList {
+        height: 40em !important;
+    }
+    .linked p:nth-child(1) {
+        width: 40%;
+    }
+
+    .linked p:nth-child(2) {
+        width: 30%;
+    }
+
+    .linked p:nth-child(3) {
+        width: 30%;
+    }
+}

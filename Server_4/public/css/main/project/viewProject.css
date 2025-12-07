@@ -80,58 +80,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 2px solid var(--textPrimaryOnBackground);
+    transition: 0.3s;
+    cursor: pointer;
 }
 
-.viewProject .page .result .uiGroup .ui svg {
-    width: 2em;
-    height: 2em;
+.viewProject .page .result .uiGroup .ui i {
+    font-size: 1.7em;
+    color: var(--textPrimaryOnBackground);
 }
 
-.viewProject .page .result .uiGroup .sliderContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 15em;
-}
-
-.viewProject .page .result .uiGroup #track {
-    position: relative;
-    width: 10px;
-    height: 100%;
-    background: var(--background200);
-    border-radius: 5px;
-}
-
-.viewProject .page .result .uiGroup #slider {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 100% - 3.5em;
-    
+.viewProject .page .result .uiGroup .ui.visibleBtn.active {
     background-color: var(--textPrimaryOnBackground);
-    border: 2px solid var(--textPrimaryOnBackground);
 }
 
-.viewProject .page .result .uiGroup #slider .background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: var(--textOnPrimary);
-    border: 2px solid var(--textPrimaryOnBackground);
-    border-radius: 1em;
-    opacity: 0;
-}
-
-.viewProject .page .result .uiGroup #slider svg {
-    position: absolute;
-    fill: var(--primary100);
-    transition: 0.1s;
-    opacity: 0;
-}
-
-.viewProject .page .result .uiGroup #slider svg:nth-child(2) {
-    fill: var(--textOnPrimary);
-    opacity: 1;
+.viewProject .page .result .uiGroup .ui.visibleBtn.active i {
+    color: var(--textOnPrimary);
 }
 
 .viewProject .page .result .uiGroup .btnContainer {
@@ -143,18 +107,16 @@
     gap: 1em;
 }
 
-.viewProject .page .result .uiGroup .addFile,
-.viewProject .page .result .uiGroup .sendDesign {
-    border: 2px solid var(--textPrimaryOnBackground);
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.viewProject .page .result .uiGroup .addFile:hover,
-.viewProject .page .result .uiGroup .sendDesign:hover {
+.viewProject .page .result .uiGroup .ui:hover,
+.viewProject .page .result .uiGroup .ui.active:hover {
     background-color: var(--primary300);
     border: 2px solid var(--primary300);
-    fill: var(--textPrimaryOnBackground);
+    color: var(--textOnPrimary);
+}
+
+.viewProject .page .result .uiGroup .ui:hover i,
+.viewProject .page .result .uiGroup .ui.active:hover i{
+    color: var(--textOnPrimary);
 }
 
 
@@ -162,18 +124,16 @@
     display: contents;
 }
 
-.viewProject .page .result .uiGroup .addFile .fileInput svg {
-    fill: var(--textPrimaryOnBackground);
-    transition: 0.3s;
-}
-
-.viewProject .page .result .uiGroup .addFile:hover .fileInput svg {
-    fill: var(--textPrimaryOnBackground);
-}
-
 .viewProject .page .result .uiGroup .sendDesign {
     background: var(--textPrimaryOnBackground);
-    fill: var(--textOnPrimary);
+}
+
+.viewProject .page .result .uiGroup .sendDesign p {
+    display: none;
+}
+
+.viewProject .page .result .uiGroup .sendDesign i {
+    color: var(--textOnPrimary);
 }
 
 #fileData {
@@ -214,6 +174,10 @@
     background-color: var(--primary300);
 }
 
+.linked {
+    padding: 0;
+}
+
 .viewProject .pageList .linked {
     line-height: 1.5;
     align-items: center;
@@ -224,7 +188,7 @@
     border-bottom-left-radius: 0.3em;
 }
 
-.viewProject .pageList .categories .area:nth-child(2) {
+.viewProject .pageList .area:nth-child(2) {
     padding-left: 0.3em;
 }
 
@@ -236,17 +200,17 @@
 }
 
 .viewProject .pageList .area:nth-child(1) {
-    width: 3%;
+    width: 2.5em;
     text-align: center;
 }
 
 .viewProject .pageList .area:nth-child(2) {
-    width: 30%;
+    width: 31.2%;
     display: flex;
 }
 
 .viewProject .pageList .area:nth-child(3) {
-    width: 10%;
+    width: 6rem;
     text-align: center;
 }
 
@@ -280,6 +244,10 @@
 .viewProject .pageList .pageElement .btnGroup {
     display: flex;
     gap: 1em;
+}
+
+.viewProject .pageList .pageElement .btnGroup i {
+    display: none;
 }
 
 .viewProject .pageList .pageElement .btnGroup a {
@@ -397,6 +365,101 @@
     z-index: 1;
 }
 
+@media (max-width: 1850px) {
+    .viewProject {
+        padding: 1em 0 0 0;
+    }
+    .viewProject .pageList .area:nth-child(2) {
+        width: calc(100% - 23rem - 14.5rem - 6rem);
+    }
+    .viewProject .pageList .area:nth-child(4) {
+        width: 14.5rem;
+    }
+    .viewProject .pageList .area:nth-child(5) {
+        width: 23rem;
+    }
+}
+@media (max-width: 1200px) {
+    .viewProject .pageList .area:nth-child(2) {
+        width: calc(100% - 9rem - 12rem - 6rem);
+    }
+    .viewProject .pageList .area:nth-child(3) {
+        width: 6rem;
+    }
+    .viewProject .pageList .area:nth-child(4) {
+        width: 12rem;
+    }
+    .viewProject .pageList .area:nth-child(5) {
+        width: 9rem;
+    }
+    .viewProject .btnGroup {
+        gap: 0.3em !important;
+    }
+    .viewProject .btnGroup a {
+        padding: 0.4em 0.6em !important;
+        border-radius: 1em !important;
+    }
+    .viewProject .btnGroup p {
+        display: none;
+    }
+    .viewProject .btnGroup i {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 1000px) {
+    .viewProject {
+        padding: 1em 0 0 0;
+    }
+    .viewProject .pageList .area:nth-child(2) {
+        width: calc(100% - 6.5rem - 9rem - 4.5rem);
+    }
+    .viewProject .pageList .area:nth-child(3) {
+        width: 4.5rem;
+    }
+    .viewProject .pageList .area:nth-child(4) {
+        width: 9rem;
+    }
+    .viewProject .pageList .area:nth-child(5) {
+        width: 6.5rem;
+    }
+
+  .viewProject .page .result {
+    gap: 0.8em;
+    flex-direction: column;
+  }
+
+  .viewProject .page .result .uiGroup {
+    width: 100%;
+    flex-direction: row;
+    height: auto;
+    justify-content: center;
+    gap: 1em;
+  }
+
+  .viewProject .page .result .uiGroup .btnContainer {
+    flex-direction: row;
+    width: auto;
+  }
+
+    .viewProject .page .result .uiGroup .sendDesign {
+        display: flex;
+        width: 12.5em;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5em;
+    }
+
+    .viewProject .page .result .uiGroup .sendDesign p {
+        display: inline-block;
+        color: var(--textOnPrimary);
+    }
+
+  .uiGroup .ui.visibleBtn.half {
+        background-color: var(--textOnPrimary);
+  }
+}
+
 @media (max-width: 768px) {
   .viewProject {
     padding: 1.5em 1em;
@@ -405,11 +468,6 @@
 
   .viewProject .page h2 {
     font-size: 1.3em;
-  }
-
-  .viewProject .page .result {
-    gap: 0.8em;
-    flex-direction: column;
   }
 
   .viewProject .page .result .dropHere {
@@ -431,24 +489,6 @@
     font-size: 0.9em;
   }
 
-  .viewProject .page .result .uiGroup {
-    width: 100%;
-    flex-direction: row;
-    height: auto;
-    justify-content: space-around;
-    padding: 1em 0;
-  }
-
-  .viewProject .page .result .uiGroup .sliderContainer {
-    display: none;
-  }
-
-  .viewProject .page .result .uiGroup .btnContainer {
-    flex-direction: row;
-    width: auto;
-    gap: 2em;
-  }
-
   .viewProject .pageList h2 {
     flex-wrap: wrap;
     gap: 0.5em;
@@ -464,5 +504,24 @@
     .listContainer {
         min-width: 900px; 
         width: 100%;
+    }
+    .viewProject .btnGroup p {
+        display: flex;
+    }
+    .viewProject .btnGroup i {
+        display: none !important;
+    }
+
+    .viewProject .pageList .area:nth-child(2) {
+        width: calc(100% - 14rem - 15rem - 6rem);
+    }
+    .viewProject .pageList .area:nth-child(3) {
+        width: 6rem;
+    }
+    .viewProject .pageList .area:nth-child(4) {
+        width: 15rem;
+    }
+    .viewProject .pageList .area:nth-child(5) {
+        width: 14rem;
     }
 }

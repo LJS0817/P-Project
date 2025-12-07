@@ -495,11 +495,39 @@ body.jungle.dark {
     opacity: 0.6;
 }
 
+
+@media (max-width: 1000px) {
+  .themeModes .mode .preview {
+        height: 6em;
+        width: 10em;
+  }
+
+  .themeDots {
+    display: grid !important;
+    grid-template-columns: repeat(3, min-content);
+  }
+}
+
+
+@media (max-width: 850px) {
+  .themeModes .mode .preview {
+        height: 5em;
+        width: 8em;
+  }
+  .contentPreview {
+    gap: 1em;
+  }
+}
+
 @media (max-width: 768px) {
   .preferInput .inputContainer {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.8em;
+  }
+
+  .themeDots {
+    display: flex !important;
   }
 
   .customSelect {

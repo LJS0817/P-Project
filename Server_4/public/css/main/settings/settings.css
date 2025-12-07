@@ -135,6 +135,13 @@
     border: 2px solid var(--primary300);
 }
 
+
+@media (max-width: 1200px) {
+  .settingContainer {
+    width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   .settings .categories {
     gap: 0.6em;

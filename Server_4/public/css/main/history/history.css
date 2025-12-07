@@ -30,7 +30,7 @@
   height: 3em;
   display: flex;
   align-items: center;
-  margin: 0 3em;
+  /* margin: 0 3em; */
   box-sizing: border-box;
 
   width: 100%;
@@ -56,11 +56,12 @@
 
 .histories .filterContainer .filters .details {
   position: absolute;
-  width: 0;
+  width: 100%;
   overflow-x: auto;
   display: flex;
   align-items: center;
   gap: 0.6em;
+  align-self: anchor-center;
 }
 
 .histories .filterContainer .filters .details::-webkit-scrollbar {
@@ -145,6 +146,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 hr {
   border-color: var(--primary300);
+}
+
+
+@media (max-width: 1200px) {
+  .histories {
+    padding: 2em 0;
+  }
 }
 
 @media (max-width: 768px) {

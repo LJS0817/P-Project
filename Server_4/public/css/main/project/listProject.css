@@ -221,6 +221,11 @@
     transition: 0.3s;
 }
 
+
+.buttons .viewMore i {
+  display: none;
+}
+
 .buttons .option {
     width: 40px;
     height: 40px;
@@ -265,6 +270,58 @@
     background-color: var(--primary300);
 }
 
+@media (max-width: 1500px) {
+  .listProject .projects tbody td {
+    height: 3.5em;
+  }
+  .listProject .projects thead th:nth-child(1) {
+    width: 5em;
+  }
+  .listProject .projects thead th:nth-child(3) {
+    width: 15%;
+  }
+  .listProject .projects thead th:nth-child(4) {
+    width: 6em;
+  }
+  .listProject .projects thead th:nth-child(5) {
+    width: 25%;
+  }
+  .listProject .projects thead th:nth-child(6) {
+    width: 14em;
+  }
+  .listProject {
+    padding: 30px 0 20px 0;
+  }
+  .pdfDownload {
+    border-radius: 4em !important;
+    height: 2.5em !important; 
+  }
+  .pdfDownload p {
+    display: none;
+  }
+  .buttons .viewMore {
+    width: 3em;
+    height: 3em;
+  }
+  .buttons .viewMore p {
+    display: none;
+  }
+  .buttons .viewMore i {
+    display: flex;
+  }
+}
+@media (max-width: 930px) {
+  .buttons {
+    gap: 0.4em;
+  }
+  .listProject .projects thead th:nth-child(4) {
+        width: 4.5em;
+    }
+  .listProject .projects thead th:nth-child(6) {
+        width: 10em;
+    }
+}
+
 @media (max-width: 768px) {
   .listProject {
     padding: 1.5em 1em;
@@ -285,7 +342,7 @@
     width: 100%;
     text-align: center;
     box-sizing: border-box;
-    padding: 0.8em 1.5em;
+    font-size: 1.2em;
   }
 
   .listProject .projects thead {
@@ -306,7 +363,7 @@
     border-radius: 0.8em;
     padding: 1.2em;
     background-color: var(--background100);
-    box-shadow: 0 2px 8px var(--shadow100);
+    box-shadow: 0 2px 8px -4px var(--shadow100);
     cursor: default;
   }
 
@@ -314,11 +371,14 @@
     background-color: var(--background100);
   }
 
-  .listProject .projects tbody tr:hover {
-    background-color: var(--background100);
-  }
   .listProject .projects tbody tr::after {
-    display: none;
+    background: var(--textPrimaryOnBackground);
+    width: 100%;
+    opacity: 0;
+  }
+
+  .listProject .projects tbody tr:hover::after {
+    opacity: 0.05;
   }
 
   .listProject .projects tbody td {
@@ -401,15 +461,24 @@
   .listProject .projects tbody td .pdfDownload,
   .listProject .projects tbody tr:nth-child(even) .pdfDownload  {
     color: var(--textPrimaryOnBackground);
-    background-color: var(--alphaPrimary);
-    box-shadow: none;
-    padding: 0.8em 1.5em;
+    padding: 0.1em 0;
     cursor: pointer;
-    height: 1.2em;
+    font-size: 1.15em;
   }
 
-  .listProject .projects tbody td .pdfDownload svg  {
-    fill: var(--textPrimaryOnBackground);
+  .listProject .projects tbody td .pdfDownload i  {
+    color: var(--textPrimaryOnBackground);
+  }
+
+  .pdfDownload p {
+    display: contents;
+  }
+
+  .buttons .viewMore p {
+    display: contents;
+  }
+  .buttons .viewMore i {
+    display: none;
   }
 
   .buttons {

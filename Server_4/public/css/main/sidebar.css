@@ -1,4 +1,5 @@
 .sidebar {
+    position: fixed;
     box-sizing: border-box;
     width: 250px;
     display: flex;
@@ -14,26 +15,6 @@
 
 .sidebar h1 {
     cursor: pointer;
-}
-
-@media (max-width: 1200px), (max-height: 1000px) {
-    .sidebar {
-        font-size: 14px;
-        width: 220px;
-    }
-}
-
-@media (max-width: 768px), (max-height: 800px) {
-    .sidebar {
-        font-size: 12px;
-        width: 180px;
-    }
-}
-
-@media (max-height: 600px) {
-    .contentContainer {
-        font-size: 11px; 
-    }
 }
 
 .sidebar h1 {
@@ -263,7 +244,7 @@ span {
     position: fixed;
     left: -100%;
     top: 0;
-    width: 100%;
+    width: 100% !important;
     z-index: 51;
     transition: left 0.3s;
     /* height: 100vh; */
@@ -315,7 +296,7 @@ span {
 
   .sidebar .addProjectBtn {
     width: 80%;
-    height: 17vw;
+    height: 12vw;
     padding: 1em;
     border-radius: 10px;
     font-size: 1.2em;

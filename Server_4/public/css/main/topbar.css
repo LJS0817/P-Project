@@ -1,39 +1,3 @@
-html,
-body {
-    height: 100%;
-    margin: 0;
-}
-
-body {
-    display: flex;
-}
-
-.contentContainer {
-    flex: 1;
-    background-color: var(--primary100);
-    display: flex;
-    flex-direction: column;
-    font-size: 16px; 
-    transition: 0.3s;
-}
-
-@media (max-width: 1200px), (max-height: 1000px) {
-    .contentContainer {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 768px), (max-height: 800px) {
-    .contentContainer {
-        font-size: 12px;
-    }
-}
-
-@media (max-height: 600px) {
-    .contentContainer {
-        font-size: 11px; 
-    }
-}
 .contentContainer .topbar {
     height: 4em;
     

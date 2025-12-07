@@ -277,6 +277,11 @@ input:checked + .slider:before {
 .pageElement:hover i {
     color: var(--textOnPrimary);
 }
+@media (max-width: 1200px) {
+  .form-wrapper {
+    width: 90%;
+  }
+}
 
 @media (max-width: 768px) {
   .form-wrapper {
