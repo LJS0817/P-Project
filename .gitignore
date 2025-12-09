@@ -399,3 +399,19 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+v0.5src/ai/models/utils/TransformerEncoder.py
+v0.5src/ai/ai_tracker.py
+v0.5src/ai/models/__init__.py
+v0.5src/ai/models/TranSalNet_Dense.py
+v0.5src/ai/models/utils/__init__.py
+v0.5src/ai/models/utils/data_process.py
+v0.5src/ai/models/utils/densenet.py
+v0.5src/ai/models/utils/loss_function.py
+v0.5src/ai/models/utils/resnet.py
+v0.5src/ai/server_result.png
+v0.5src/ai/test.py
+v0.5src/ai/test_image.png
+v0.5src/ai/weights/TranSalNet_Dense.pth
+v0.5src/web/backend/config/db.js
+v0.5src/web/backend/config/session.js
+v0.5src/web/backend/middleware/upload.js
