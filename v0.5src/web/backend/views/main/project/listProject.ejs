@@ -1,0 +1,39 @@
+<script src="/js/main/project/listProject.js" defer></script>
+<link rel="stylesheet" href="/css/main/project/listProject.css" />
+<div class="listProject">
+    <div class="projectMenu">
+        <p>Total projects : <%= projects.length %> / 6</p>
+        <p>
+            <% let cnt = 0; for(let i = 0; i < projects.length; i++) { %>
+                <% cnt += projects[i].pages.length %>
+            <% } %>
+            Total pages : <%= cnt %> / 60
+        </p>
+        <a href="/dashboard/project/add">Add new project<p>+</p></a>
+    </div>
+    <table class="projects">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Pages</th>
+                <th>Updated</th>
+                <th>Options</th>
+            </tr>
+        </thead> 
+        <tbody>
+            <% projects.forEach((project, idx) => { %>
+                <%- include('listProjectElement', {
+                    id: project.id,
+                    name: project.name,
+                    desc: project.desc,
+                    pages: project.pages,
+                    author: project.author,
+                    updated: project.updated,
+                }) %>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+<%- include("emptyProject") %>

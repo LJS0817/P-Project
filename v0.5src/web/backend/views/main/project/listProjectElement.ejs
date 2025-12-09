@@ -1,0 +1,22 @@
+<tr>
+    <td>
+        <div class="pdfDownload" onclick="location.href='/dashboard/project/requestPDF/<%= id %>'">
+            <i class="fi fi-rr-file-download"></i><p>PDF</p>
+        </div>
+    </td>
+    <td>
+        <p><%= name %>
+            <span><%= desc %></span>
+        </p>
+    </td>
+    <td><%= author %></td>
+    <td><%= pages.length %></td>
+    <td><%= updated %></td>
+    <td>
+        <div class="buttons">
+            <a href="/dashboard/project/view/<%= id %>" class="viewMore"><p>View more</p><i class="fi fi-rr-overview"></i></a>
+            <a href="/dashboard/project/edit/<%= id %>" class="option"><i class="fi fi-rr-file-edit"></i></a>
+            <a class="option" onclick="confirmDelete('/dashboard/project/delete/<%= id %>', '<%=name%>', this)"><i class="fi fi-rr-cross"></i></a>
+        </div>
+    </td>
+</tr>

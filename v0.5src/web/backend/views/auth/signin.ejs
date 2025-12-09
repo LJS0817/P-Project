@@ -1,0 +1,33 @@
+<h1 class="auth-title">Hello World</h1>
+
+<form action="/auth/signin" method="POST" id="userForm">
+  <p>Incorrect username or password.</p>
+  <div class="input-group">
+    <input type="text" name="userid" placeholder="ID" class="input-field" />
+  </div>
+  <div class="input-group">
+    <input
+      type="password"
+      name="password"
+      placeholder="Password"
+      id="password"
+      class="input-field"
+    />
+    <i class="fas fa-eye-slash toggle-pw" onclick="togglePassword(this)"></i>
+  </div>
+  <a href="/auth/forgot-password" class="forgot-pw">Forgot my password</a>
+  <input type="submit" class="btn-submit" value="Sign in" />
+</form>
+
+<div class="auth-footer">
+  Don't have an account? <a href="/auth/signup">Register</a>
+</div>
+
+<div class="social-login">
+  <a href="/auth/google" class="social-btn google-btn"
+    ><i class="fab fa-google"></i
+  ></a>
+  <a href="/auth/kakao" class="social-btn kakao-btn"
+    ><i class="fas fa-comment"></i
+  ></a>
+</div>

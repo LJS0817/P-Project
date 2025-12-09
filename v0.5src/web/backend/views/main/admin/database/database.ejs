@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="/css/main/listview.css" />
+<link rel="stylesheet" href="/css/main/admin/database.css" />
+<script src="/js/main/admin/tableControl.js" defer></script>
+<script src="/js/main/scroll.js" defer></script>
+<script src="/js/main/sort.js" defer></script>
+<div class="databaseContainer">
+    <div class="pins">
+        <% for(let i = 0; i < tables.length; i++) { %>
+            <div class="pin <%= i == 0 ? 'active' : '' %>"><%= tables[i].name %></div>
+        <% } %>
+    </div>
+    <div class="tableContent">
+        <% for(let i = 0; i < tables.length; i++) { %>
+            <%- include('table', {
+                name: tables[i].name,
+                sche: tables[i].sche,
+                data: tables[i].data,
+                index: i
+            }) %>
+        <% } %>
+    </div>  
+</div>

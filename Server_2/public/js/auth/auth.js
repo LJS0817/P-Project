@@ -36,7 +36,6 @@ Object.values(formKeys).forEach((value) => {
             if(ele.classList.contains('error')) ele.classList.remove("error");
         })
     }
-
 });
 
 // form.addEventListener('input', (e) => {

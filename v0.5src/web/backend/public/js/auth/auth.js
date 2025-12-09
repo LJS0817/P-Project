@@ -71,10 +71,10 @@ if (form) {
           window.location.href = "/dashboard";
         }
       } else {
-        console.error("요청 실패:", result);
-        messageBox.textContent = errorData.msg;
+        // console.error("요청 실패:", result);
+        messageBox.textContent = result.msg;
         messageBox.classList.add('active');
-        errorData.reason.forEach((code) => {
+        result.reason.forEach((code) => {
           if (!form[formKeys[code]].classList.contains('error')) form[formKeys[code]].classList.add("error");
         });
         // alert(result.msg || "An error occurred.");
