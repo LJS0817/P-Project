@@ -1,0 +1,169 @@
+.verticalScrollableList,
+.listParent {
+    height: 100%;
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+.verticalScrollableList {
+    overflow-x: auto;
+}
+
+.listParent {
+    min-width: fit-content; 
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    height: 100%;
+}
+
+.listContainer {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 2.4em);
+    top: 2.4em;
+    overflow: hidden;
+}
+
+.list {
+    position: relative;
+    max-height: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+    
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+
+.list::-webkit-scrollbar {
+    display: none;
+}
+
+.linked {
+    height: 2.2em;
+    display: flex;
+    padding: 0.3em 0.6em;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.1em;
+    transition: color 0.3s, background-color 0.3s;
+    position: relative;
+    align-items: center;
+}
+
+.linked .sortable {
+    cursor: pointer;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.linked .sortable:hover {
+    color: var(--textPrimaryOnBackground);
+}
+
+.linked .sortable span {
+    font-size: 0.75em;
+    margin-left: 1em;
+}
+
+.linked .sortable .arrow {
+    display: inline-block;
+    font-size: 0.75em;
+    margin-left: 0.5em;
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+}
+
+.linked .sortable:hover .arrow {
+    opacity: 0.3;
+}
+
+.linked .sortable.asc .arrow, 
+.linked .sortable.desc .arrow { 
+    opacity: 1; 
+}
+
+.linked .sortable.asc .arrow { transform: rotate(180deg); }
+.linked .sortable.desc .arrow { transform: rotate(0deg); }
+
+.categories {
+    width: 100%;
+    background-color: var(--background200);
+    border-radius: 0.5em 0.5em 0 0;
+    z-index: 1;
+}
+
+.categories.linked::after {
+    content: "";
+    position: absolute;
+    height: 1em;
+    width: 100%;
+    bottom: -1em;
+    left: 0;
+    box-shadow: inset 0px 13px 18px -20px var(--textPrimaryOnBackground);
+    z-index: 50;
+}
+
+.scrollBar {
+    position: absolute;
+    right: 4px;
+    width: 6px;
+    background-color: var(--primary300);
+    border-radius: 3px;
+    cursor: pointer;
+    top: 2.4em;
+    opacity: 0;
+    transition: background-color 0.2s, opacity 0.3s, height 0.2s;
+    z-index: 50;
+}
+
+.scrollTrack {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    pointer-events: none;
+    left: 0;
+    z-index: 50;
+}
+
+.scrollBar:hover, .scrollBar.active {
+    background-color: var(--textPrimaryOnBackground);
+}
+
+.list .linked:nth-child(even) {
+    background-color: var(--background200);
+}
+
+.list .linked:hover {
+    background-color: var(--alphaPrimary);
+}
+
+@media (max-width: 768px) {
+    .verticalScrollableList {
+        position: relative;
+        overflow-x: auto; 
+        height: 100%;
+    }
+
+    .listParent {
+        min-width: 0; 
+        width: 100%;
+        max-width: 100%;
+        position: absolute;
+        height: 100%;
+    }
+
+    .categories, 
+    .listContainer {
+        min-width: 600px; 
+        width: 100%;
+    }
+
+    .scrollTrack {
+        position: sticky;
+    }
+}

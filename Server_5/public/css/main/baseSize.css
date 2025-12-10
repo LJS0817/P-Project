@@ -1,0 +1,66 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+}
+
+.contentContainer {
+    flex: 1;
+    background-color: var(--primary100);
+    display: flex;
+    flex-direction: column;
+    font-size: 16px; 
+    transition: background-color 0.3s;
+    margin-left: 250px;
+}
+
+@media (max-width: 1200px), (max-height: 1100px) {
+    .contentContainer,
+    .sidebar  {
+        font-size: 14px;
+    }
+    .sidebar {
+        width: 220px;
+    }
+    .contentContainer {
+        margin-left: 220px;
+    }
+}
+
+@media (max-width: 1000px), (max-height: 950px) {
+    .contentContainer,
+    .sidebar  {
+        font-size: 12px;
+    }
+    .sidebar {
+        width: 220px;
+    }
+    .contentContainer {
+        margin-left: 220px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .contentContainer,
+    .sidebar {
+        font-size: 11px;
+    }
+    .sidebar {
+        width: 180px;
+    }
+    .contentContainer {
+        margin-left: 0;
+    }
+}
+
+@media (max-height: 600px) {
+    .contentContainer,
+    .sidebar {
+        font-size: 11px; 
+    }
+}

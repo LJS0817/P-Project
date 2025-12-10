@@ -1,0 +1,115 @@
+{
+    "signinTitle": "Sign in",
+    "signinErrorMsg": "Incorrect id or password.",
+    "signinRemMsg": "Remember me",
+    "signinForgotMsg": "Forgot my password",
+    "signinSignupMsg": "Don't have an account?",
+    "signinSignupButtonMsg": "Register",
+
+    "signupTitle": "Create account",
+    "signupErrorMsg": "Incorrect id, email, username or password.",
+    "signupEmailMsg": "E-mail",
+    "signupNameMsg": "Username",
+    "signupSigninMsg": "Already have an account?",
+
+    "signIDMsg": "ID",
+    "signPwdMsg": "Password",
+
+    "forgotTitle": "Reset Password",
+    "forgotErrorMsg": "Enter the email address associated with your account and we'll send you a link to reset your password.",
+    "forgotButtonMsg": "Send Reset Link",
+    "forgotReturnMsg": "Remembered your password?",
+
+    "seeMore": "See more",
+    "dashboardViewProject": "View project",
+
+    "name": " name",
+    "cancel": "Cancel",
+
+    "historyTitle": "Histories",
+    "historyFilterTitle": "Filter",
+    "historyFilterAll": "All",
+    "historyFilterProject": "Project",
+    "historyFilterPage": "Page",
+    "historyFilterDate": "Date",
+
+    "emptyMsg_0": "Ooops! It's Empty",
+    "emptyMsg_1": "Start create resources by clicking on 'Add new project'",
+    "emptyButtonMsg": "Add new project",
+
+    "listProjectCountTitle": "Total projects",
+    "listPageCountTitle": "Total pages",
+
+    "listPageOptionDownload": "Download",
+    "listPageOptionReset": "Reset",
+    
+    "listElementMsg_delete": "Delete",
+
+    "configProjectSubtitle": "Required fields are marked with an asterisk (*).",
+    "configProjectName": "Project name *",
+    "configProjectDesc": "Short description",
+    "configProjectThumbnail": "Thumbnail ( Logo, Thumbnail... )",
+    "configProjectAddFile": "Add File",
+    "configProjectAddPage": "Pages",
+    "configProjectAddPageMsg": "( Optional ) [ Limited 10 pages ]",
+    "configProjectAddPageEnterPage": "Enter page name",
+    "configProjectVisibleTitle": "Choose visibility *",
+    "configProjectVisibleSubtitle": "Choose who can see this project",
+    "configProjectVisiblePublic": "Public",
+    "configProjectVisiblePrivate": "Private",
+
+    "viewProjectDropHereTitle": "Drag and drop or click here",
+    "viewProjectDropHereSubtitle": "to upload to your deisgn",
+    "viewProjectAnalysisButtonMsg": "Design analysis",
+    "viewProjectPageTitle": "Pages",
+    "viewProjectAddPageButtonMsg": "Add page",
+
+    "settingSaveChangesButtonMsg": "Save changes",
+
+    "setting_accountTitle": "Account",
+    "setting_accountSubtitle": "Set your account details",
+    "setting_accountDelete": "Delete account",
+    "setting_accountDeleteDanger": "If you delete your account, there is no going back.",
+    "setting_accountDeleteButtonMsg": "Delete your account",
+    "setting_accountLinkGoogle": "Linked Google",
+    "setting_accountLinkKakao": "Linked Kakao",
+
+    "setting_preferTitle": "Preferneces",
+    "setting_preferSubtitle": "Set according to your preferences",
+    "setting_preferLanguage": "Language",
+    "setting_preferLanguageEng": "English",
+    "setting_preferLanguageKor": "Korean",
+    "setting_preferFormat": "Date and time format",
+    "setting_preferFormat12": "12-Hours",
+    "setting_preferFormat24": "24-Hours",
+    "setting_preferTheme": "Select Theme",
+    "setting_preferThemeLight": "Light mode",
+    "setting_preferThemeDark": "Dark mode",
+    "setting_preferThemeSystem": "System theme",
+    
+    "setting_projectTitle": "Project",
+    "setting_projectSubtitle": "Manage your projects all at once",
+    "setting_projectDanger": "Please be certain",
+    "setting_projectDeletePage": "Delete pages",
+    "setting_projectDeletePageButtonMsg": "Delete all pages",
+    "setting_projectDeleteProject": "Delete projects",
+    "setting_projectDeleteProjectButtonMsg": "Delete all projects",
+
+
+    
+    "listMsg_name": "Name",
+    "listMsg_author": "Author",
+    "listMsg_page": "Pages",
+    "listMsg_analysis": "Analyzed",
+    "listMsg_updated": "Updated",
+    "listMsg_option": "Options"
+}
+
+
+
+
+
+
+
+
+

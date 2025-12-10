@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="/css/main/admin/dashboard.css">
+<link rel="stylesheet" href="/css/main/listview.css">
+<script src="/js/main/admin/chart.js" defer ></script>
+<script src="/js/main/scroll.js" defer></script>
+<script src="/js/main/sort.js" defer></script>
+<div class="dashboardContainer">
+    <div class="chartContainer">
+        <% cards.forEach(card => { %>
+            <%- include('chart', {
+                tag: card.tag,
+                value: card.value,
+                points: card.points,
+            }) %>
+        <% }); %>
+    </div>
+    <h2>User list</h2>
+    <div class="verticalScrollableList">
+        <div class="userContainer listParent">
+            <div class="categories linked">
+                <p class="sortable">Username<span class="arrow">▼</span></p>
+                <p class="sortable">Projects<span class="arrow">▼</span></p>
+                <p class="sortable">Created<span class="arrow">▼</span></p>
+            </div>
+            <div class="listContainer">
+                <div class="list">
+                    <% users.forEach(user => { %>
+                        <div class="linked">
+                            <p><%= user.name %></p>
+                            <p><%= user.projectCnt %></p>
+                            <p><%= user.created %></p>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+        <div class="scrollTrack">
+            <div class="scrollBar" id="customScroll"></div>
+        </div>
+    </div>
+</div>

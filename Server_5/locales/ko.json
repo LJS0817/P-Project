@@ -1,0 +1,105 @@
+{
+    "signinTitle": "로그인",
+    "signinErrorMsg": "아이디 또는 비밀번호가 유효하지 않습니다.",
+    "signinRemMsg": "자동 로그인",
+    "signinForgotMsg": "비밀번호를 잊음",
+    "signinSignupMsg": "계정이 없으신가요?",
+    "signinSignupButtonMsg": "계정 생성하기",
+
+    "signupTitle": "계정 생성",
+    "signupErrorMsg": "아이디 또는 이메일, 사용자명, 비밀번호가 유효하지 않습니다.",
+    "signupEmailMsg": "이메일",
+    "signupNameMsg": "사용자명",
+    "signupSigninMsg": "이미 계정이 있으신가요?",
+    
+    "signIDMsg": "아이디",
+    "signPwdMsg": "비밀번호",
+
+    "forgotTitle": "비밀번호 초기화",
+    "forgotErrorMsg": "유효한 이메일이 아닙니다.",
+    "forgotButtonMsg": "초기화 메일 받기",
+    "forgotReturnMsg": "로그인 화면으로 돌아가기",
+
+    "seeMore": "더 보기",
+    "dashboardViewProject": "프로젝트 보기",
+
+    "name": "명",
+    "cancel": "취소",
+    
+    "historyTitle": "기록",
+    "historyFilterTitle": "필터",
+    "historyFilterAll": "모두",
+    "historyFilterProject": "프로젝트",
+    "historyFilterPage": "페이지",
+    "historyFilterDate": "날짜",
+
+    "emptyMsg_0": "프로젝트가 없습니다.",
+    "emptyMsg_1": "프로젝트 만들기 버튼을 눌러 프로젝트를 생성하세요.",
+    "emptyButtonMsg": "프로젝트 만들기",
+
+    "listProjectCountTitle": "프로젝트 수",
+    "listPageCountTitle": "페이지 수",
+
+    "listPageOptionDownload": "다운로드",
+    "listPageOptionReset": "초기화",
+    
+    "listElementMsg_delete": "삭제",
+
+    "configProjectSubtitle": "* 이 표시된 항목은 필수로 채워야합니다.",
+    "configProjectName": "프로젝트명 *",
+    "configProjectDesc": "짧은 설명",
+    "configProjectThumbnail": "프로젝트 기본 이미지 ( 로고, 썸네일... )",
+    "configProjectAddFile": "파일 추가",
+    "configProjectAddPage": "페이지 추가",
+    "configProjectAddPageMsg": "( 선택사항 ) [ 최대 10 페이지 ]",
+    "configProjectAddPageEnterPage": "페이지명 입력",
+    "configProjectVisibleTitle": "프로젝트 공개 여부 *",
+    "configProjectVisibleSubtitle": "공개 여부를 선택해주세요.",
+    "configProjectVisiblePublic": "공개",
+    "configProjectVisiblePrivate": "비공개",
+
+    "viewProjectDropHereTitle": "여기에 드래그 앤 드롭하세요",
+    "viewProjectDropHereSubtitle": "디자인을 업로드하세요",
+    "viewProjectAnalysisButtonMsg": "디자인 분석",
+    "viewProjectPageTitle": "페이지",
+    "viewProjectAddPageButtonMsg": "페이지 추가",
+
+    "settingSaveChangesButtonMsg": "변경사항 저장하기",
+
+    "setting_accountTitle": "계정",
+    "setting_accountSubtitle": "계정 정보 설정",
+    "setting_accountDelete": "계정 삭제",
+    "setting_accountDeleteDanger": "다시 되돌릴 수 없습니다.",
+    "setting_accountDeleteButtonMsg": "계정 삭제하기",
+    "setting_accountLinkGoogle": "구글 연결",
+    "setting_accountLinkKakao": "카카오 연결",
+
+    "setting_preferTitle": "기본 설정",
+    "setting_preferSubtitle": "개인 취향에 맞게 설정",
+    "setting_preferLanguage": "언어 설정",
+    "setting_preferLanguageEng": "영어",
+    "setting_preferLanguageKor": "한국어",
+    "setting_preferFormat": "날짜 및 시간 표기법",
+    "setting_preferFormat12": "12시간",
+    "setting_preferFormat24": "24시간",
+    "setting_preferTheme": "테마 설정",
+    "setting_preferThemeLight": "라이트 모드",
+    "setting_preferThemeDark": "다크 모드",
+    "setting_preferThemeSystem": "시스템 설정에 따른 모드",
+    
+    "setting_projectTitle": "프로젝트",
+    "setting_projectSubtitle": "프로젝트를 일괄로 관리",
+    "setting_projectDanger": "한번 더 확인하세요",
+    "setting_projectDeletePage": "모든 페이지 삭제",
+    "setting_projectDeletePageButtonMsg": "모든 페이지 삭제하기",
+    "setting_projectDeleteProject": "모든 프로젝트 삭제",
+    "setting_projectDeleteProjectButtonMsg": "모든 프로젝트 삭제하기",
+
+    
+    "listMsg_name": "이름",
+    "listMsg_author": "소유자",
+    "listMsg_page": "페이지 수",
+    "listMsg_analysis": "분석 여부",
+    "listMsg_updated": "수정 날짜",
+    "listMsg_option": "비고"
+}

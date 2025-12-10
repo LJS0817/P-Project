@@ -1,0 +1,18 @@
+<div class="tableDetails <%= index !== 0 ? 'disable' : '' %>" data-table="<%= name %>" >
+    <h3><%= name %> table<div class="selectBtn" data-table="<%= name %>" onclick="retrieveData(this)">Retrieve</div></h3>
+    <div class="verticalScrollableList">
+        <div class="listParent">
+            <div class="categories linked">
+                <p>Option</p>
+            </div>
+            <div class="listContainer">
+                <div class="list">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="scrollTrack">
+            <div class="scrollBar" id="customScroll"></div>
+        </div>
+    </div>
+</div>

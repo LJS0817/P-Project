@@ -1,0 +1,36 @@
+<script src="/js/main/settings/project.js" defer></script>
+<link rel="stylesheet" href="/css/main/settings/project.css" />
+<h3><%= __('setting_projectTitle') %></h3>
+<h4><%= __('setting_projectSubtitle') %></h4>
+<hr>
+<!-- <div class="btnGroup">
+    <h2>Project visibility <p>Applies to all projects</p></h2>
+    <div class="change pub btn">
+        <div class="notice">
+            <h3>Change to public</h3>
+        </div>
+        <a href="#">Change to public</a>
+    </div>
+    <div class="change pri btn">
+        <div class="notice">
+            <h3>Change to private</h3>
+        </div>
+        <a href="#">Change to private</a>
+    </div>
+</div>
+<hr> -->
+<div class="btnGroup">
+    <h2><%= __('setting_projectDanger') %></h2>
+    <div class="deleteUser btn">
+        <div class="notice">
+            <h3><%= __('setting_projectDeletePage') %></h3>
+        </div>
+        <a onclick="deleteAllPage()"><%= __('setting_projectDeletePageButtonMsg') %></a>
+    </div>
+    <div class="deleteUser btn">
+        <div class="notice">
+            <h3><%= __('setting_projectDeleteProject') %></h3>
+        </div>
+        <a onclick="deleteAllProject()"><%= __('setting_projectDeleteProjectButtonMsg') %></a>
+    </div>
+</div>
