@@ -1,0 +1,97 @@
+<link rel="stylesheet" href="/css/main/settings/prefer.css" />
+<script>
+    document.textData['setting_preferSavePopupTitle'] = '<%= __("setting_preferSavePopupTitle") %>';
+    document.textData['setting_preferSavePopupMsg'] = '<%= __("setting_preferSavePopupMsg") %>';
+</script>
+<script src="/js/main/settings/prefer.js" defer></script>
+<h3><%= __('setting_preferTitle') %></h3>
+<h4><%= __('setting_preferSubtitle') %></h4>
+<hr>
+<div class="preferInput input">
+    <div class="inputContainer">
+        <p><%= __('setting_preferLanguage') %></p>
+        <div class="customSelect" id="languageSelect">
+            <button type="button" class="selectTrigger"><%= __('setting_preferLanguageEng') %></button>
+            <div class="selectOptions">
+                <span class="optionItem selected" data-value="en"><%= __('setting_preferLanguageEng') %></span>
+                <span class="optionItem" data-value="ko"><%= __('setting_preferLanguageKor') %></span>
+            </div>
+            <input type="hidden" name="languageSelector" id="languageInput" value="en">
+        </div>
+    </div>
+
+    <div class="inputContainer">
+        <p><%= __('setting_preferFormat') %></p>
+        <div class="formatInput">
+            <div class="toggleContainer">
+                <label for="themeToggle" class="toggleText" id="textLeft"><%= __('setting_preferFormat12') %></label>
+                
+                <label class="switchWrapper">
+                    <input type="checkbox" class="toggleCheckbox" id="themeToggle">
+                    <span class="sliderRound"></span>
+                </label>
+                
+                <label for="themeToggle" class="toggleText" id="textRight"><%= __('setting_preferFormat24') %></label>
+            </div>
+            <hr>
+            <div class="customSelect" id="dateFormatSelect">
+                <button type="button" class="selectTrigger">yyyy.mm.dd</button>
+                <div class="selectOptions">
+                    <span class="optionItem selected" data-value="YYYY. MM. DD">yyyy.mm.dd</span>
+                    <span class="optionItem" data-value="YY. MM. DD">yy.mm.dd</span>
+                    <span class="optionItem" data-value="MM. DD. YYYY">mm.dd.yyyy</span>
+                    <span class="optionItem" data-value="MM. DD. YY">mm.dd.yy</span>
+                    <span class="optionItem" data-value="DD. MM. YYYY">dd.mm.yyyy</span>
+                    <span class="optionItem" data-value="DD. MM. YY">dd.mm.yy</span>
+                </div>
+                <input type="hidden" name="dateFormatSelector" id="dateFormatInput" value="0">
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="themeSetting">
+    <p><%= __('setting_preferTheme') %></p>
+    <div class="themes">
+        <div class="themeDots">
+            <div class="dot active" style="background-color: var(--defaultPrimary);"><svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24"><path d="M22.319,4.431,8.5,18.249a1,1,0,0,1-1.417,0L1.739,12.9a1,1,0,0,0-1.417,0h0a1,1,0,0,0,0,1.417l5.346,5.345a3.008,3.008,0,0,0,4.25,0L23.736,5.847a1,1,0,0,0,0-1.416h0A1,1,0,0,0,22.319,4.431Z"/></svg></div>
+            <div class="dot" style="background-color: var(--juicePrimary);"><svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24"><path d="M22.319,4.431,8.5,18.249a1,1,0,0,1-1.417,0L1.739,12.9a1,1,0,0,0-1.417,0h0a1,1,0,0,0,0,1.417l5.346,5.345a3.008,3.008,0,0,0,4.25,0L23.736,5.847a1,1,0,0,0,0-1.416h0A1,1,0,0,0,22.319,4.431Z"/></svg></div>
+            <div class="dot" style="background-color: var(--sandPrimary);"><svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24"><path d="M22.319,4.431,8.5,18.249a1,1,0,0,1-1.417,0L1.739,12.9a1,1,0,0,0-1.417,0h0a1,1,0,0,0,0,1.417l5.346,5.345a3.008,3.008,0,0,0,4.25,0L23.736,5.847a1,1,0,0,0,0-1.416h0A1,1,0,0,0,22.319,4.431Z"/></svg></div>
+            <div class="dot" style="background-color: var(--lavenderPrimary);"><svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24"><path d="M22.319,4.431,8.5,18.249a1,1,0,0,1-1.417,0L1.739,12.9a1,1,0,0,0-1.417,0h0a1,1,0,0,0,0,1.417l5.346,5.345a3.008,3.008,0,0,0,4.25,0L23.736,5.847a1,1,0,0,0,0-1.416h0A1,1,0,0,0,22.319,4.431Z"/></svg></div>
+            <div class="dot" style="background-color: var(--junglePrimary);"><svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24"><path d="M22.319,4.431,8.5,18.249a1,1,0,0,1-1.417,0L1.739,12.9a1,1,0,0,0-1.417,0h0a1,1,0,0,0,0,1.417l5.346,5.345a3.008,3.008,0,0,0,4.25,0L23.736,5.847a1,1,0,0,0,0-1.416h0A1,1,0,0,0,22.319,4.431Z"/></svg></div>
+        </div>
+        <div class="themeModes">
+            <div class="mode active">
+                <div class="preview">
+                    <div class="contentPreview">
+                        <div class="dummyPreview"></div>
+                        <div class="dummyPreview"></div>
+                    </div>
+                    <div class="checked"><svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24"><path d="M22.319,4.431,8.5,18.249a1,1,0,0,1-1.417,0L1.739,12.9a1,1,0,0,0-1.417,0h0a1,1,0,0,0,0,1.417l5.346,5.345a3.008,3.008,0,0,0,4.25,0L23.736,5.847a1,1,0,0,0,0-1.416h0A1,1,0,0,0,22.319,4.431Z"/></svg></div>
+                </div>
+                <p><%= __('setting_preferThemeLight') %></p>
+            </div>
+            <div class="mode">
+                <div class="preview">
+                    <div class="contentPreview">
+                        <div class="dummyPreview"></div>
+                        <div class="dummyPreview"></div>
+                    </div>
+                    <div class="checked"><svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24"><path d="M22.319,4.431,8.5,18.249a1,1,0,0,1-1.417,0L1.739,12.9a1,1,0,0,0-1.417,0h0a1,1,0,0,0,0,1.417l5.346,5.345a3.008,3.008,0,0,0,4.25,0L23.736,5.847a1,1,0,0,0,0-1.416h0A1,1,0,0,0,22.319,4.431Z"/></svg></div>
+                </div>
+                <p><%= __('setting_preferThemeDark') %></p>
+            </div>
+            <div class="mode">
+                <div class="preview">
+                    <div class="contentPreview">
+                        <div class="dummyPreview"></div>
+                        <div class="dummyPreview"></div>
+                    </div>
+                    <div class="checked"><svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24"><path d="M22.319,4.431,8.5,18.249a1,1,0,0,1-1.417,0L1.739,12.9a1,1,0,0,0-1.417,0h0a1,1,0,0,0,0,1.417l5.346,5.345a3.008,3.008,0,0,0,4.25,0L23.736,5.847a1,1,0,0,0,0-1.416h0A1,1,0,0,0,22.319,4.431Z"/></svg></div>
+                </div>
+                <p><%= __('setting_preferThemeSystem') %></p>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" name="theme" id="themeInput" value="default"> 

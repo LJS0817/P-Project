@@ -1,0 +1,597 @@
+body {
+    --defaultPrimary: #3f51b5;
+    --juicePrimary: #f58d64;
+    --sandPrimary: #bfae9f;
+    --lavenderPrimary: #8b5fbf;
+    --junglePrimary: #658864;
+
+    --previewPrimary: var(--primary100);
+    --previewPrimary300: var(--primary300);
+    --previewBackground: var(--background100);
+    --previewPrimaryOnBackground: var(--previewPrimary);
+
+    --previewDarkPrimary: #0b1627;
+    --previewDarkPrimary300: #556785;
+    --previewDarkBackground: #19263b;
+    --previewDarkPrimaryOnBackground: #497fcc;
+}
+
+
+body.dark {
+    --previewPrimary :#3f51b5;
+    --previewPrimary300: #7d85b3;
+    --previewBackground: #ffffff;
+    --previewPrimaryOnBackground: var(--previewPrimary);
+
+    --previewDarkPrimary: var(--primary100);
+    --previewDarkPrimary300: var(--primary300);
+    --previewDarkBackground: var(--background100);
+    --previewDarkPrimaryOnBackground: var(--textPrimaryOnBackground);
+}
+
+/* ============================================================================================ */
+
+body.juice {
+    --previewPrimary: var(--primary100);
+    --previewPrimary300: var(--primary300);
+    --previewBackground: var(--background100);
+    --previewPrimaryOnBackground: var(--previewPrimary);
+
+    --previewDarkPrimary: #2b2b2b;
+    --previewDarkPrimary300: #a17066;
+    --previewDarkBackground: #1c1c1c;
+    --previewDarkPrimaryOnBackground: #c54f35;
+}
+
+body.juice.dark {
+    --previewPrimary: #f58d64;
+    --previewPrimary300: #df9f87;
+    --previewBackground: #f5e6cc;
+    --previewPrimaryOnBackground: var(--previewPrimary);
+
+    --previewDarkPrimary: var(--primary100);
+    --previewDarkPrimary300: var(--primary300);
+    --previewDarkBackground: var(--background100);
+    --previewDarkPrimaryOnBackground: var(--textPrimaryOnBackground);
+}
+
+/* ============================================================================================ */
+
+body.sand {
+    --previewPrimary: var(--primary100);
+    --previewPrimary300: var(--primary300);
+    --previewBackground: var(--background100);
+    --previewPrimaryOnBackground: var(--textPrimaryOnBackground);
+
+    --previewDarkPrimary: #3c2f2f;
+    --previewDarkPrimary300: #8c7c7c;
+    --previewDarkBackground: #4d3f3f;
+    --previewDarkPrimaryOnBackground: #c38957;
+}
+
+body.sand.dark {
+    --previewPrimary: #bfae9f;
+    --previewPrimary300: #bc9370;
+    --previewBackground: #f5efe8;
+    --previewPrimaryOnBackground: #724721;
+
+    --previewDarkPrimary: var(--primary100);
+    --previewDarkPrimary300: var(--primary300);
+    --previewDarkBackground: var(--background100);
+    --previewDarkPrimaryOnBackground: var(--textPrimaryOnBackground);
+}
+
+/* ============================================================================================ */
+
+body.lavender {
+    --previewPrimary: var(--primary100);
+    --previewPrimary300: var(--primary300);
+    --previewBackground: var(--background100);
+    --previewPrimaryOnBackground: var(--previewPrimary);
+
+    --previewDarkPrimary: #2f2240;
+    --previewDarkPrimary300: #9984b3;
+    --previewDarkBackground: #3e324e;
+    --previewDarkPrimaryOnBackground: #a482d0;
+}
+
+body.lavender.dark {
+    --previewPrimary: #8b5fbf;
+    --previewPrimary300: #b6a5ca;
+    --previewBackground: #f5f3f7;
+    --previewPrimaryOnBackground: var(--previewPrimary);
+
+    --previewDarkPrimary: var(--primary100);
+    --previewDarkPrimary300: var(--primary300);
+    --previewDarkBackground: var(--background100);
+    --previewDarkPrimaryOnBackground: var(--textPrimaryOnBackground);
+}
+
+/* ============================================================================================ */
+
+body.jungle {
+    --previewPrimary: var(--primary100);
+    --previewPrimary300: var(--primary300);
+    --previewBackground: var(--background100);
+    --previewPrimaryOnBackground: var(--previewPrimary);
+
+    --previewDarkPrimary: #212318;
+    --previewDarkPrimary300: #717654;
+    --previewDarkBackground: #333624;
+    --previewDarkPrimaryOnBackground: #d0d8b0;
+}
+
+body.jungle.dark {
+    --previewPrimary: #658864;
+    --previewPrimary300: #98bc98;
+    --previewBackground: #dddddd;
+    --previewPrimaryOnBackground: var(--previewPrimary);
+
+    --previewDarkPrimary: var(--primary100);
+    --previewDarkPrimary300: var(--primary300);
+    --previewDarkBackground: var(--background100);
+    --previewDarkPrimaryOnBackground: var(--textPrimaryOnBackground);
+}
+/* ============================================================================================ */
+
+.preferInput .inputContainer {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.preferInput .inputContainer p {
+    display: inline-block;
+}
+
+.customSelect {
+    position: relative;
+    width: 11em;
+    font-size: 1em;
+}
+
+.selectTrigger {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.7em 0.9em;
+    background: var(--background200);
+    border: 2px solid var(--background200);
+    border-radius: 0.5em;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: left;
+    transition: 0.3s;
+    box-shadow: inset -1px 4px 19px -14px var(--shadow100);
+    color: var(--textPrimaryOnBackground);
+    font-weight: 500;
+}
+
+.customSelect.open .selectTrigger {
+    border-color: 2px solid var(--textPrimaryOnBackground);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.selectTrigger:hover {
+    border-color: var(--textPrimaryOnBackground);
+}
+
+.selectTrigger::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-bottom: 2px solid var(--textPrimaryOnBackground);
+    border-right: 2px solid var(--textPrimaryOnBackground);
+    transform: rotate(45deg);
+    margin-left: 10px;
+    transition: transform 0.2s ease;
+}
+
+.customSelect.open .selectTrigger::after {
+    transform: rotate(-135deg);
+}
+
+.selectOptions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--background200);
+    border: 2px solid var(--textPrimaryOnBackground);
+    border-top: none;
+    border-radius: 0 0 0.5em 0.5em;
+    box-shadow: inset 0 4px 5px -5px var(--shadow100);
+    z-index: 10;
+    
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: 0.2s;
+}
+
+.customSelect.open .selectOptions {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.optionItem {
+    display: block;
+    padding: 0.7em 0.9em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.optionItem:hover,
+.optionItem.selected:hover {
+    background-color: var(--primary300);
+    color: var(--textOnPrimary);
+}
+
+.optionItem.selected {
+    background-color: var(--textPrimaryOnBackground);
+    color: var(--textOnPrimary);
+    font-weight: bold;
+}
+
+.formatInput {
+    display: flex;
+    align-items: center;
+}
+
+.formatInput hr {
+    height: 80%;
+    border: none;
+    background-color: var(--background200);
+    width: 2px;
+    margin: 0 1em;
+}
+
+.toggleContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+}
+
+.toggleText {
+    font-size: 1em;
+    color: var(--alphaText);
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.toggleText.active {
+    color: var(--textPrimaryOnBackground);
+}
+
+.switchWrapper {
+    position: relative;
+    display: inline-block;
+    width: 3em;
+}
+
+.toggleCheckbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.sliderRound {
+    position: absolute;
+    cursor: pointer;
+    transition: 0.3s;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+}
+
+.sliderRound::before {
+    position: absolute;
+    content: "";
+    height: 1.1em; 
+    width: 1.1em;
+    background-color: var(--textPrimaryOnBackground);
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+.toggleCheckbox:checked + .sliderRound::before {
+    transform: translateX(24px);
+}
+
+.themeSetting .themes {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.themeSetting .themeDots {
+    margin-top: 0.3em;
+    display: flex;
+    gap: 0.5em;
+}
+
+.themeDots .dot {
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background-color: var(--background200);
+    cursor: pointer;
+    border: 2px solid var(--background200);
+    transition: 0.3s;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.themeDots .dot svg {
+    opacity: 0;
+    fill: var(--textOnPrimary);
+    width: 1em;
+    height: 1em;
+    transition: 0.3s;
+}
+
+.themeDots .dot.active svg {
+    opacity: 1;
+}
+
+.themeDots .dot::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: var(--alphaPrimary);
+    transition: 0.3s;
+    opacity: 0;
+    border-radius: 50%;
+}
+
+.themeDots.active .dot::after {
+    opacity: 0.3;
+}
+
+.themeDots .dot:hover::after,
+.themeDots.active .dot:hover::after {
+    opacity: 0.6;
+}
+
+.themeDots .dot.active {
+    border-color: var(--textPrimaryOnBackground);
+}
+
+.themeModes {
+    display: flex;
+    gap: 1.3em;
+}
+
+.themeModes .mode {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.themeModes .mode p {
+    font-size: 0.9em;
+}
+.themeModes .mode .preview {
+    height: 8em;
+    width: 13em;
+    border-radius: 0.6em;
+    border: 2px solid var(--background200);
+    position: relative;
+    cursor: pointer;
+    background-color: var(--previewPrimary);
+}
+
+.contentPreview {
+    position: absolute;
+    border-radius: 0.6em 0 0.3em 0;
+    right: 0;
+    bottom: 0;
+    left: 2.5em;
+    top: 1.2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    background-color: var(--previewBackground);
+}
+
+.dummyPreview {
+    width: 50%;
+    height: 20%;
+    border-radius: 0.5em;
+    background-color: var(--previewPrimary300);
+}
+
+.themeModes .mode .preview .dummyPreview:nth-child(2) {
+    background-color: var(--previewPrimaryOnBackground);
+}
+
+.themeModes .mode:nth-child(2) .preview {
+    background-color: var(--previewDarkPrimary);
+}
+
+.themeModes .mode:nth-child(2) .preview .contentPreview {
+    background-color: var(--previewDarkBackground);
+}
+
+.themeModes .mode:nth-child(2) .preview .dummyPreview:nth-child(1) {
+    background-color: var(--previewDarkPrimary300);
+}
+
+.themeModes .mode:nth-child(2) .preview .dummyPreview:nth-child(2) {
+    background-color: var(--previewDarkPrimaryOnBackground);
+}
+
+.themeModes .mode.active .preview {
+    border-color: var(--textPrimaryOnBackground);
+}
+
+.themeModes .mode .checked {
+    z-index: 3;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 1.8em;
+    height: 1.8em;
+    background-color: var(--textPrimaryOnBackground);
+    margin: auto;
+    border-radius: 50%;
+    border: 2px solid var(--textOnPrimary);
+    transition: 0.3s;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.themeModes .mode.active .checked {
+    opacity: 1;
+}
+
+.themeModes .mode .checked svg,
+.themeModes .mode.active .checked svg {
+    width: 1.1em;
+    height: 1.1em;
+    fill: var(--textOnPrimary);
+}
+
+.themeModes .mode .preview::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: var(--alphaPrimary);
+    transition: 0.3s;
+    opacity: 0;
+    border-radius: 0.4em;
+}
+
+.themeModes .mode.active .preview::after {
+    opacity: 0.3;
+}
+
+.themeModes .mode .preview:hover::after,
+.themeModes .mode.active .preview:hover::after {
+    opacity: 0.6;
+}
+
+@media (max-width: 1800px) {
+    .settingContainer {
+        width: 70vw;
+    }
+  .themeModes .mode .preview {
+        height: 6em;
+        width: 10em;
+  }
+}
+
+
+@media (max-width: 1100px) {
+  .themeModes .mode .preview {
+        height: 6em;
+        width: 10em;
+  }
+
+  .themeDots {
+    display: grid !important;
+    grid-template-columns: repeat(3, min-content);
+  }
+}
+
+
+@media (max-width: 850px) {
+  .themeModes .mode .preview {
+        height: 5em;
+        width: 8em;
+  }
+  .contentPreview {
+    gap: 1em;
+  }
+
+    .toggleContainer {
+        gap: 0.4em;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+  .preferInput .inputContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8em;
+  }
+
+    .toggleContainer {
+        gap: 0.7em;
+        flex-direction: row;
+    }
+
+  .themeDots {
+    display: flex !important;
+  }
+
+  .customSelect {
+    width: 100%;
+  }
+
+  .formatInput {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 1em;
+  }
+
+  .formatInput hr {
+    display: none;
+  }
+
+  .toggleContainer {
+    justify-content: end;
+  }
+
+  .themeSetting .themes {
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+  .themeModes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+  }
+
+  .themeModes .mode .preview {
+    width: 100%;
+    height: 7em;
+  }
+
+  .themeModes .mode:last-child {
+    grid-column: span 2;
+  }
+
+  .themeModes .mode:last-child .preview {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}

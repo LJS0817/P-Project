@@ -1,0 +1,147 @@
+.contentContainer .topbar {
+    height: 4em;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 0 1.8em 0 1.2em;
+    min-height: 4em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contentContainer .topbar .search {
+    visibility: hidden;
+    height: 2.5em;
+    width: 70%;
+    padding: 0 0.9em;
+    background-color: var(--background100);
+    border-radius: 0.75em;
+    box-shadow: inset 1px 4px 20px -14px var(--shadow100);
+    display: flex;
+    align-items: center;
+}
+
+.contentContainer .topbar .search svg {
+    width: 1.25em;
+    height: 1.25em;
+    
+    fill: var(--text100);
+}
+
+.contentContainer .topbar .search #searchText {
+    border: none;
+    height: 80%;
+    flex: 1;
+    
+    margin-left: 1.25em;
+    
+    background-color: transparent;
+    font-size: 1.04em;
+    color: var(--text100);
+}
+
+.contentContainer .topbar .search #searchText:focus-visible {
+    outline: none;
+}
+
+.contentContainer .topbar .search #searchText::placeholder {
+    color: var(--placeholderText);
+}
+
+.contentContainer .topbar .profile {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--textOnPrimary);
+    font-size: 1.1em;
+    font-weight: 400;
+    transition: 0.3s;
+    
+    border-radius: 0.6em;
+    
+    padding: 0.3em 0.6em;
+    
+    border: 0.18em solid transparent;
+}
+
+.contentContainer .topbar .profile svg {
+    margin-left: 0.8em;
+    width: 1.1em;
+    height: 1.1em;
+    fill: var(--textOnPrimary);
+}
+
+.contentContainer .topbar .profile:hover {
+    color: var(--primary100);
+    background-color: var(--textOnPrimary);
+    border-color: var(--primary100);
+}
+
+.contentContainer .topbar .profile:hover svg {
+    fill: var(--primary100);
+}
+
+.contentContainer .content {
+    background-color: var(--background100);
+    flex: 1;
+    
+    border-top-left-radius: 0.9em;
+}
+
+
+
+.hamburger {
+  display: none;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4em;
+  transition: background-color 0.3s, left 0.3s;
+  flex-shrink: 0;
+  left: 0;
+
+  position: relative;
+  z-index: 53;
+  margin-right: 0.5em;
+}
+
+.hamburger span {
+  width: 1.5em;
+  height: 0.2em;
+  background-color: var(--textOnPrimary);
+  transition: transform 0.3s, opacity 0.3s;
+  border-radius: 2px;
+  display: block;
+}
+
+.hamburger.active {
+    left: 90%;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(0.6em) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-0.6em) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .contentContainer .topbar {
+    padding: 0 1em;
+  }
+}

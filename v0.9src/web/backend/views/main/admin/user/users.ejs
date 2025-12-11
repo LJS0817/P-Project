@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="/css/main/listview.css">
+<link rel="stylesheet" href="/css/main/admin/users.css">
+<script src="/js/main/scroll.js" defer></script>
+<script src="/js/main/sort.js" defer></script>
+
+<div class="userContainer">
+    <div class="verticalScrollableList">
+        <div class="listParent">
+            <div class="categories linked">
+                <p class="sortable"><%= __('signupNameMsg') %><span class="arrow">▼</span></p>
+                <p><%= __('signupEmailMsg') %></p>
+                <p class="sortable"><%= __('listProjectCountTitle') %><span class="arrow">▼</span></p>
+                <p class="sortable"><%= __('listMsg_created') %><span class="arrow">▼</span></p>
+            </div>
+            <div class="listContainer">
+                <div class="list">
+                    <% users.forEach(user => { %>
+                        <div class="linked">
+                            <p><%= user.name %></p>
+                            <p><%= user.mail %></p>
+                            <p><%= user.projectCnt %></p>
+                            <p><%= user.created %></p>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+        <div class="scrollTrack">
+            <div class="scrollBar" id="customScroll"></div>
+        </div>
+    </div>
+</div>
