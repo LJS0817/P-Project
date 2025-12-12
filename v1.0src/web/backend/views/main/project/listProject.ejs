@@ -1,0 +1,54 @@
+<script>
+    <% let text = [
+        'projectSubtitle',
+        'projectEmptySubtitle',
+        'listProjectCountTitle',
+        'listPageCountTitle',
+        'listProjectDeletePopupMsg',
+        'listProjectDeletePopupDetail',
+        'projectTitle',
+        'name',
+    ] %>
+    <% text.forEach(str => { %>
+        document.textData['<%= str %>'] = '<%= __(str) %>';
+    <% }); %>
+</script>
+<script src="/js/main/project/listProject.js" defer></script>
+<link rel="stylesheet" href="/css/main/project/listProject.css" />
+<div class="listProject">
+    <div class="projectMenu">
+        <p><%= __('listProjectCountTitle') %> : <%= projects.length %> / 6</p>
+        <p>
+            <% let cnt = 0; for(let i = 0; i < projects.length; i++) { %>
+                <% cnt += projects[i].pages.length %>
+            <% } %>
+            <%= __('listPageCountTitle') %> : <%= cnt %> / 60
+        </p>
+        <a href="/dashboard/project/add"><%= __('emptyButtonMsg') %><p>+</p></a>
+    </div>
+    <table class="projects">
+        <thead>
+            <tr>
+                <th></th>
+                <th><%= __('listMsg_name') %></th>
+                <th><%= __('listMsg_author') %></th>
+                <th><%= __('listMsg_page') %></th>
+                <th><%= __('listMsg_updated') %></th>
+                <th><%= __('listMsg_option') %></th>
+            </tr>
+        </thead> 
+        <tbody>
+            <% projects.forEach((project, idx) => { %>
+                <%- include('listProjectElement', {
+                    id: project.id,
+                    name: project.name,
+                    desc: project.desc,
+                    pages: project.pages,
+                    author: project.author,
+                    updated: project.updated,
+                }) %>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+<%- include("emptyProject") %>

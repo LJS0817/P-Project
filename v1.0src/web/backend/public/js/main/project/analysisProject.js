@@ -1,61 +1,80 @@
 setupVisibilityControls();
 function setupVisibilityControls() {
-    // 버튼 요소 선택
-    // .half 클래스가 없는 요소를 '눈(Toggle)' 버튼으로 간주
-    const toggleBtn = document.querySelector('.viewProject .uiGroup .visibleBtn:not(.half)');
-    const halfBtn = document.querySelector('.viewProject .uiGroup .visibleBtn.half');
+    function bindControl(btnSelector, imgAltName, useHalfBtn) {
+        // 1. 버튼 요소 선택
+        const toggleBtn = document.querySelector(`.viewProject .uiGroup .visibleBtn${btnSelector}:not(.half)`);
+        const halfBtn = useHalfBtn ? document.querySelector(`.viewProject .uiGroup .visibleBtn${btnSelector}.half`) : null;
 
-    // 1. 눈 아이콘 버튼 (Toggle Visibility)
-    if (toggleBtn) {
-        toggleBtn.addEventListener('click', () => {
-            const heatmapImg = document.querySelector('.dropHere .img.after');
-            const icon = toggleBtn.querySelector('i');
-
-            if (!heatmapImg) return; // 이미지가 없으면 실행 안 함
-
-            // 현재 투명도 확인 (Computed Style 사용이 안전함)
-            const currentOpacity = window.getComputedStyle(heatmapImg).opacity;
-
-            if (currentOpacity > 0) {
-                // 현재 보이면 -> 숨기기 (0)
-                toggleBtn.classList.remove('active');
-                heatmapImg.style.opacity = '0';
-                
-                // 아이콘 변경: 눈 -> 눈 감기
-                icon.classList.remove('fi-rr-eye');
-                icon.classList.add('fi-rr-eye-crossed');
-            } else {
-                toggleBtn.classList.add('active');
-                // 현재 숨겨져 있으면 -> 보이기 (1)
-                heatmapImg.style.opacity = '1';
-                
-                // 아이콘 변경: 눈 감기 -> 눈
-                icon.classList.remove('fi-rr-eye-crossed');
-                icon.classList.add('fi-rr-eye');
+        // [내부 함수] 슬래시 아이콘 상태 업데이트
+        // isVisible이 true면(이미지가 보이면) -> slash를 숨김(opacity 0)
+        // isVisible이 false면(이미지가 안 보이면) -> slash를 보임(opacity 1)
+        const updateSlashIcon = (btn, isVisible) => {
+            const slash = btn.querySelector('.fi-rr-slash');
+            if (slash) {
+                slash.style.opacity = isVisible ? '0' : '1';
             }
-        });
-    }
+        };
 
-    // 2. 50% 버튼 (Half Visibility)
-    if (halfBtn) {
-        halfBtn.addEventListener('click', () => {
-            const heatmapImg = document.querySelector('.dropHere .img.after');
-            
-            if (!heatmapImg) return;
+        // --- [공통] 토글(On/Off) 버튼 로직 ---
+        if (toggleBtn) {
+            // 초기 상태: active가 있으면 이미지가 보이는 상태이므로 slash 숨김
+            if (toggleBtn.classList.contains('active')) {
+                updateSlashIcon(toggleBtn, true);
+            }
 
-            // 투명도 0.5 설정
-            heatmapImg.style.opacity = '0.5';
+            toggleBtn.addEventListener('click', () => {
+                const targetImg = document.querySelector(`.dropHere .img.after[alt="${imgAltName}"]`);
+                
+                if (!targetImg) return; 
 
-            // 50%도 '보이는 상태'이므로, 눈 아이콘이 감겨있다면 다시 뜨게 변경
-            if (toggleBtn) {
-                const icon = toggleBtn.querySelector('i');
-                if (icon.classList.contains('fi-rr-eye-crossed')) {
-                    icon.classList.remove('fi-rr-eye-crossed');
-                    icon.classList.add('fi-rr-eye');
+                const currentOpacity = window.getComputedStyle(targetImg).opacity;
+
+                if (currentOpacity > 0) {
+                    // [숨기기]
+                    toggleBtn.classList.remove('active');
+                    targetImg.style.opacity = '0';
+                    
+                    // 아이콘: 빗금(/) 보이기
+                    updateSlashIcon(toggleBtn, false);
+                } else {
+                    // [보이기]
+                    toggleBtn.classList.add('active');
+                    targetImg.style.opacity = '1';
+                    
+                    // 아이콘: 빗금(/) 숨기기
+                    updateSlashIcon(toggleBtn, true);
                 }
-            }
-        });
+            });
+        }
+
+        // --- [옵션] 50% 버튼 로직 (Heatmap 전용) ---
+        if (useHalfBtn && halfBtn) {
+            halfBtn.addEventListener('click', () => {
+                const targetImg = document.querySelector(`.dropHere .img.after[alt="${imgAltName}"]`);
+                
+                console.log(targetImg);
+                if (!targetImg) return;
+
+                // 투명도 0.5 설정
+                targetImg.style.opacity = '0.5';
+
+                // 50%도 '보이는 상태'이므로 토글 버튼을 활성화 상태로 동기화
+                if (toggleBtn) {
+                    toggleBtn.classList.add('active');
+                    // 빗금(/) 숨기기
+                    updateSlashIcon(toggleBtn, true);
+                }
+            });
+        }
     }
+
+    // ========== 실행 설정 ==========
+
+    // 1. Scan Path: Toggle 기능만 (버튼 아이콘: code-branch)
+    bindControl('.target-path', 'path', false);
+
+    // 2. Heatmap: Toggle + Half 기능 (버튼 아이콘: eye)
+    bindControl('.target-heatmap', 'Heatmap', true);
 }
 
 const addBtn = document.getElementById('addPageBtn');
@@ -121,6 +140,7 @@ function bindEventsToRow(row) {
     const nameInput = row.querySelector('.pageNameInput');
     const deleteBtn = row.querySelector('.deleteBtn');
     const resetBtn = row.querySelector('.resetBtn');
+    const downloadBtn = row.querySelector('.btnGroup a:nth-child(1)');
 
     row.addEventListener('click', (e) => {
         // 1. input(이름 수정, 체크박스)이나 a태그(버튼)를 클릭했을 경우 실행하지 않음
@@ -140,6 +160,37 @@ function bindEventsToRow(row) {
         // 3. 뷰 페이지 실행
         viewPage(row);
     });
+
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // 1. 현재 이 줄(Row)이 활성화(Active) 상태인지 확인
+            if (row.classList.contains('active')) {
+                // 2. 화면에 이미지가 있는지 확인 (공통 함수 활용)
+                const canvas = createMergedCanvas();
+                
+                if (canvas) {
+                    window.showLoading();
+                    // 파일명 가져오기
+                    const currentName = row.querySelector('.pageNameInput')?.value || row.querySelector('.pageName').textContent.trim();
+                    
+                    // 다운로드 링크 생성 및 클릭
+                    const link = document.createElement('a');
+                    link.download = `${currentName}_merged.png`;
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                    endLoad();
+                    return; // 종료
+                }
+            } else {
+                
+            }
+            
+            // 만약 Active 상태가 아니거나 이미지가 로드되지 않았다면?
+            // 기존 href 경로(서버 다운로드)로 이동하게 둡니다.
+            // (서버 로직이 이미지를 압축해서 주거나 원본을 주는 경우 대비)
+        });
+    }
 
     if (nameInput) {
         nameInput.addEventListener('blur', () => convertToStaticText(nameInput));
@@ -259,37 +310,6 @@ async function savePageNameToServer(id, name, cellElement) {
         (data) => { },
         payload
     )
-    // try {
-    //     const response = await fetch(url, {
-    //         method: 'POST',
-    //         headers: { 'Content-Type': 'application/json' },
-    //         body: JSON.stringify(payload)
-    //     });
-
-    //     const data = await response.json();
-
-    //     if (data.success) {
-    //         console.log(isNew ? `생성 완료 ID: ${data.newId}` : `수정 완료`);
-
-    //         // ★ [핵심] 새로 생성된 경우, DOM 요소(버튼 링크 등)를 실제 ID로 업데이트
-    //         if (isNew && data.newId && cellElement) {
-    //             // 1. data-id 업데이트
-    //             cellElement.setAttribute('data-id', data.newId);
-
-    //             // 2. 부모 Row 찾기
-    //             const row = cellElement.closest('.pageElement');
-                
-    //             // 3. 버튼들의 href 링크 업데이트 함수 호출
-    //             updateRowLinks(row, data.newId);
-    //         }
-    //     } else {
-    //         window.showErrorMsg(data.message);
-    //         // 실패 시 UI 롤백 처리가 필요하다면 여기에 작성
-    //     }
-    // } catch (error) {
-    //     console.error('서버 통신 오류', error);
-    //     window.showErrorMsg('서버와 통신 중 오류가 발생했습니다.');
-    // }
 }
 
 // [새로 추가할 헬퍼 함수]
@@ -328,13 +348,29 @@ function getCurrentDateTimeString() {
     return `${year}.${month}.${day} ${hours}:${minutes}`;
 }
 
+function resetVisibilityButtons() {
+    // 1. 모든 토글 버튼에서 active 클래스 제거
+    const toggleBtns = document.querySelectorAll('.viewProject .uiGroup .visibleBtn');
+    toggleBtns.forEach(btn => {
+        // 50% 버튼 제외하고 active 제거 (혹은 전체 제거해도 무방)
+        btn.classList.remove('active'); 
+        
+        // 2. 빗금(/) 아이콘 상태 초기화 (이미지가 없으므로 빗금이 보이는게 맞을 수도 있지만, 
+        // 보통 '분석 전' 상태로 돌아가는 것이므로 빗금 로직은 상황에 맞게 둡니다.
+        // 여기서는 버튼이 비활성(꺼짐) 상태가 되므로, 빗금(/)이 보이는 상태(opacity 1)로 둡니다.
+        const slash = btn.querySelector('.fi-rr-slash');
+        if (slash) {
+            slash.style.opacity = '1'; // 버튼 꺼짐 -> 빗금 보이기
+        }
+    });
+}
+
 const dropArea = document.querySelector('.viewProject .page .result .dropHere');
 const fileInput = document.getElementById('fileData');
 
 const addFileUi = document.querySelector('.viewProject .page .result .uiGroup .addFile');
 const fileInputContainer = addFileUi.querySelector('.fileInput');
 
-// [추가] 페이지 선택 여부 확인 헬퍼 함수
 function isPageSelected() {
     const pageIdInput = document.getElementById('currentPageId');
     if (!pageIdInput || !pageIdInput.value) {
@@ -344,73 +380,75 @@ function isPageSelected() {
     return true;
 }
 
+function createMergedCanvas() {
+    const dropArea = document.querySelector('.viewProject .page .result .dropHere');
+    const container = dropArea.querySelector('.imageContainer');
+    
+    if (!container) return null;
+
+    const imgOriginal = container.querySelector('.img.before');
+    const imgHeatmap = container.querySelector('.img.after[alt="Heatmap"]');
+    const imgPath = container.querySelector('.img.after[alt="path"]');
+
+    if (!imgOriginal) return null;
+
+    // 1. 캔버스 생성
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+
+    // 2. 크기 설정
+    canvas.width = imgOriginal.naturalWidth;
+    canvas.height = imgOriginal.naturalHeight;
+
+    // 3. 그리기 (원본 -> 히트맵 -> 경로 순서)
+    ctx.drawImage(imgOriginal, 0, 0, canvas.width, canvas.height);
+
+    // * 눈(Toggle) 버튼으로 숨겼더라도, 다운로드 시에는 포함할지 여부 결정
+    // "클릭 시 표시되는 이미지와 같게"라고 하셨으므로, DOM에 존재하면 그립니다.
+    if (imgHeatmap) {
+        ctx.drawImage(imgHeatmap, 0, 0, canvas.width, canvas.height);
+    }
+    if (imgPath) {
+        ctx.drawImage(imgPath, 0, 0, canvas.width, canvas.height);
+    }
+
+    return canvas;
+}
+
+// 기존 dropArea.addEventListener('click', ...) 부분을 교체
 dropArea.addEventListener('click', () => {
     if (!isPageSelected()) return;
 
-    // 1. 현재 렌더링된 이미지 요소들 가져오기
-    const container = dropArea.querySelector('.imageContainer');
-    if (!container) {
-        // 이미지가 없으면 업로드 창 열기
-        fileInput.click();
-        return;
-    }
+    // 공통 함수로 캔버스 생성
+    const canvas = createMergedCanvas();
 
-    const imgOriginal = container.querySelector('.img.before');
-    // alt 속성이나 순서로 구분 (HTML 구조에 따라 선택자 조정 필요)
-    const imgHeatmap = container.querySelector('.img.after[alt="Heatmap"]');
-    const imgPath = container.querySelector('.img.after[alt="path"]');
-    console.log(imgOriginal);
-    if (imgOriginal) {
-        // [CASE A] 이미지가 있을 때 -> Canvas로 합성하여 새 창 열기
-        
-        // 1. 캔버스 생성 (메모리 상에서만 존재)
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-
-        // 2. 캔버스 크기를 원본 이미지 크기에 맞춤
-        canvas.width = imgOriginal.naturalWidth;
-        canvas.height = imgOriginal.naturalHeight;
-
-        // 3. 순서대로 그리기 (원본 -> 히트맵 -> 경로)
-        // drawImage(이미지요소, x, y, width, height)
-        
-        // (1) 원본 그리기
-        ctx.drawImage(imgOriginal, 0, 0, canvas.width, canvas.height);
-
-        // (2) 히트맵 그리기 (이미지가 존재하면)
-        if (imgHeatmap) {
-            // 투명도가 필요하다면 아래 주석 해제 (0.0 ~ 1.0)
-            // ctx.globalAlpha = 0.6; 
-            ctx.drawImage(imgHeatmap, 0, 0, canvas.width, canvas.height);
-            // ctx.globalAlpha = 1.0; // 투명도 원상복구
-        }
-
-        // (3) 스캔패스 그리기 (이미지가 존재하면)
-        if (imgPath) {
-            ctx.drawImage(imgPath, 0, 0, canvas.width, canvas.height);
-        }
-
-        // 4. 합쳐진 이미지를 DataURL 문자열로 변환
+    if (canvas) {
+        // [CASE A] 합성된 이미지 새 창으로 띄우기
         const mergedDataURL = canvas.toDataURL('image/png');
-
-        // 5. 새 창 열어서 이미지 보여주기
+        
         const newWindow = window.open('');
         if (newWindow) {
             newWindow.document.write(`
+                <!DOCTYPE html>
                 <html>
-                    <head><title>Merged Result</title></head>
-                    <body style="margin:0; display:flex; justify-content:center; align-items:center; background:#222;">
-                        <img src="${mergedDataURL}" style="max-width:100%; height:auto;" />
+                    <head>
+                        <title>Merged Result</title>
+                        <style>
+                            body { margin: 0; background-color: #222; display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; }
+                            img { max-width: 95%; max-height: 95%; object-fit: contain; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+                        </style>
+                    </head>
+                    <body>
+                        <img src="${mergedDataURL}" />
                     </body>
                 </html>
             `);
-            newWindow.document.close(); // 로딩 완료 처리
+            newWindow.document.close();
         } else {
             alert("팝업 차단을 해제해주세요.");
         }
-
     } else {
-        // [CASE B] 이미지가 없을 때 -> 파일 업로드 창 열기
+        // [CASE B] 이미지가 없으면 파일 업로드 창 열기
         fileInput.click();
     }
 });
@@ -477,41 +515,31 @@ fileInput.addEventListener('change', (e) => {
     handleFiles(e.target.files);
 });
 
+let selectedFile = null;
+
 function handleFiles(files) {
     if (files.length > 0) {
-        // 원본 코드
-        // console.log('선택/드롭된 파일 목록:');
-        // for (let i = 0; i < files.length; i++) {
-        //      console.log(`- ${files[i].name} (${(files[i].size / 1024 / 1024).toFixed(2)} MB)`);
-        // }
-        const file = files[0]; // 첫 번째 파일만 처리
-        console.log('파일 업로드 중: ', file.name);
+        selectedFile = files[0]; // 1. 파일 변수에 저장
+        console.log('새 파일 선택됨:', selectedFile.name);
 
-        // 프로젝트 ID 가져오기
-        const projectId = document.getElementById('currentProjectId').value;
-        const imageId = document.getElementById('currentPageId').value;
+        // 2. FileReader로 이미지 미리보기 생성
+        const reader = new FileReader();
         
-        // 데이터를 담을 폼 생성
-        const formData = new FormData();
-        formData.append('fileData', file); // 라우터의 upload.single('fileData')와 동일해야 함
-        formData.append('projectId', projectId) // ID도 함께 전송
-        formData.append('imageId', imageId);
+        reader.onload = function(e) {
+            const dropArea = document.querySelector('.dropHere');
+            
+            // 3. [핵심] 기존 DOM(히트맵, 경로 이미지 등)을 덮어쓰기
+            // innerHTML에 새로운 문자열을 할당하면 기존 자식 요소들은 메모리에서 해제됩니다.
+            dropArea.innerHTML = `
+            <div class='imageContainer'>
+                <img class='img before' src="${e.target.result}" alt="Original Preview">
+            </div>`;
 
-
-        window.sendData('/dashboard/project/analyze', 'POST',
-            (data) => {
-                const dropArea = document.querySelector('.dropHere');
-                dropArea.innerHTML = `
-                <div class='imageContainer'>
-                    <img class='img before' src="${data.original}" alt="Original">
-                    <img class='img after' src="${data.heatmap}" alt="Heatmap">
-                    <img class='img after' src="${data.path}" alt="path">
-                </div>`;
-                addNewPageRow();
-            },
-            (data) => {},
-            formData
-        )
+            // 4. [추가] 버튼 UI 상태 초기화 (분석 이미지가 사라졌으므로 버튼도 꺼짐 상태로)
+            resetVisibilityButtons();
+        };
+        
+        reader.readAsDataURL(selectedFile); // 파일을 Base64 URL로 읽기
     }
 }
 
@@ -521,6 +549,7 @@ async function viewPage(ele) {
     const nameCell = ele.querySelector('.pageName');
     const pageId = nameCell.getAttribute('data-id');
     const currentName = nameCell.textContent.trim();
+    selectedFile = null;
 
     // 1. 페이지 제목 변경
     if (pageTitleElement) pageTitleElement.innerText = currentName;
@@ -552,4 +581,79 @@ async function viewPage(ele) {
             }
         }
     )
+}
+
+// 분석 버튼 선택
+// 분석 버튼 선택
+const analyzeBtn = document.querySelector('.viewProject .uiGroup .sendDesign');
+
+analyzeBtn.addEventListener('click', () => {
+    // 1. 페이지 선택 여부 체크
+    if (!isPageSelected()) return; 
+    
+    // 2. [추가] 이미 분석된 결과인지 확인
+    // selectedFile이 없는데(null), 화면에 분석 결과(.img.after)가 있다면 서버 데이터임
+    const hasAnalyzedResult = document.querySelector('.dropHere .img.after');
+
+    if (!selectedFile) {
+        if (hasAnalyzedResult) {
+            // Case A: 서버에서 불러온 이미지이거나, 방금 분석을 마친 상태
+            window.showClientErrorMsg(document.textData['viewProjectAlreadyAnaylzedMsg']);
+        } else {
+            // Case B: 아예 이미지가 없는 상태
+            window.showClientErrorMsg(document.textData['viewProjectPageNoImageMsg']);
+        }
+        return; // 여기서 함수 종료 (서버 전송 차단)
+    }
+
+    // --- 이하 로직은 기존과 동일 ---
+
+    console.log('서버로 전송 시작:', selectedFile.name);
+
+    // 3. DOM에서 ID값들 가져오기
+    const projectId = document.getElementById('currentProjectId').value;
+    // ... (이하 생략) ...
+    const imageId = document.getElementById('currentPageId').value;
+    const pageNameInput = document.querySelector('.pageElement.active .pageNameInput');
+    const pageTitle = document.getElementById('pageTitle');
+    const pageName = pageNameInput ? pageNameInput.value : (pageTitle ? pageTitle.innerText : '');
+
+    // 4. FormData 생성
+    const formData = new FormData();
+    formData.append('fileData', selectedFile); 
+    formData.append('projectId', projectId);
+    formData.append('pageName', pageName);
+    formData.append('imageId', imageId);
+
+    // 5. 서버 전송
+    window.sendData('/dashboard/project/analyze', 'POST',
+        (data) => {
+            const dropArea = document.querySelector('.dropHere');
+            
+            dropArea.innerHTML = `
+            <div class='imageContainer'>
+                <img class='img before' src="${data.original}" alt="Original">
+                <img class='img after heatmap' src="${data.heatmap}" alt="Heatmap">
+                <img class='img after scanpath' src="${data.path}" alt="path">
+            </div>`;
+            
+            // ★ 중요: 전송 후 selectedFile을 비워서 중복 전송 방지
+            selectedFile = null; 
+            
+            updateCurrentRowStatus(); 
+        },
+        (err) => { 
+            console.error('Upload Error', err);
+        },
+        formData
+    );
+});
+
+// [헬퍼 함수] 분석 완료 후 리스트의 상태 아이콘 변경 (선택 사항)
+function updateCurrentRowStatus() {
+    const activeRow = document.querySelector('.pageElement.active');
+    if (activeRow) {
+        const statusIcon = activeRow.querySelector('.status');
+        if (statusIcon) statusIcon.classList.add('done');
+    }
 }

@@ -1,0 +1,80 @@
+<link rel="stylesheet" href="/css/main/listview.css" />
+<link rel="stylesheet" href="/css/main/history/history.css" />
+<script src="/js/main/history/filterProject.js" defer></script>
+<script src="/js/main/scroll.js" defer></script>
+<script src="/js/main/sort.js" defer></script>
+<div class="histories">
+    <div class="filterContainer">
+        <h3><%= __('historyFilterTitle') %></h3>
+        <% 
+            // 1. 프로젝트 목록 추출 (중복 제거)
+            const uniqueProjects = [...new Set(history.map(item => item.project))].sort();
+            
+            // 2. 페이지 목록 추출 (중복 제거)
+            const uniquePages = [...new Set(history.map(item => item.page))].sort();
+        %>
+        <div class="filters">
+            <div class="projectName filter-group" data-filter-key="project">
+                <p><%= __('historyFilterProject') %></p>
+                <div class="detailContainer">
+                    <div class="details">
+                        <div class="filter active" onclick="filtering(this, true)"><%= __('historyFilterAll') %></div>
+                        <% uniqueProjects.forEach(project => { %>
+                            <div class="filter" onclick="filtering(this)"><%= project %></div>
+                        <% }); %>
+                        </div>
+                </div>
+            </div>
+            <hr>
+            <div class="pageName filter-group" data-filter-key="page">
+                <p><%= __('historyFilterPage') %></p>
+                <div class="detailContainer">
+                    <div class="details">
+                        <div class="filter active" onclick="filtering(this, true)"><%= __('historyFilterAll') %></div>
+                        <% uniquePages.forEach(page => { %>
+                            <div class="filter" onclick="filtering(this)"><%= page %></div>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="date">
+                <p><%= __('historyFilterDate') %></p>
+                <div class="dateSelector">
+                    <input type="date" name="startDate" id="startDate">
+                    <span>~</span>
+                    <input type="date" name="endDate" id="endDate">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="verticalScrollableList">
+        <div class="result listParent">
+            <div class="categories linked">
+                <p class="sortable"><%= __('historyFilterDate') %><span class="arrow">▼</span></p>
+                <p class="sortable"><%= __('historyFilterProject') %><%= __('name') %><span class="arrow">▼</span></p>
+                <p class="sortable"><%= __('historyFilterPage') %><%= __('name') %><span class="arrow">▼</span></p>
+            </div>
+            <div class="historyContainer listContainer">
+                <div class="historyList list">
+                    <% history.forEach(hist => { %>
+                        <div class="history linked" 
+                             data-project="<%= hist.project %>" 
+                             data-page="<%= hist.page %>"
+                             data-date="<%= hist.rawDate %>">
+                             
+                            <%- include('historyContainer', {
+                                date: hist.date,
+                                project: hist.project,
+                                page: hist.page,
+                            }) %>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+        <div class="scrollTrack">
+            <div class="scrollBar" id="customScroll"></div>
+        </div>
+    </div>
+</div>

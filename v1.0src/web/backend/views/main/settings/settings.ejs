@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="/css/main/settings/settings.css" />
+<script src="/js/main/settings/settings.js" defer></script>
+<div class="settings">
+    <div class="categories">
+        <a href="/dashboard/settings/" class="category <%= index == 0 ? 'active' : '' %>"><%= __('setting_accountTitle') %></a>
+        <a href="/dashboard/settings/preferences" class="category <%= index == 1 ? 'active' : '' %>"><%= __('setting_preferTitle') %></a>
+        <a href="/dashboard/settings/project" class="category <%= index == 2 ? 'active' : '' %>"><%= __('setting_projectTitle') %></a>
+    </div>
+    <div class="settingContainer">
+        <%- include(which) %>
+        <% if(index < 2) { %>
+            <hr>
+            <div class="settingBtnContainer" >
+                <a href="#" id="saveSettingsBtn"><%= __('settingSaveChangesButtonMsg') %></a>
+            </div>
+        <% } %>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+.settingContainer .btnGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3em;
+}
+
+.settingContainer .btnGroup h2 p {
+    display: inline-block;
+    font-size: 0.6em;
+    font-weight: 500;
+}
+
+.settingContainer .btnGroup .btn a {
+    width: 10em;
+    text-align: center;
+}
+
+.settingContainer .btnGroup .change h3 {
+    color: var(--text100);
+}
+
+.settingContainer .btnGroup .change.btn a {
+    color: var(--text100);
+    border-color: var(--text100);
+}
+
+.settingContainer .btnGroup .change.btn a:hover {
+    background-color: var(--primary300);
+    color: var(--textOnPrimary);
+}
+
+@media (max-width: 768px) {
+  .settingContainer .btnGroup {
+    gap: 1em;
+  }
+
+  .settingContainer .btnGroup h2 {
+    font-size: 1.3em;
+  }
+
+  .settingContainer .btnGroup h2 p {
+    font-size: 0.65em;
+    margin-top: 0.3em;
+  }
+
+  .settingContainer .btnGroup .btn {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1em;
+  }
+
+  .settingContainer .btnGroup .btn a {
+    align-self: flex-end;
+    width: auto;
+    min-width: 10em;
+  }
+}

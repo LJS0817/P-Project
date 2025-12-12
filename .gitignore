@@ -433,3 +433,7 @@ v0.9src/ai/models/utils/data_process.py
 v0.9src/ai/models/utils/densenet.py
 v0.9src/ai/models/utils/loss_function.py
 /v0.9src/web/backend/middleware
+/v1.0src/ai
+/v1.0src/web/backend/config
+/v1.0src/web/backend/middleware
+/v1.0src/web/backend/public/storage

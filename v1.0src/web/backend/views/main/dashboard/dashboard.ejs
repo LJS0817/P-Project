@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="/css/main/dashboard/dashboard.css">
+<script>
+    document.textData['adminDatabaseEmptyMsg'] = '<%= __("adminDatabaseEmptyMsg") %>';
+    const recentImagesData = <%- JSON.stringify(histories || []) %>;
+</script>
+<script src="/js/main/dashboard/dashboard.js" defer></script>
+<div class="dashboardContainer">
+    <div class="cardContainer">
+        <% cards.forEach(card => { %>
+            <%- include('projectCard', {
+                id: card.id,
+                title: card.title,
+                author: card.author,
+                updated: card.updated,
+                thumb: card.thumb,
+            }) %>
+        <% }); %>
+    </div>
+    <div class="projectInfo">
+        <div class="lastestProject">
+            <div class="prevImage">
+                <div class="arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24">
+                        <path
+                            d="M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z" />
+                    </svg>
+                </div>
+                <div id="projectImage">
+
+                </div>
+                <div class="arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24">
+                        <path
+                            d="M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="imageCount">
+                <!-- <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div> -->
+            </div>
+        </div>
+        <div class="history">
+            <h2><%= __('historyTitle') %></h2>
+            <div class="historyList">
+                <% histories.forEach(hist => { %>
+                    <%- include('historyCard', {
+                        pid: hist.pid,
+                        id: hist.id,
+                        name: hist.name,
+                        when: hist.when,
+                    }) %>
+                <% }); %>
+            </div>
+            <a href="/dashboard/history" class="seeMore"><%= __('seeMore') %></a>
+        </div>
+    </div>
+</div>

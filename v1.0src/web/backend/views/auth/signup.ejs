@@ -1,0 +1,28 @@
+<h1 class="auth-title"><%= __('signupTitle') %></h1>
+
+<form action="/auth/signup" method="POST" id="userForm">
+  <p><%= __('signupErrorMsg') %></p>
+
+  <div class="input-group">
+    <input type="text" name="userid" placeholder="<%= __('signIDMsg') %>" class="input-field" required />
+  </div>
+
+  <div class="input-group">
+    <input type="email" name="useremail" placeholder="<%= __('signupEmailMsg') %>" class="input-field" required />
+  </div>
+
+  <div class="input-group">
+    <input type="text" name="username" placeholder="<%= __('signupNameMsg') %>" class="input-field" required />
+  </div>
+
+  <div class="input-group">
+    <input type="password" name="password" placeholder="<%= __('signPwdMsg') %>" id="password" class="input-field" required />
+    <i class="fas fa-eye-slash toggle-pw" onclick="togglePassword(this)"></i>
+  </div>
+
+  <button type="submit" class="btn-submit"><%= __('signupTitle') %></button>
+</form>
+
+<div class="auth-footer">
+  <%= __('signupSigninMsg') %> <a href="/auth/signin"><%= __('signinTitle') %></a>
+</div>

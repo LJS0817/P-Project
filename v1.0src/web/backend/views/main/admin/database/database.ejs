@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="/css/main/listview.css" />
+<link rel="stylesheet" href="/css/main/admin/database.css" />
+<script>
+    <% let text = [
+                'listMsg_option',
+                'adminDatabaseEmptyMsg',
+                'adminDatabaseGrantMsg',
+                'adminDatabaseRevokeMsg',
+                'delete',
+                'adminDatabaseGrantPopupMsg',
+                'adminDatabaseRevokePopupMsg',
+                'adminDatabaseDeletePopupTitle',
+                'adminDatabaseDeletePopupDesc',
+    ] %>
+    <% text.forEach(str => { %>
+        document.textData['<%= str %>'] = '<%= __(str) %>';
+    <% }); %>
+</script>
+<script src="/js/main/admin/tableControl.js" defer></script>
+<script src="/js/main/scroll.js" defer></script>
+<script src="/js/main/sort.js" defer></script>
+<div class="databaseContainer">
+    <div class="verticalScrollableList">
+        <div class="pins">
+            <% for(let i = 0; i < tables.length; i++) { %>
+                <div class="pin <%= i == 0 ? 'active' : '' %>" data-index="<%= i %>"><%= tables[i] %></div>
+            <% } %>
+        </div>
+    </div>
+    <div class="tableContent" id="tableContent">
+        <% for(let i = 0; i < tables.length; i++) { %>
+            <%- include('table', {
+                name: tables[i],
+                index: i
+            }) %>
+        <% } %>
+    </div>  
+</div>
