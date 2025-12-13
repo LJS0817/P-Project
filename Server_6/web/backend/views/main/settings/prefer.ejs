@@ -1,0 +1,249 @@
+<link rel="stylesheet" href="/css/main/settings/prefer.css" />
+<script>
+  document.textData["setting_preferSavePopupTitle"] =
+    '<%= __("setting_preferSavePopupTitle") %>';
+  document.textData["setting_preferSavePopupMsg"] =
+    '<%= __("setting_preferSavePopupMsg") %>';
+</script>
+<script src="/js/main/settings/prefer.js" defer></script>
+<h3><%= __('setting_preferTitle') %></h3>
+<h4><%= __('setting_preferSubtitle') %></h4>
+<hr />
+<div class="preferInput input">
+  <div class="inputContainer">
+    <p><%= __('setting_preferLanguage') %></p>
+    <div class="customSelect" id="languageSelect">
+      <% var currentLang = getLocale(); %>
+      <button type="button" class="selectTrigger">
+        <%= currentLang === 'en' ? __('setting_preferLanguageEng') :
+        __('setting_preferLanguageKor') %>
+      </button>
+      <div class="selectOptions">
+        <span
+          class="optionItem <%= currentLang === 'en' ? 'selected' : '' %>"
+          data-value="en"
+          ><%= __('setting_preferLanguageEng') %></span
+        >
+        <span
+          class="optionItem <%= currentLang === 'ko' ? 'selected' : '' %>"
+          data-value="ko"
+          ><%= __('setting_preferLanguageKor') %></span
+        >
+      </div>
+      <input
+        type="hidden"
+        name="languageSelector"
+        id="languageInput"
+        value="<%= currentLang %>"
+      />
+    </div>
+  </div>
+
+  <!-- 날짜 포맷 로직 -->
+  <% // user.date_format이 없으면 기본값 설정 let currentFormat = (user &&
+  user.date_format) ? user.date_format : 'YYYY. MM. DD HH:mm'; // 24시간제인지
+  체크 (HH가 있으면 24시간) let is24Hour = currentFormat.includes('HH'); // 날짜
+  부분만 추출 (시간 포맷 문자열 제거) let datePart = currentFormat.replace('
+  HH:mm', '').replace(' a hh:mm', '').replace(' hh:mm a', '').trim(); %>
+
+  <div class="inputContainer">
+    <p><%= __('setting_preferFormat') %></p>
+    <div class="formatInput">
+      <div class="toggleContainer">
+        <!-- 12시간 텍스트 -->
+        <label
+          for="themeToggle"
+          class="toggleText <%= !is24Hour ? 'active' : '' %>"
+          id="textLeft"
+          ><%= __('setting_preferFormat12') %></label
+        >
+
+        <label class="switchWrapper">
+          <!-- 24시간이면 checked -->
+          <input type="checkbox" class="toggleCheckbox" id="themeToggle" <%=
+          is24Hour ? 'checked' : '' %>>
+          <span class="sliderRound"></span>
+        </label>
+
+        <!-- 24시간 텍스트 -->
+        <label
+          for="themeToggle"
+          class="toggleText <%= is24Hour ? 'active' : '' %>"
+          id="textRight"
+          ><%= __('setting_preferFormat24') %></label
+        >
+      </div>
+      <hr />
+      <div class="customSelect" id="dateFormatSelect">
+        <!-- 현재 선택된 날짜 포맷 표시 -->
+        <button type="button" class="selectTrigger"><%= datePart %></button>
+        <div class="selectOptions">
+          <!-- 옵션들 중 현재 날짜 부분과 일치하면 selected 추가 -->
+          <span
+            class="optionItem <%= datePart === 'YYYY. MM. DD' ? 'selected' : '' %>"
+            data-value="YYYY. MM. DD"
+            >yyyy.mm.dd</span
+          >
+          <span
+            class="optionItem <%= datePart === 'YY. MM. DD' ? 'selected' : '' %>"
+            data-value="YY. MM. DD"
+            >yy.mm.dd</span
+          >
+          <span
+            class="optionItem <%= datePart === 'MM. DD. YYYY' ? 'selected' : '' %>"
+            data-value="MM. DD. YYYY"
+            >mm.dd.yyyy</span
+          >
+          <span
+            class="optionItem <%= datePart === 'MM. DD. YY' ? 'selected' : '' %>"
+            data-value="MM. DD. YY"
+            >mm.dd.yy</span
+          >
+          <span
+            class="optionItem <%= datePart === 'DD. MM. YYYY' ? 'selected' : '' %>"
+            data-value="DD. MM. YYYY"
+            >dd.mm.yyyy</span
+          >
+          <span
+            class="optionItem <%= datePart === 'DD. MM. YY' ? 'selected' : '' %>"
+            data-value="DD. MM. YY"
+            >dd.mm.yy</span
+          >
+        </div>
+        <input
+          type="hidden"
+          name="dateFormatSelector"
+          id="dateFormatInput"
+          value="<%= datePart %>"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+<hr />
+<div class="themeSetting">
+  <p><%= __('setting_preferTheme') %></p>
+  <div class="themes">
+    <!-- 테마 설정 부분은 기존 유지 -->
+    <div class="themeDots">
+      <div class="dot active" style="background-color: var(--defaultPrimary)">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          id="Outline"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M22.319,4.431,8.5,18.249a1,1,0,0,1-1.417,0L1.739,12.9a1,1,0,0,0-1.417,0h0a1,1,0,0,0,0,1.417l5.346,5.345a3.008,3.008,0,0,0,4.25,0L23.736,5.847a1,1,0,0,0,0-1.416h0A1,1,0,0,0,22.319,4.431Z"
+          />
+        </svg>
+      </div>
+      <div class="dot" style="background-color: var(--juicePrimary)">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          id="Outline"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M22.319,4.431,8.5,18.249a1,1,0,0,1-1.417,0L1.739,12.9a1,1,0,0,0-1.417,0h0a1,1,0,0,0,0,1.417l5.346,5.345a3.008,3.008,0,0,0,4.25,0L23.736,5.847a1,1,0,0,0,0-1.416h0A1,1,0,0,0,22.319,4.431Z"
+          />
+        </svg>
+      </div>
+      <div class="dot" style="background-color: var(--sandPrimary)">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          id="Outline"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M22.319,4.431,8.5,18.249a1,1,0,0,1-1.417,0L1.739,12.9a1,1,0,0,0-1.417,0h0a1,1,0,0,0,0,1.417l5.346,5.345a3.008,3.008,0,0,0,4.25,0L23.736,5.847a1,1,0,0,0,0-1.416h0A1,1,0,0,0,22.319,4.431Z"
+          />
+        </svg>
+      </div>
+      <div class="dot" style="background-color: var(--lavenderPrimary)">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          id="Outline"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M22.319,4.431,8.5,18.249a1,1,0,0,1-1.417,0L1.739,12.9a1,1,0,0,0-1.417,0h0a1,1,0,0,0,0,1.417l5.346,5.345a3.008,3.008,0,0,0,4.25,0L23.736,5.847a1,1,0,0,0,0-1.416h0A1,1,0,0,0,22.319,4.431Z"
+          />
+        </svg>
+      </div>
+      <div class="dot" style="background-color: var(--junglePrimary)">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          id="Outline"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M22.319,4.431,8.5,18.249a1,1,0,0,1-1.417,0L1.739,12.9a1,1,0,0,0-1.417,0h0a1,1,0,0,0,0,1.417l5.346,5.345a3.008,3.008,0,0,0,4.25,0L23.736,5.847a1,1,0,0,0,0-1.416h0A1,1,0,0,0,22.319,4.431Z"
+          />
+        </svg>
+      </div>
+    </div>
+    <div class="themeModes">
+      <div class="mode active">
+        <div class="preview">
+          <div class="contentPreview">
+            <div class="dummyPreview"></div>
+            <div class="dummyPreview"></div>
+          </div>
+          <div class="checked">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              id="Outline"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M22.319,4.431,8.5,18.249a1,1,0,0,1-1.417,0L1.739,12.9a1,1,0,0,0-1.417,0h0a1,1,0,0,0,0,1.417l5.346,5.345a3.008,3.008,0,0,0,4.25,0L23.736,5.847a1,1,0,0,0,0-1.416h0A1,1,0,0,0,22.319,4.431Z"
+              />
+            </svg>
+          </div>
+        </div>
+        <p><%= __('setting_preferThemeLight') %></p>
+      </div>
+      <div class="mode">
+        <div class="preview">
+          <div class="contentPreview">
+            <div class="dummyPreview"></div>
+            <div class="dummyPreview"></div>
+          </div>
+          <div class="checked">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              id="Outline"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M22.319,4.431,8.5,18.249a1,1,0,0,1-1.417,0L1.739,12.9a1,1,0,0,0-1.417,0h0a1,1,0,0,0,0,1.417l5.346,5.345a3.008,3.008,0,0,0,4.25,0L23.736,5.847a1,1,0,0,0,0-1.416h0A1,1,0,0,0,22.319,4.431Z"
+              />
+            </svg>
+          </div>
+        </div>
+        <p><%= __('setting_preferThemeDark') %></p>
+      </div>
+      <div class="mode">
+        <div class="preview">
+          <div class="contentPreview">
+            <div class="dummyPreview"></div>
+            <div class="dummyPreview"></div>
+          </div>
+          <div class="checked">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              id="Outline"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M22.319,4.431,8.5,18.249a1,1,0,0,1-1.417,0L1.739,12.9a1,1,0,0,0-1.417,0h0a1,1,0,0,0,0,1.417l5.346,5.345a3.008,3.008,0,0,0,4.25,0L23.736,5.847a1,1,0,0,0,0-1.416h0A1,1,0,0,0,22.319,4.431Z"
+              />
+            </svg>
+          </div>
+        </div>
+        <p><%= __('setting_preferThemeSystem') %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<input type="hidden" name="theme" id="themeInput" value="default" />

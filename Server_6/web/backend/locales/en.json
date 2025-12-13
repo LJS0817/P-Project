@@ -1,0 +1,235 @@
+{
+	"menu_home": "Home",
+	"menu_service": "Service",
+	"menu_tech": "Tech",
+	"menu_team": "Team",
+
+	"menu_signup": "Sign up",
+	"menu_home_title": "Stop guessing",
+	"menu_home_desc": "See your design through your users' eyes<br>Reveal the hidden patterns of user engagement",
+	"menu_home_getStart": "Get Started",
+
+	"menu_service_title": "AI-Powered Attention Prediction",
+	"menu_service_desc": "Leverage advanced machine learning to simulate human eye-tracking instantly. Get 90% accurate results without expensive hardware or lab testing",
+	"menu_service_card_title": "Instant Heatmap Generation",
+	"menu_service_card_desc": "Upload your design and visualize user attention in seconds. Identify focal points and blind spots to optimize your layout before launch",
+
+	"menu_tech_title": "Uncover Hidden Insights",
+	"menu_tech_desc": "Analyze your design deeper with our three core pillars of visual tracking",
+	"menu_tech_card0_desc": "Instantly visualize the \"hot spots\" of your design. See exactly which elements capture immediate attention and which ones get ignored by users",
+	"menu_tech_card1_desc": "Track the sequential order of user attention. Understand the narrative your design tells by following the numbered path of the user's eye",
+	"menu_tech_card2_desc": "Get a quantifiable score on how clean and uncluttered your design is. Use data to remove distractions and focus on conversion goals",
+
+    "menu_tech_step_title": "How it works",
+	"menu_tech_step0_title": "Prepare Design",
+	"menu_tech_step0_desc": "Select the UI mockup or webpage screenshot you want to analyze",
+	"menu_tech_step1_title": "Upload File",
+	"menu_tech_step1_desc": "Simply drag and drop your image (JPG, PNG) into the dashboard",
+	"menu_tech_step2_title": "AI Processing",
+	"menu_tech_step2_desc": "Our predictive AI analyzes visual hierarchy and focal points instantly",
+	"menu_tech_step3_title": "View Insights",
+	"menu_tech_step3_desc": "Get your heatmap report and optimize your design for better conversion",
+
+    "menu_team_title": "Gachon Univ.",
+
+    "signEmptyError": "Please fill in all required fields.",
+
+    "signinTitle": "Sign in",
+    "signinErrorMsg": "Incorrect id or password.",
+    "signinRemMsg": "Remember me",
+    "signinForgotMsg": "Forgot my password",
+    "signinSignupMsg": "Don't have an account?",
+    "signinSignupButtonMsg": "Register",
+
+    "signupTitle": "Create account",
+    "signupErrorMsg": "Incorrect id, email, username or password.",
+    "signupEmailMsg": "E-mail",
+    "signupNameMsg": "Username",
+    "signupSigninMsg": "Already have an account?",
+
+    "signIDMsg": "ID",
+    "signPwdMsg": "Password",
+
+    "forgotTitle": "Reset your Password",
+    "forgotErrorMsg": "Enter the email address associated with your account.",
+    "forgotButtonMsg": "Send password rest email",
+    "forgotReturnMsg": "Remembered your password?",
+
+    "verifyTitle": "Vefity code",
+    "verifyButtonMsg": "Submit",
+    "verifyNewPassword": "New password",
+    "verifyNewPasswordButtonMsg": "Change password",
+
+
+    "seeMore": "See more",
+    "dashboardViewProject": "View project",
+    
+	"popupProcessMsg": "Processing",
+	"popupErrorMsg": "Error",
+	"popupDoneMsg": "All done!",
+	"popupReturnMsg": "Return",
+    "popupReturnAfter3s": "( 3s )",
+    "popupFailedSendToServer": "Failed to send data to the server.",
+    "popupFailedPleaseLater": "Please try again later.",
+    "popupFailedTask": "Operation failed.",
+
+    "overviewTitle": "Overview",
+    "overviewSubtitle": "Welcome, %s",
+
+    "name": " name",
+    "dummy": "%s",
+    "cancel": "Cancel",
+	"delete": "Delete",
+	"noReturn": "This action cannot be undone",
+
+    "historyTitle": "Histories",
+    "historySubtitle": "Showing all your analysis histories",
+    "historyFilterTitle": "Filter",
+    "historyFilterAll": "All",
+    "historyFilterProject": "Project",
+    "historyFilterPage": "Page",
+    "historyFilterDate": "Date",
+
+    "emptyMsg_0": "Ooops! It's Empty",
+    "emptyMsg_1": "Start create resources by clicking on 'Add new project'",
+    "emptyButtonMsg": "Add new project",
+
+    "listProjectCountTitle": "Total projects",
+    "listPageCountTitle": "Total pages",
+    "listProjectDeletePopupMsg": "Delete project",
+    "listProjectDeletePopupDetail": "Are you sure you want to proceed",
+
+    "listPageOptionDownload": "Download",
+    "listPageOptionReset": "Reset",
+
+    "listPageResetPopupMsg": "Reset page",
+    "listPageResetPopupDetail": "Are you sure you want to reset this page",
+
+    "listPageDeletePopupMsg": "Delete page",
+    "listPageDeletePopupDetail": "Are you sure you want to delete this page",
+
+	"listPageNeedSelectMsg": "Select page",
+    
+
+    "projectTitle": "Project",
+    "projectSubtitle": "Project manage",
+    "projectEmptySubtitle": "It's empty",
+    "projectAddTitle": "Add project",
+    "projectAddSubTitle": "Add new project",
+    "projectEditTitle": "Edit Project",
+    "projectEditSubTitle": "Modify your project details",
+    "projectViewSubTitle": "Analysis your design",
+
+    "configProjectSubtitle": "Required fields are marked with an asterisk (*).",
+    "configProjectName": "Project name *",
+    "configProjectDesc": "Short description",
+    "configProjectThumbnail": "Thumbnail ( Logo, Thumbnail... )",
+    "configProjectAddFile": "Add File",
+    "configProjectAddPage": "Pages",
+    "configProjectAddPageMsg": "( Optional ) [ Limited 10 pages ]",
+    "configProjectAddPageEnterPage": "Enter page name",
+    "configProjectVisibleTitle": "Choose visibility *",
+    "configProjectVisibleSubtitle": "Choose who can see this project",
+    "configProjectVisiblePublic": "Public",
+    "configProjectVisiblePrivate": "Private",
+
+    "viewProjectDropHereTitle": "Drag and drop or click here",
+    "viewProjectDropHereSubtitle": "to upload to your deisgn",
+    "viewProjectAnalysisButtonMsg": "Design analysis",
+    "viewProjectPageTitle": "Pages",
+    "viewProjectAddPageButtonMsg": "Add page",
+    "viewProjectAlreadyAnaylzedMsg": "This image has already been analyzed.<br>Please upload a new image to analyze again.",
+    "viewProjectPageNoImageMsg": "Please drag or select an image to analyze.",
+
+    "viewProjectScoreTitle": "Scores",
+    "viewProjectBalanceTitle": "Balance",
+    "viewProjectBalanceDesc": "Evaluates how stably the visual center of gravity is placed within the screen.<br>A higher score indicates that content is evenly distributed, providing a sense of stability. A lower score suggests the visual weight is skewed to one side, which may make the layout appear empty or unstable.",
+    "viewProjectFocusTitle": "Focus",
+    "viewProjectFocusDesc": "Indicates how strongly user attention is directed toward key content.<br>A higher score means users fixate on primary messages or buttons without distraction. Conversely, a lower score implies that attention is scattered across multiple areas, increasing the risk of missing key information.",
+    "viewProjectPageFailedDownload": "Failed to load image information",
+
+
+    "settingSaveChangesButtonMsg": "Save changes",
+    "settingTitle": "Settings",
+    "settingSubtitle": "Manage your account Setting and preferences",
+
+    "setting_accountTitle": "Account",
+    "setting_accountSubtitle": "Set your account details",
+    "setting_accountDelete": "Delete account",
+    "setting_accountDeleteDanger": "If you delete your account, there is no going back.",
+    "setting_accountDeleteButtonMsg": "Delete your account",
+    "setting_accountLinkGoogle": "Linked Google",
+    "setting_accountLinkKakao": "Linked Kakao",
+	"setting_accountSavePopupTitle": "Change account details",
+	"setting_accountSavePopupMsg": "Do you want to save your changes",
+	"setting_accountDeletePopupTitle": "Delete your account",
+	"setting_accountDeletePopupMsg": "Are you sure you want to delete your account",
+
+    "setting_preferTitle": "Preferneces",
+    "setting_preferSubtitle": "Set according to your preferences",
+    "setting_preferLanguage": "Language",
+    "setting_preferLanguageEng": "English",
+    "setting_preferLanguageKor": "Korean",
+    "setting_preferFormat": "Date and time format",
+    "setting_preferFormat12": "12-Hours",
+    "setting_preferFormat24": "24-Hours",
+    "setting_preferTheme": "Select Theme",
+    "setting_preferThemeLight": "Light mode",
+    "setting_preferThemeDark": "Dark mode",
+    "setting_preferThemeSystem": "System theme",
+	"setting_preferSavePopupTitle": "Change preferences",
+	"setting_preferSavePopupMsg": "Do you want to save your changes",
+
+    
+    "setting_projectTitle": "Project",
+    "setting_projectSubtitle": "Manage your projects all at once",
+    "setting_projectDanger": "Please be certain",
+
+    "setting_projectDeletePage": "Delete Pages",
+    "setting_projectDeletePageButtonMsg": "Delete All Pages",
+    "setting_projectDeletePagePopupMsg": "Are you sure you want to delete all pages?",
+
+    "setting_projectDeleteProject": "Delete Projects",
+    "setting_projectDeleteProjectButtonMsg": "Delete All Projects",
+    "setting_projectDeleteProjectPopupMsg": "Are you sure you want to delete all projects?",
+
+    "listMsg_name": "Name",
+    "listMsg_author": "Author",
+    "listMsg_page": "Pages",
+    "listMsg_analysis": "Analyzed",
+    "listMsg_updated": "Updated",
+	"listMsg_created": "Created",
+    "listMsg_option": "Options",
+    
+    "adminOverviewChartPageTitle": "Analyzed pages",
+
+    "adminDatabaseTitle": "Database",
+    "adminDatabaseSubtitle": "List of tables",
+	"adminDatabaseEmptyMsg": "No data found",
+	"adminDatabaseGrantMsg": "Grant admin",
+	"adminDatabaseRevokeMsg": "Revoke admin",
+	"adminDatabaseGrantPopupMsg": "Will you grant admin permission this user",
+	"adminDatabaseRevokePopupMsg": "Will you revoke admin permission this user",
+	"adminDatabaseDeletePopupTitle": "Delete table data",
+	"adminDatabaseRetrieveButtonMsg": "Retrieve",
+
+    
+
+    "adminUserTitle": "Users",
+    "adminUserSubtitle": "Manage users & permissions",
+
+    "adminHistorySubtitle": "Show all user's activities",
+
+    "addNewButtonMsg": "Add<br>new project",
+
+    "adminSwitchButtonMsg": "Switch<br>user mode"
+}
+
+
+
+
+
+
+
+
+

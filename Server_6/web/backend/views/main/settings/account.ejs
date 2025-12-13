@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/css/main/settings/account.css"/>
+<script>
+    <% let text = [
+        'setting_accountSavePopupTitle',
+        'setting_accountSavePopupMsg',
+        'setting_accountDeletePopupTitle',
+        'setting_accountDeletePopupMsg',
+    ] %>
+    <% text.forEach(str => { %>
+        document.textData['<%= str %>'] = '<%= __(str) %>';
+    <% }); %>
+</script>
+<script src="/js/main/settings/account.js" defer></script>
+<h3><%= __('setting_accountTitle') %></h3>
+<h4><%= __('setting_accountSubtitle') %></h4>
+<hr>
+<div class="accountInput input">
+    <div class="inputContainer">
+        <p><%= __('signupNameMsg') %></p>
+        <input type="text" name="userName" id="userName" value="<%= user.nickname %>">
+    </div>
+    <div class="inputContainer">
+        <p><%= __('signupEmailMsg') %> <span><%= __('setting_accountLinkGoogle') %></span></p>
+        <input type="text" name="mail" id="mail" value="<%= user.email %>">
+        
+    </div>
+</div>
+<hr>
+<div class="deleteUser btn">
+   <div class="notice">
+        <h3><%= __('setting_accountDelete') %></h3>
+        <h4><%= __('setting_accountDeleteDanger') %></h4>
+   </div>
+   <a href="#" id="deleteAccountBtn"><%= __('setting_accountDeleteButtonMsg') %></a>
+</div>

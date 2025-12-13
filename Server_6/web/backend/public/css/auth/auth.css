@@ -1,0 +1,315 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    var(--background100) 0%,
+    var(--gradient100) 100%
+  );
+}
+
+.auth-container {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  height: -webkit-fill-available;
+  padding: 20px;
+  align-items: center;
+}
+
+.auth-left {
+  box-sizing: border-box;
+  flex: 1;
+  height: 100%;
+  border-radius: 20px;
+  background: url("https://cdn.pixabay.com/photo/2022/10/07/13/34/sea-7505054_640.jpg")
+    no-repeat center center / cover;
+}
+
+.auth-right {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 12%;
+  width: 50%;
+}
+
+.auth-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--text100);
+}
+
+form p:nth-child(1) {
+    font-size: 0.85em;
+    color: var(--danger100);
+    font-weight: 600;
+    margin-bottom: 1em;
+    display: inline-block;
+    text-align: center;
+
+    opacity: 0; 
+    transition: opacity 0.3s;
+    min-height: 1.2em; 
+}
+
+form p:nth-child(1).active {
+    opacity: 1;
+}
+
+.input-label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+  color: var(--text100);
+}
+
+.input-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.input-group.disable {
+    visibility: hidden;
+    min-height: 0;
+    height: 0;
+    opacity: 0;
+    margin-bottom: 0;
+}
+
+.input-group.disable input {
+    min-height: 0;
+    height: 0;
+    padding: 0;
+}
+
+.input-field {
+  width: 100%;
+  padding: 15px 20px;
+  background-color: var(--background200);
+  border: 3px solid transparent;
+  border-radius: 15px;
+  font-size: 14px;
+  color: var(--text100);
+  transition: 0.3s;
+  box-sizing: border-box;
+  box-shadow: inset 1px 4px 20px -14px var(--shadow100);
+  transition: height 0.3s,min-height 0.3s, padding 0.3s;
+}
+
+.input-field:focus-visible {
+  outline: none;
+  border-color: var(--primary100);
+  background-color: var(--background100);
+}
+
+/* 비밀번호 눈 아이콘 */
+.toggle-pw {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text200);
+  cursor: pointer;
+}
+
+.signSubmenu {
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0.5em 0.5em 1em 0.5em;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox-group label {
+  position: relative;
+  cursor: pointer;
+  padding-left: 30px;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.checkbox-group label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.2em;
+  height: 1.2em;
+  background-color: var(--background100);
+  border: 2px solid var(--textPrimaryOnBackground);
+  border-radius: 0.3em;
+  transition: all 0.2s ease-in-out;
+}
+
+.checkbox-group label:hover::before {
+  border-color: var(--primary300);
+}
+
+.checkbox-group input[type="checkbox"]:checked + label::before {
+  background-color: var(--textPrimaryOnBackground);
+  border-color: var(--textPrimaryOnBackground);
+}
+
+/* 6. 체크 표시 (V자 모양 - ::after 가상요소) */
+.checkbox-group label::after {
+  content: "";
+  position: absolute;
+  display: none; /* 기본적으로 숨김 */
+  
+  /* V자 모양 만들기 */
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* 체크되었을 때 V자 보이기 */
+.checkbox-group input[type="checkbox"]:checked + label::after {
+  display: block;
+}
+
+.forgot-pw {
+  display: inline-block;
+  text-align: right;
+  font-size: 12px;
+  color: var(--text100);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--primary100);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: var(--primary200);
+}
+
+.auth-footer {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text200);
+  margin-bottom: 30px;
+}
+
+.auth-footer a {
+  color: var(--primary100);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.social-login {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  border-top: 2px solid var(--alphaPrimary);
+  padding-top: 30px;
+}
+
+.social-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px var(--shadow100);
+}
+
+.google-btn {
+  background-color: white;
+  border: 1px solid var(--background300);
+  color: #db4437;
+}
+
+.google-btn i {
+  color: #db4437;
+}
+
+.kakao-btn {
+  background-color: #fee500;
+  color: #3c1e1e;
+  border: none;
+}
+
+.kakao-btn i {
+  color: #3c1e1e;
+}
+
+@media (max-width: 1200px) {
+  .auth-right {
+    padding: 0 4%;
+  }
+}
+
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    padding: 20px;
+    gap: 30px;
+  }
+
+  .auth-left {
+    width: 100%;
+    height: 180px;
+    flex: none;
+    border-radius: 15px;
+  }
+
+  .auth-right {
+    width: 100%;
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .auth-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .input-field {
+    padding: 12px 15px;
+  }
+
+  .btn-submit {
+    padding: 12px;
+  }
+}

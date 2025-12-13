@@ -437,3 +437,7 @@ v0.9src/ai/models/utils/loss_function.py
 /v1.0src/web/backend/config
 /v1.0src/web/backend/middleware
 /v1.0src/web/backend/public/storage
+/Server_6/ai
+/Server_6/web/backend/config
+/Server_6/web/backend/middleware
+/Server_6/web/backend/public/storage

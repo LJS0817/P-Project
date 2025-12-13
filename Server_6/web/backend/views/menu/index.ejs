@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Welcome</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+    <link rel="stylesheet" href="/css/shared/default.css"> 
+    <link rel="stylesheet" href="/css/menu/style.css"> 
+    <script src="/js/menu/menu.js" defer></script>
+  </head>
+  <body class="">
+    <header>
+      <div class="headerContent">
+        <a href="/"><div class="logo"><img src="/img/logo.png" alt="">HeatSight</div></a>
+        <nav class="nav-center">
+          <a href="#first" class="active"><%= __('menu_home') %></a>
+          <a href="#second"><%= __('menu_service') %></a>
+          <a href="#third"><%= __('menu_tech') %></a>
+          <a href="#fourth"><%= __('menu_team') %></a>
+        </nav>
+        <div class="nav-right">
+          <a href="/auth/signin" class="btn-signin"><%= __('signinTitle') %></a>
+          <a href="/auth/signup" class="btn-signup"><%= __('menu_signup') %></a>
+        </div>
+      </div>
+      <hr>
+    </header>
+
+    <section class="first" id="first">
+      <h1><%= __('menu_home_title') %></h1>
+      <p><%- __('menu_home_desc') %></p>
+
+      <a href="/auth/signin" class="getStartBtn"><%= __('menu_home_getStart') %></a>
+
+      <div class="thumb">
+        <img src="/img/menu/before.png" class="imgBefore" alt="before">
+        <img src="/img/menu/after.png" class="imgAfter" alt="after">
+        <div class="handle"></div>
+        <div class="handleController"><i class="fi fi-rr-reflect-horizontal"></i></div>
+      </div>
+      
+    </section>
+
+    <section id="second">
+      <i class="fi fi-tr-no-attention section-icon"></i>
+      <h2 class="section-title"><%= __('menu_service_title') %></h2>
+      <p class="section-desc"><%= __('menu_service_desc') %></p>
+
+      <div class="split-section">
+        <div class="split-text">
+          <div class="card-icon"><i class="fi fi-tr-chart-area"></i></div>
+          <h3><%= __('menu_service_card_title') %></h3>
+          <p class="section-desc" style="margin-bottom: 0;"><%= __('menu_service_card_desc') %></p>
+          <!-- <a href="#" class="learnMoreBtn">Learn more</a> -->
+        </div>
+        <div class="split-img"><img src="/img/menu/heatmap.png"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-icon"><i class="fas fa-search"></i></div>
+      <h2 class="section-title"><%= __('menu_tech_title') %></h2>
+      <p class="section-desc"><%= __('menu_tech_desc') %></p>
+
+      <div class="card-grid">
+        <div class="info-card">
+          <div class="card-text">
+            <div class="card-icon"><i class="fi fi-rr-search"></i></div>
+             <%= __('menu_tech_card0_desc') %>
+          </div>
+          <div class="card-box"><img src="/img/menu/heatmap_0.png"></div>
+        </div>
+        <div class="info-card">
+          <div class="card-text">
+            <div class="card-icon"><i class="fi fi-tr-code-branch"></i></div>
+             <%= __('menu_tech_card1_desc') %>
+          </div>
+          <div class="card-box"><img src="/img/menu/path.png"></div>
+        </div>
+        <div class="info-card">
+          <div class="card-text">
+            <div class="card-icon"><i class="fi fi-tr-bullseye-pointer"></i></div>
+             <%= __('menu_tech_card2_desc') %>
+          </div>
+          
+          <div class="card-box"><img src="/img/menu/score.png"style="object-fit: contain;"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="third">
+      <div class="third">
+        
+        <h2 class="section-title"><div class="card-icon"><i class="fi fi-tr-process"></i></div><%= __('menu_tech_step_title') %></h2>
+
+        <div class="process-list">
+          <div class="process-item">
+            <div class="process-box"><i class="fi fi-tr-images"></i></div>
+            <div class="process-text">1. <%= __('menu_tech_step0_title') %><br><p><%= __('menu_tech_step0_desc') %></p></div>
+          </div>
+          <div class="arrow-down">▼</div>
+          <div class="process-item">
+            <div class="process-box"><i class="fi fi-tr-folder-upload"></i></div>
+            <div class="process-text">2. <%= __('menu_tech_step1_title') %><br><p><%= __('menu_tech_step1_desc') %></p></div>
+          </div>
+          <div class="arrow-down">▼</div>
+          <div class="process-item">
+            <div class="process-box"><i class="fi fi-tr-microchip-ai"></i></div>
+            <div class="process-text">3. <%= __('menu_tech_step2_title') %><br><p><%= __('menu_tech_step2_desc') %></p></div>
+          </div>
+          <div class="arrow-down">▼</div>
+          <div class="process-item">
+            <div class="process-box"><i class="fi fi-tr-analyse"></i></div>
+            <div class="process-text">4. <%= __('menu_tech_step3_title') %><br><p><%= __('menu_tech_step3_desc') %></p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+    <section id="fourth">
+      <div class="bottom-banner">
+        <div class="teamTitle">
+          <div class="banner-content">
+            <div class="card-icon"><i class="fi fi-tr-employees"></i></div>
+            <h3><%= __('menu_team_title') %> P-Project</h3>
+            <p>Team. undefined</p>
+          </div>
+          <img class="gachonImg" src="https://www.gachon.ac.kr/sites/kor/images/sub/slogan_2.png" alt="Gachon Logo" onclick="location.href='https://www.gachon.ac.kr'">
+        </div>
+        <div class="teamContainer">
+          <div class="teammate">
+            <div class="teamIcon"><i class="fi fi-tr-cyborg"></i></div>
+            <div class="teamInfo">
+              <p>A.I.</p>
+              <p>함 의 찬 <span>( 202136057 )</span></p>
+            </div>
+          </div>
+          <hr>
+          <div class="teammate">
+            <div class="teamIcon"><i class="fi fi-tr-pencil-paintbrush"></i></div>
+            <div class="teamInfo">
+              <p>Frontend</p>
+              <p>이 준 상 <span>( 202136017) </span></p>
+            </div>
+          </div>
+          <div class="teammate">
+            <div class="teamIcon"><i class="fi fi-tr-pencil-paintbrush"></i></div>
+            <div class="teamInfo">
+              <p>Frontend</p>
+              <p>채 동 원 <span>( 202239901 )</span></p>
+            </div>
+          </div>
+          <hr>
+          <div class="teammate">
+            <div class="teamIcon"><i class="fi fi-tr-database"></i></div>
+            <div class="teamInfo">
+              <p>Backend</p>
+              <p>김 성 주 <span>( 202135930 ) *</span></p>
+            </div>
+          </div>
+          <div class="teammate">
+            <div class="teamIcon"><i class="fi fi-tr-database"></i></div>
+            <div class="teamInfo">
+              <p>Backend</p>
+              <p>이 시 우 <span>( 202337657 )</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr>
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-left">
+          <p style="font-size: 1.2em;">HeatSight</p>
+          <span style="font-size: 0.8em;">Heatmap Insight</span>
+        </div>
+        <div class="footer-links">
+          <a href="#first"><%= __('menu_home') %></a>
+          <a href="#second"><%= __('menu_service') %></a>
+          <a href="#third"><%= __('menu_tech') %></a>
+          <a href="#fourth"><%= __('menu_team') %></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
